@@ -40,4 +40,28 @@ mat-toolbar {
 .mat-mdc-nav-list .mat-mdc-list-item{
   border-radius: 0px !important;
   margin-bottom: .15rem !important;
+
 }
+.mat-mdc-menu-item .mat-icon-no-color, .mat-mdc-menu-item .mat-mdc-menu-submenu-icon,.title{
+  color: var(--mat-button-filled-container-color, var(--mat-sys-primary)) !important;
+}
+.mat-mdc-menu-item .mat-icon {
+  margin-right: 0px !important;
+}
+.mat-mdc-menu-content{
+  background-color: white !important;
+}
+.mat-mdc-nav-list{
+  display: flex;
+  justify-content: space-between;
+flex: 1;
+
+}
+mat-toolbar{
+  display: flex;
+  justify-content: space-between;
+}
+.title{
+  margin:1rem;
+}
+

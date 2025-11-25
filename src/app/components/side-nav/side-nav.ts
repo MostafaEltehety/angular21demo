@@ -2,6 +2,7 @@ import { Component, computed, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListItem, MatNavList } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -16,7 +17,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     RouterLink,
     RouterOutlet,
     MatToolbarModule,
-    MatNavList
+    MatNavList,
+    MatMenuModule,
 ],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
