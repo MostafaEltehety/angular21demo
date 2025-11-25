@@ -1,0 +1,43 @@
+
+/* ===== GENERAL LAYOUT ===== */
+mat-sidenav-container { height: 100vh; }
+
+mat-sidenav { background: white !important;border-radius: 0px !important; }
+
+mat-toolbar {
+  background: white !important;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 2px solid #72a1a05c;
+}
+
+/* ===== LIST ITEM CONTENT ===== */
+.list-item-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.list-item-content mat-icon,.mat-icon {
+  font-size: 26px;
+  min-width: 26px;
+  height: 26px;
+  width: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mat-button-filled-container-color, var(--mat-sys-primary));
+}
+
+.list-item-content span {
+  white-space: nowrap;
+}
+.mat-toolbar-row, .mat-toolbar-single-row{
+  padding-left: .5rem !important;
+}
+.container{padding: 2rem;}
+.mat-mdc-nav-list .mat-mdc-list-item{
+  border-radius: 0px !important;
+  margin-bottom: .15rem !important;
+}

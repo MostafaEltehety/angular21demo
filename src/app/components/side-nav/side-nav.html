@@ -1,0 +1,27 @@
+  <mat-toolbar>
+      <button mat-icon-button (click)="toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    </mat-toolbar>
+ <mat-sidenav-container>
+  <mat-sidenav mode="side" opened [style.width]="sidenavWidth()">
+    <mat-nav-list>
+      <a mat-list-item routerLink="home">
+        <div class="list-item-content">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="about">
+        <div class="list-item-content">
+          <mat-icon>info</mat-icon>
+          <span>About</span>
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="container" [style.margin-left]="sidenavWidth()">
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
