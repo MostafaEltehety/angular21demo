@@ -6,7 +6,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-side-nav',
@@ -20,6 +21,8 @@ import { TranslateService } from '@ngx-translate/core';
     MatToolbarModule,
     MatNavList,
     MatMenuModule,
+    TranslateModule,
+MatTooltipModule
 ],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
@@ -28,7 +31,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class SideNav {
 collabse=signal(false);
 sidenavWidth=computed(()=>this.collabse()?'60px':'250px');
-private translate=inject(TranslateService);
+ translate=inject(TranslateService);
 curentLanguage=signal('ar');
 isRtl=computed(()=>this.curentLanguage()==='ar');
 constructor(){

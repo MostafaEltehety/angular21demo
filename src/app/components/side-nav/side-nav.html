@@ -3,7 +3,7 @@
   <button mat-icon-button (click)="toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="title">App Demo</span>
+  <span class="title">{{'APP_TITLE'|translate }}</span>
   </div>
 
   <div>
@@ -40,13 +40,21 @@
         <a mat-list-item routerLink="/home">
         <div class="list-item-content">
           <mat-icon>home</mat-icon>
-          <span>Home</span>
+          <span>{{'HOME'|translate}}</span>
         </div>
       </a>
+
+<mat-list-item>
+  <div class="list-item-content">
+    <mat-icon matTooltip="{{'DEPARTMENT'|translate}}">account_tree</mat-icon>
+    <span>{{'DEPARTMENT'|translate}}</span>
+  </div>
+</mat-list-item>
+
       <a mat-list-item routerLink="/about">
         <div class="list-item-content">
-          <mat-icon>info</mat-icon>
-          <span>About</span>
+          <mat-icon matTooltip="{{'ABOUT'|translate}}">info</mat-icon>
+          <span>{{'ABOUT'|translate}}</span>
         </div>
       </a>
 </div>
@@ -54,8 +62,8 @@
        <div class="nav-items-bottom">
   <a mat-list-item routerLink="/login">
         <div class="list-item-content">
-          <mat-icon>exit_to_app</mat-icon>
-          <span>LogOut</span>
+          <mat-icon matTooltip="{{'LOGOUT' | translate}}">exit_to_app</mat-icon>
+          <span>{{'LOGOUT'|translate}}</span>
         </div>
       </a>
 </div>
