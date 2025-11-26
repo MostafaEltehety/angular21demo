@@ -38,12 +38,23 @@ isRtl=computed(()=>this.curentLanguage()==='ar');
 
  themeService = inject(ThemeService);
 
+  constructor() {
+    // Attempt to retrieve saved language from localStorage
+    const savedLang = localStorage.getItem('language');
+    if (savedLang) {
+      this.curentLanguage.set(savedLang);
+      this.translate.use(savedLang);
+      this.updateDirection(savedLang);
+    } else {
+      // Default to Arabic if no language is saved
+      this.translate.setDefaultLang('ar');
+      this.translate.use('ar');
+      this.updateDirection('ar');
+    }
+  }
 
-constructor(){
-  this.translate.setDefaultLang('ar');
-  this.translate.use('ar');
-  this.updateDirection('ar');
-}
+
+
 toggle() {
 this.collabse.update(x=>x=!x);
 }
@@ -58,12 +69,18 @@ htmlTag.setAttribute('dir','ltr');
 htmlTag.setAttribute('lang','en');
 }
 }
-SwitchLang(){
-  const newLang=this.curentLanguage()==='ar'?'en':'ar';
-this.curentLanguage.set(newLang);
-this.translate.use(newLang);
-this.updateDirection(newLang);
-}
+
+
+
+ SwitchLang() {
+    const newLang = this.curentLanguage() === 'ar' ? 'en' : 'ar';
+    this.curentLanguage.set(newLang);
+    this.translate.use(newLang);
+    this.updateDirection(newLang);
+
+    // Save the selected language in localStorage
+    localStorage.setItem('language', newLang);
+  }
 
 
   // Theme toggle method
