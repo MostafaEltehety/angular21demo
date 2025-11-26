@@ -12,5 +12,8 @@
   "DEPARTMENT_NAME":"Department name",
   "REQUIRED":"This field is required",
   "DEPARTMENT_DESC":"Department Description",
-  "Cancel":"Cancel"
+  "Cancel":"Cancel",
+  "USER_NAME":"User Name",
+  "PASSWORD":"Password"
+
 }

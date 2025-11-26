@@ -6,11 +6,13 @@
   "LOGOUT": "تسجيل الخروج",
   "PROFILE": "الملف الشخصي",
   "SETTINGS": "الإعدادات",
-  "DEPARTMENT":"الأقسام",
-  "ADD_DEPARTMENT":"إضافة قسم",
-  "SAVE":"حفظ",
-  "DEPARTMENT_NAME":"أسم القسم",
-  "REQUIRED":"هذا الحقل مطلوب",
-  "DEPARTMENT_DESC":"وصف القسم",
-  "Cancel":"إلغاء"
+  "DEPARTMENT": "الأقسام",
+  "ADD_DEPARTMENT": "إضافة قسم",
+  "SAVE": "حفظ",
+  "DEPARTMENT_NAME": "أسم القسم",
+  "REQUIRED": "هذا الحقل مطلوب",
+  "DEPARTMENT_DESC": "وصف القسم",
+  "Cancel": "إلغاء",
+  "USER_NAME": "أسم المستخدم",
+  "PASSWORD":"كلمة المرور"
 }

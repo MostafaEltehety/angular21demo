@@ -1,1 +1,51 @@
-<p>login works!</p>
+<div class="card">
+  <div class="card-title">
+{{'LOGIN'|translate}}
+  </div>
+
+<form [formGroup]="from" (ngSubmit)="save()" class="form">
+<mat-form-field appearance="outline">
+<mat-label>{{'USER_NAME'|translate}}</mat-label>
+<input matInput placeholder="{{'USER_NAME'|translate}}">
+@if(from.get('userName')?.invalid){
+  <mat-error>{{'REQUIRED'|translate}}</mat-error>
+}
+</mat-form-field>
+<mat-form-field appearance="outline">
+<mat-label>{{'PASSWORD'|translate}}</mat-label>
+<input matInput placeholder="{{'PASSWORD'|translate}}" type="password">
+@if(from.get('password')?.invalid){
+<mat-error>{{'REQUIRED'|translate}}</mat-error>
+}
+</mat-form-field>
+<!--
+<div >
+  <button mat-flat-button class="w-100">
+    <mat-icon>login</mat-icon>
+    {{'LOGIN'|translate}}
+
+  </button>
+  <button mat-raised-button  class="btn-warn w-100">
+    <mat-icon>close</mat-icon>
+    {{'Cancel'|translate}}</button>
+</div> -->
+
+<div class="actions">
+
+  <button mat-raised-button  class="btn-warn w-100">
+    <mat-icon>close</mat-icon>
+    {{'Cancel'|translate}}</button>
+
+     <button mat-flat-button class="w-100">
+    <mat-icon>login</mat-icon>
+    {{'LOGIN'|translate}}
+
+  </button>
+
+</div>
+
+
+
+</form>
+
+</div>
