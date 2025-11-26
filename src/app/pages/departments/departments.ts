@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { DialogModule, DialogRef } from '@angular/cdk/dialog';
 import { DepartmentForm } from './department-form/department-form';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-departments',
@@ -20,8 +21,15 @@ export class Departments {
 openDialoge() {
    const currentDir = document.documentElement.getAttribute('dir') as 'ltr' | 'rtl' || 'ltr';
 this.dialog.open(DepartmentForm,{
-  direction:currentDir
-});
+  direction:currentDir,
+  disableClose: true
+
+
+}
+
+
+);
+ 
 }
 
 }

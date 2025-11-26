@@ -8,5 +8,9 @@
   "SETTINGS": "الإعدادات",
   "DEPARTMENT":"الأقسام",
   "ADD_DEPARTMENT":"إضافة قسم",
-  "SAVE":"حفظ"
+  "SAVE":"حفظ",
+  "DEPARTMENT_NAME":"أسم القسم",
+  "REQUIRED":"هذا الحقل مطلوب",
+  "DEPARTMENT_DESC":"وصف القسم",
+  "Cancel":"إلغاء"
 }

@@ -8,5 +8,9 @@
   "SETTINGS": "Settings",
   "DEPARTMENT":"Departments",
   "ADD_DEPARTMENT":"Add Department",
-  "SAVE":"Save"
+  "SAVE":"Save",
+  "DEPARTMENT_NAME":"Department name",
+  "REQUIRED":"This field is required",
+  "DEPARTMENT_DESC":"Department Description",
+  "Cancel":"Cancel"
 }

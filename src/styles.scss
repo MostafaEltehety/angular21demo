@@ -1,28 +1,276 @@
  /* ================= GLOBAL THEME ================= */
 @use '@angular/material' as mat;
 
+// Import Cairo font
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+
+// Include core Material styles
+@include mat.core();
+
+/* ================= LIGHT THEME ================= */
 html {
-@include mat.theme((
-color: (
-primary: mat.$cyan-palette,
-tertiary: mat.$orange-palette,
-),
-// typography: Roboto,
-typography: Cairo,
-density: 0,
-));
+  @include mat.theme((
+    color: (
+      primary: mat.$cyan-palette,
+      tertiary: mat.$orange-palette,
+    ),
+    typography: (
+      brand-family: 'Cairo',
+      plain-family: 'Cairo',
+      bold-weight: 700,
+      medium-weight: 500,
+      regular-weight: 400,
+    ),
+    density: 0,
+  ));
 }
 
+/* ================= DARK THEME ================= */
+html.dark-theme {
+  @include mat.theme((
+    color: (
+      primary: mat.$cyan-palette,
+      tertiary: mat.$orange-palette,
+      theme-type: dark,
+    ),
+    typography: (
+      brand-family: 'Cairo',
+      plain-family: 'Cairo',
+      bold-weight: 700,
+      medium-weight: 500,
+      regular-weight: 400,
+    ),
+    density: 0,
+  ));
+}
+
+/* ================= BODY STYLES ================= */
 body {
-color-scheme: light;
-background-color: var(--mat-sys-surface);
-color: var(--mat-sys-on-surface);
-// font: var(--mat-sys-body-medium);
-margin: 0;
+  margin: 0;
+  height: 100%;
+  font-family: Cairo, "Roboto", sans-serif;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-  body { margin: 0; font-family: Cairo, "Roboto", sans-serif; }
+html {
+  height: 100%;
+  color-scheme: light;
+}
 
+html.dark-theme {
+  color-scheme: dark;
+}
 
+/* ================= CUSTOM ACCENT COLOR CLASS ================= */
+.btn-accent {
+  &.mat-mdc-raised-button,
+  &.mat-mdc-unelevated-button {
+    background-color: #ff9800 !important;
+    color: white !important;
+
+    &:hover {
+      background-color: #f57c00 !important;
+    }
+  }
+
+  &.mat-mdc-outlined-button {
+    border-color: #ff9800 !important;
+    color: #ff9800 !important;
+
+    &:hover {
+      background-color: rgba(255, 152, 0, 0.1) !important;
+    }
+  }
+
+  &.mat-mdc-button {
+    color: #ff9800 !important;
+
+    &:hover {
+      background-color: rgba(255, 152, 0, 0.1) !important;
+    }
+  }
+
+  &.mat-mdc-icon-button {
+    color: #ff9800 !important;
+
+    &:hover {
+      background-color: rgba(255, 152, 0, 0.1) !important;
+    }
+  }
+}
+
+html.dark-theme .btn-accent {
+  &.mat-mdc-raised-button,
+  &.mat-mdc-unelevated-button {
+    background-color: #ffb74d !important;
+    color: black !important;
+
+    &:hover {
+      background-color: #ffa726 !important;
+    }
+  }
+
+  &.mat-mdc-outlined-button {
+    border-color: #ffb74d !important;
+    color: #ffb74d !important;
+
+    &:hover {
+      background-color: rgba(255, 183, 77, 0.1) !important;
+    }
+  }
+
+  &.mat-mdc-button {
+    color: #ffb74d !important;
+  }
+
+  &.mat-mdc-icon-button {
+    color: #ffb74d !important;
+  }
+}
+
+/* ================= CUSTOM WARN/DANGER COLOR CLASS ================= */
+.btn-warn {
+  &.mat-mdc-raised-button,
+  &.mat-mdc-unelevated-button {
+    background-color: #f44336 !important;
+    color: white !important;
+
+    &:hover {
+      background-color: #d32f2f !important;
+    }
+  }
+
+  &.mat-mdc-outlined-button {
+    border-color: #f44336 !important;
+    color: #f44336 !important;
+
+    &:hover {
+      background-color: rgba(244, 67, 54, 0.1) !important;
+    }
+  }
+
+  &.mat-mdc-button {
+    color: #f44336 !important;
+
+    &:hover {
+      background-color: rgba(244, 67, 54, 0.1) !important;
+    }
+  }
+
+  &.mat-mdc-icon-button {
+    color: #f44336 !important;
+
+    &:hover {
+      background-color: rgba(244, 67, 54, 0.1) !important;
+    }
+  }
+}
+.btn-warn .mat-icon{
+    color: white !important;
+  }
+html.dark-theme .btn-warn {
+  &.mat-mdc-raised-button,
+  &.mat-mdc-unelevated-button {
+    background-color: #ef5350 !important;
+    color: white !important;
+
+    &:hover {
+      background-color: #e53935 !important;
+    }
+  }
+
+  &.mat-mdc-outlined-button {
+    border-color: #ef5350 !important;
+    color: #ef5350 !important;
+  }
+
+  &.mat-mdc-button {
+    color: #ef5350 !important;
+  }
+
+  &.mat-mdc-icon-button {
+    color: #ef5350 !important;
+  }
+}
+
+/* ================= FORM FIELD ACCENT COLOR ================= */
+.mat-mdc-form-field.field-accent {
+  --mdc-outlined-text-field-focus-outline-color: #ff9800 !important;
+  --mdc-outlined-text-field-focus-label-text-color: #ff9800 !important;
+  --mdc-outlined-text-field-caret-color: #ff9800 !important;
+}
+
+html.dark-theme .mat-mdc-form-field.field-accent {
+  --mdc-outlined-text-field-focus-outline-color: #ffb74d !important;
+  --mdc-outlined-text-field-focus-label-text-color: #ffb74d !important;
+  --mdc-outlined-text-field-caret-color: #ffb74d !important;
+}
+
+/* ================= FORM FIELD WARN COLOR ================= */
+.mat-mdc-form-field.field-warn {
+  --mdc-outlined-text-field-focus-outline-color: #f44336 !important;
+  --mdc-outlined-text-field-focus-label-text-color: #f44336 !important;
+  --mdc-outlined-text-field-caret-color: #f44336 !important;
+  --mdc-outlined-text-field-error-focus-label-text-color: #f44336 !important;
+  --mdc-outlined-text-field-error-label-text-color: #f44336 !important;
+}
+
+html.dark-theme .mat-mdc-form-field.field-warn {
+  --mdc-outlined-text-field-focus-outline-color: #ef5350 !important;
+  --mdc-outlined-text-field-focus-label-text-color: #ef5350 !important;
+}
+
+/* ================= SMOOTH TRANSITIONS ================= */
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-mdc-icon-button {
+  transition: all 0.3s ease !important;
+}
+
+/* ================= CUSTOM SCROLLBAR ================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mat-sys-surface-container-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mat-sys-primary);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--mat-sys-primary-container);
+  }
+}
+
+/* ================= DIALOG STYLES ================= */
+.mat-mdc-dialog-container {
+  --mdc-dialog-container-color: var(--mat-sys-surface-container-high);
+}
+
+/* ================= UTILITY CLASSES ================= */
+.container {
+
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.mt-1 { margin-top: 8px !important; }
+.mt-2 { margin-top: 16px !important; }
+.mt-3 { margin-top: 24px !important; }
+.mt-4 { margin-top: 32px !important; }
+
+.mb-1 { margin-bottom: 8px !important; }
+.mb-2 { margin-bottom: 16px !important; }
+.mb-3 { margin-bottom: 24px !important; }
+.mb-4 { margin-bottom: 32px !important; }
+
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-left { text-align: left !important; }

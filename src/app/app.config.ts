@@ -33,13 +33,6 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       })
-    ),
-{
-      provide: MAT_DIALOG_DEFAULT_OPTIONS,
-      useFactory: () => ({
-        direction: document.documentElement.getAttribute('dir') as 'rtl' | 'ltr' || 'ltr'
-      })
-    }
-
+    )
   ]
 };

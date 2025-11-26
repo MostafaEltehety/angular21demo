@@ -1,10 +1,54 @@
-<mat-card>
+<div class="card">
+<div class="card-title">
+  {{'ADD_DEPARTMENT'|translate}}
+</div>
 
+  <form [formGroup]="from" (submit)="save()" class="form">
+<mat-form-field appearance="outline" class="w-100">
+<mat-label>{{'DEPARTMENT_NAME'|translate}}</mat-label>
+<input matInput formControlName="name" placeholder="{{'DEPARTMENT_NAME'|translate}}">
+@if(from.get('name')?.invalid){
+<mat-error>{{"REQUIRED"|translate}}</mat-error>
+}
+</mat-form-field>
+
+<mat-form-field class="w-100" appearance="outline">
+<mat-label>{{"DEPARTMENT_DESC"|translate}}</mat-label>
+<textarea matInput rows="4" formControlName="description"></textarea>
+@if(from.get('description')?.invalid){
+<mat-error>{{"REQUIRED"|translate}}</mat-error>
+}
+</mat-form-field>
+
+</form>
+
+<div>
+  <button mat-raised-button class="btn-warn" (click)="Close()">
+    <mat-icon>close</mat-icon>
+    {{ 'Cancel' | translate }}
+  </button>
+
+  <button mat-flat-button color="primary" [disabled]="from.invalid">
+    <mat-icon>save</mat-icon>
+    {{ 'SAVE' | translate }}
+  </button>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- <mat-card class="card">
+  <form [formGroup]="from" (submit)="save()" class="form">
 <mat-card-header>
-  <mat-card-title>
+  <mat-card-title class="card-title">
   {{'ADD_DEPARTMENT'|translate}}
 </mat-card-title>
 </mat-card-header>
+<mat-divider></mat-divider>
 
 <mat-card-content>
 
@@ -12,11 +56,11 @@
 
 <mat-card-footer>
   <mat-card-actions>
-<button mat-flat-button>
+<button mat-flat-button [disabled]="from.invalid">
   <mat-icon >save</mat-icon>
   {{'SAVE'|translate}}
 </button>
   </mat-card-actions>
 </mat-card-footer>
-
-</mat-card>
+  </form>
+</mat-card> -->
