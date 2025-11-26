@@ -1,0 +1,40 @@
+ .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: var(--mat-sys-surface);
+    }
+
+    .app-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-button {
+      margin-left: 8px;
+    }
+
+    .app-title {
+      font-size: 20px;
+      font-weight: 500;
+      font-family: Cairo, sans-serif;
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    .main-content {
+      flex: 1;
+      overflow: auto;
+      padding: 24px;
+    }
+
+    [dir="rtl"] {
+      .menu-button {
+        margin-left: 0;
+        margin-right: 8px;
+      }
+    }
