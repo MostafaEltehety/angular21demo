@@ -307,20 +307,20 @@ html.dark-theme .mat-mdc-form-field.field-warn {
 }
 
 /* ================= RTL SUPPORT ================= */
-[dir="rtl"] {
-  .mat-icon {
-    transform: scaleX(-1);
-  }
+// [dir="rtl"] {
+//   .mat-icon {
+//     transform: scaleX(-1);
+//   }
 
-  button .mat-icon {
-    margin-left: 0;
-    margin-right: 8px;
-  }
-}
+//   button .mat-icon {
+//     margin-left: 0;
+//     margin-right: 8px;
+//   }
+// }
 
 /* ================= UTILITY CLASSES ================= */
 .container {
-  max-width: 1200px;
+  // max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 }
