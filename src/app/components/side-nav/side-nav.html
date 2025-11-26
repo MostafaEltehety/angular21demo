@@ -7,14 +7,14 @@
   </div>
 
   <div>
-    <button mat-icon-button (click)="SwitchLang()">
+    <button matTooltip="En-Ar" mat-icon-button (click)="SwitchLang()">
       <mat-icon>g_translate</mat-icon>
     </button>
-<button mat-icon-button>
+<button matTooltip="Light-Dark" mat-icon-button>
   <mat-icon>settings_brightness</mat-icon>
 </button>
-  <button mat-icon-button [matMenuTriggerFor]="menuId">
-    <mat-icon>person</mat-icon>
+  <button matTooltip="{{'PROFILE'|translate}}" mat-icon-button [matMenuTriggerFor]="menuId">
+    <mat-icon >person</mat-icon>
   </button>
 </div>
 
@@ -25,7 +25,7 @@
   </div>
   <div mat-menu-item class="list-item-content" routerLink="/login">
     <mat-icon>exit_to_app</mat-icon>
-    <span>LogOut</span>
+    <span>{{'LOGOUT'|translate}}</span>
   </div>
 </mat-menu>
 
@@ -39,7 +39,7 @@
  <div class="nav-items-top">
         <a mat-list-item routerLink="/home">
         <div class="list-item-content">
-          <mat-icon>home</mat-icon>
+          <mat-icon matTooltip="{{'HOME'|translate}}">home</mat-icon>
           <span>{{'HOME'|translate}}</span>
         </div>
       </a>
