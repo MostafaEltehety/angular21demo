@@ -71,7 +71,7 @@
 
 
 
-  <mat-sidenav-content class="container" [style.margin-left]="sidenavWidth()">
+  <mat-sidenav-content class="container" [style.margin-left]="isRtl()?'0':sidenavWidth()"   [style.margin-right]="!isRtl()?'0':sidenavWidth()">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -30,6 +30,7 @@ collabse=signal(false);
 sidenavWidth=computed(()=>this.collabse()?'60px':'250px');
 private translate=inject(TranslateService);
 curentLanguage=signal('ar');
+isRtl=computed(()=>this.curentLanguage()==='ar');
 constructor(){
   this.translate.setDefaultLang('ar');
   this.translate.use('ar');
