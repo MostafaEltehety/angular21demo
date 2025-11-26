@@ -5,6 +5,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { routes } from './app.routes';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 export class CustomTranslateLoader implements TranslateLoader {
   constructor(private http: HttpClient) {}
@@ -32,6 +33,13 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       })
-    )
+    ),
+{
+      provide: MAT_DIALOG_DEFAULT_OPTIONS,
+      useFactory: () => ({
+        direction: document.documentElement.getAttribute('dir') as 'rtl' | 'ltr' || 'ltr'
+      })
+    }
+
   ]
 };

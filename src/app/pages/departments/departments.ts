@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { department } from '../../models/demaprtment';
 import { MatAnchor } from "@angular/material/button";
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,9 +14,14 @@ import { DepartmentForm } from './department-form/department-form';
   styleUrl: './departments.scss',
 })
 export class Departments {
+
+
   dialog=inject(MatDialog);
 openDialoge() {
-this.dialog.open(DepartmentForm);
+   const currentDir = document.documentElement.getAttribute('dir') as 'ltr' | 'rtl' || 'ltr';
+this.dialog.open(DepartmentForm,{
+  direction:currentDir
+});
 }
 
 }
