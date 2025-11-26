@@ -6,5 +6,7 @@
   "LOGOUT": "تسجيل الخروج",
   "PROFILE": "الملف الشخصي",
   "SETTINGS": "الإعدادات",
-  "DEPARTMENT":"الأقسام"
+  "DEPARTMENT":"الأقسام",
+  "ADD_DEPARTMENT":"إضافة قسم",
+  "SAVE":"حفظ"
 }

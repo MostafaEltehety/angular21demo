@@ -6,5 +6,7 @@
   "LOGOUT": "Logout",
   "PROFILE": "Profile",
   "SETTINGS": "Settings",
-  "DEPARTMENT":"Departments"
+  "DEPARTMENT":"Departments",
+  "ADD_DEPARTMENT":"Add Department",
+  "SAVE":"Save"
 }

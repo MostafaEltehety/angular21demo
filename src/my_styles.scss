@@ -51,9 +51,13 @@ mat-toolbar {
 .mat-toolbar-row, .mat-toolbar-single-row {
   padding-left: .5rem !important;
 }
+.mat-mdc-unelevated-button>.mat-icon{
+  color: white !important;
 
+}
 .container {
   padding: 2rem;
+  background-color: whitesmoke !important;
 }
 
 .mat-mdc-nav-list .mat-mdc-list-item {
@@ -95,4 +99,7 @@ mat-toolbar {
 
 .title {
   margin: 1rem;
+}
+button,.mat-mdc-dialog-surface{
+  border-radius: 2px !important;
 }
