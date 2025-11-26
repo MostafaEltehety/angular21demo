@@ -7,7 +7,8 @@ color: (
 primary: mat.$cyan-palette,
 tertiary: mat.$orange-palette,
 ),
-typography: Roboto,
+// typography: Roboto,
+typography: Cairo,
 density: 0,
 ));
 }
@@ -16,13 +17,12 @@ body {
 color-scheme: light;
 background-color: var(--mat-sys-surface);
 color: var(--mat-sys-on-surface);
-font: var(--mat-sys-body-medium);
+// font: var(--mat-sys-body-medium);
 margin: 0;
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  body { margin: 0; font-family: Cairo, "Roboto", sans-serif; }
 
 

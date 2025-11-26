@@ -20,7 +20,7 @@
     <mat-icon>account_box</mat-icon>
      <span>Eltehety</span>
   </div>
-  <div mat-menu-item class="list-item-content">
+  <div mat-menu-item class="list-item-content" routerLink="/login">
     <mat-icon>exit_to_app</mat-icon>
     <span>LogOut</span>
   </div>
@@ -33,7 +33,7 @@
     <mat-nav-list >
 
 
-
+ <div class="nav-items-top">
         <a mat-list-item routerLink="/home">
         <div class="list-item-content">
           <mat-icon>home</mat-icon>
@@ -46,14 +46,16 @@
           <span>About</span>
         </div>
       </a>
+</div>
 
+       <div class="nav-items-bottom">
   <a mat-list-item routerLink="/login">
         <div class="list-item-content">
-          <mat-icon>login</mat-icon>
-          <span>Login</span>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>LogOut</span>
         </div>
       </a>
-
+</div>
 
 
     </mat-nav-list>

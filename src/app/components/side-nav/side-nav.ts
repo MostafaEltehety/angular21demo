@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListItem, MatNavList } from '@angular/material/list';
@@ -22,6 +22,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 ],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
+   encapsulation: ViewEncapsulation.None
 })
 export class SideNav {
 collabse=signal(false);
