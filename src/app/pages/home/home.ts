@@ -8,15 +8,11 @@ import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle
 
 @Component({
   selector: 'app-home',
-  imports: [ RouterOutlet,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    ThemeToggleComponent],
+  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
 
 }
+RouterOutlet

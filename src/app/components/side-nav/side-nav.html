@@ -1,85 +1,110 @@
-<mat-toolbar>
+ <mat-toolbar>
   <div>
-  <button mat-icon-button (click)="toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span class="title">{{'APP_TITLE'|translate }}</span>
+    <button mat-icon-button (click)="toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title">{{ 'APP_TITLE' | translate }}</span>
   </div>
 
-  <div>
-    <button matTooltip="En-Ar" mat-icon-button (click)="SwitchLang()">
+  <div class="toolbar-actions">
+    <!-- Language Toggle -->
+    <button
+      matTooltip="En-Ar"
+      mat-icon-button
+      (click)="SwitchLang()"
+      class="toolbar-btn">
       <mat-icon>g_translate</mat-icon>
     </button>
-<button matTooltip="Light-Dark" mat-icon-button>
-  <mat-icon>settings_brightness</mat-icon>
-</button>
-  <button matTooltip="{{'PROFILE'|translate}}" mat-icon-button [matMenuTriggerFor]="menuId">
-    <mat-icon >person</mat-icon>
-  </button>
-</div>
 
-<mat-menu #menuId>
-  <div mat-menu-item class="list-item-content">
-    <mat-icon>account_box</mat-icon>
-     <span>Eltehety</span>
+    <!-- Theme Toggle -->
+    <button
+      [matTooltip]="(themeService.isDarkMode() ? 'LIGHT_MODE' : 'DARK_MODE') | translate"
+      mat-icon-button
+      (click)="toggleTheme()"
+      class="toolbar-btn theme-toggle-btn"
+      [class.dark-mode]="themeService.isDarkMode()">
+      <mat-icon>{{ getThemeIcon() }}</mat-icon>
+    </button>
+
+    <!-- Profile Menu -->
+    <button
+      [matTooltip]="'PROFILE' | translate"
+      mat-icon-button
+      [matMenuTriggerFor]="menuId"
+      class="toolbar-btn">
+      <mat-icon>person</mat-icon>
+    </button>
   </div>
-  <div mat-menu-item class="list-item-content" routerLink="/login">
-    <mat-icon>exit_to_app</mat-icon>
-    <span>{{'LOGOUT'|translate}}</span>
-  </div>
-</mat-menu>
 
-
+  <mat-menu #menuId>
+    <div mat-menu-item class="list-item-content">
+      <mat-icon>account_box</mat-icon>
+      <span>Eltehety</span>
+    </div>
+    <div mat-menu-item class="list-item-content" routerLink="/login">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>{{ 'LOGOUT' | translate }}</span>
+    </div>
+  </mat-menu>
 </mat-toolbar>
+
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened [style.width]="sidenavWidth()" >
-    <mat-nav-list >
+  <mat-sidenav
+    mode="side"
+    opened
+    [style.width]="sidenavWidth()"
+    class="app-sidenav">
+    <mat-nav-list>
+      <div class="nav-items-top">
+        <!-- Home -->
+        <a mat-list-item routerLink="/home" routerLinkActive="active-link">
+          <div class="list-item-content">
+            <mat-icon [matTooltip]="'HOME' | translate">home</mat-icon>
+            @if (!collabse()) {
+              <span>{{ 'HOME' | translate }}</span>
+            }
+          </div>
+        </a>
 
+        <!-- Departments -->
+        <a mat-list-item routerLink="/departments" routerLinkActive="active-link">
+          <div class="list-item-content">
+            <mat-icon [matTooltip]="'DEPARTMENT' | translate">account_tree</mat-icon>
+            @if (!collabse()) {
+              <span>{{ 'DEPARTMENT' | translate }}</span>
+            }
+          </div>
+        </a>
 
- <div class="nav-items-top">
-        <a mat-list-item routerLink="/home">
-        <div class="list-item-content">
-          <mat-icon matTooltip="{{'HOME'|translate}}">home</mat-icon>
-          <span>{{'HOME'|translate}}</span>
-        </div>
-      </a>
+        <!-- About -->
+        <a mat-list-item routerLink="/about" routerLinkActive="active-link">
+          <div class="list-item-content">
+            <mat-icon [matTooltip]="'ABOUT' | translate">info</mat-icon>
+            @if (!collabse()) {
+              <span>{{ 'ABOUT' | translate }}</span>
+            }
+          </div>
+        </a>
+      </div>
 
-<mat-list-item>
-  <div class="list-item-content" routerLink="/departments">
-    <mat-icon matTooltip="{{'DEPARTMENT'|translate}}">account_tree</mat-icon>
-    <span>{{'DEPARTMENT'|translate}}</span>
-  </div>
-</mat-list-item>
-
-      <a mat-list-item routerLink="/about">
-        <div class="list-item-content">
-          <mat-icon matTooltip="{{'ABOUT'|translate}}">info</mat-icon>
-          <span>{{'ABOUT'|translate}}</span>
-        </div>
-      </a>
-</div>
-
-       <div class="nav-items-bottom">
-  <a mat-list-item routerLink="/login">
-        <div class="list-item-content">
-          <mat-icon matTooltip="{{'LOGOUT' | translate}}">exit_to_app</mat-icon>
-          <span>{{'LOGOUT'|translate}}</span>
-        </div>
-      </a>
-</div>
-
-
+      <div class="nav-items-bottom">
+        <!-- Logout -->
+        <a mat-list-item routerLink="/login">
+          <div class="list-item-content">
+            <mat-icon [matTooltip]="'LOGOUT' | translate">exit_to_app</mat-icon>
+            @if (!collabse()) {
+              <span>{{ 'LOGOUT' | translate }}</span>
+            }
+          </div>
+        </a>
+      </div>
     </mat-nav-list>
-
-
-
-
   </mat-sidenav>
 
-
-
-
-  <mat-sidenav-content class="container" [style.margin-left]="isRtl()?'0':sidenavWidth()"   [style.margin-right]="!isRtl()?'0':sidenavWidth()">
+  <mat-sidenav-content
+    class="container"
+    [style.margin-left]="isRtl() ? '0' : sidenavWidth()"
+    [style.margin-right]="!isRtl() ? '0' : sidenavWidth()">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

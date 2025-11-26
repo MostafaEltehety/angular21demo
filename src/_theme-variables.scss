@@ -1,0 +1,174 @@
+// _theme-variables.scss
+// ملف متغيرات مخصص للمشروع
+
+/* ================= CUSTOM SPACING ===== */
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+/* ================= CUSTOM RADIUS ===== */
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-card: 0.75rem; // 12px
+
+/* ================= CUSTOM SHADOWS ===== */
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+$shadow-md: 0 2px 8px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.18);
+$shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+/* ================= CUSTOM TRANSITIONS ===== */
+$transition-fast: 150ms ease-in-out;
+$transition-base: 250ms ease-in-out;
+$transition-slow: 350ms ease-in-out;
+
+/* ================= CUSTOM BREAKPOINTS ===== */
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1280px;
+
+/* ================= LIGHT THEME COLORS ===== */
+:root {
+  // Custom app colors for light theme
+  --app-primary: #00bcd4;
+  --app-primary-rgb: 0, 188, 212;
+  --app-accent: #ff9800;
+  --app-accent-rgb: 255, 152, 0;
+  --app-warn: #f44336;
+  --app-warn-rgb: 244, 67, 54;
+
+  // Surface colors
+  --app-surface: #ffffff;
+  --app-surface-variant: #f5f5f5;
+  --app-background: #fafafa;
+
+  // Text colors
+  --app-text-primary: rgba(0, 0, 0, 0.87);
+  --app-text-secondary: rgba(0, 0, 0, 0.6);
+  --app-text-disabled: rgba(0, 0, 0, 0.38);
+
+  // Border colors
+  --app-border: #e0e0e0;
+  --app-border-light: #f0f0f0;
+  --app-divider: rgba(0, 0, 0, 0.12);
+
+  // Component specific
+  --app-toolbar-height: 64px;
+  --app-sidenav-width: 250px;
+  --app-sidenav-collapsed-width: 60px;
+
+  // Hover states
+  --app-hover-bg: rgba(0, 0, 0, 0.04);
+  --app-hover-primary: rgba(0, 188, 212, 0.08);
+  --app-hover-accent: rgba(255, 152, 0, 0.08);
+  --app-hover-warn: rgba(244, 67, 54, 0.08);
+}
+
+/* ================= DARK THEME COLORS ===== */
+html.dark-theme {
+  // Custom app colors for dark theme
+  --app-primary: #26c6da;
+  --app-primary-rgb: 38, 198, 218;
+  --app-accent: #ffb74d;
+  --app-accent-rgb: 255, 183, 77;
+  --app-warn: #ef5350;
+  --app-warn-rgb: 239, 83, 80;
+
+  // Surface colors
+  --app-surface: #1e1e1e;
+  --app-surface-variant: #2d2d2d;
+  --app-background: #121212;
+
+  // Text colors
+  --app-text-primary: rgba(255, 255, 255, 0.87);
+  --app-text-secondary: rgba(255, 255, 255, 0.6);
+  --app-text-disabled: rgba(255, 255, 255, 0.38);
+
+  // Border colors
+  --app-border: #404040;
+  --app-border-light: #333333;
+  --app-divider: rgba(255, 255, 255, 0.12);
+
+  // Hover states
+  --app-hover-bg: rgba(255, 255, 255, 0.08);
+  --app-hover-primary: rgba(38, 198, 218, 0.12);
+  --app-hover-accent: rgba(255, 183, 77, 0.12);
+  --app-hover-warn: rgba(239, 83, 80, 0.12);
+}
+
+/* ================= MIXINS ===== */
+@mixin card-style {
+  background-color: var(--app-surface);
+  border-radius: $radius-card;
+  box-shadow: $shadow-md;
+  padding: $spacing-lg;
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+}
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin scrollbar-style {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--app-surface-variant);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--app-border);
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--app-text-secondary);
+    }
+  }
+}
+
+/* ================= UTILITY FUNCTIONS ===== */
+@function spacing($multiplier) {
+  @return $spacing-md * $multiplier;
+}
+
+/* Usage example:
+  margin: spacing(2); // 32px
+  padding: spacing(0.5); // 8px
+*/

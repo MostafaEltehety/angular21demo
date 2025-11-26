@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ThemeService } from '../../services/theme';
 
 @Component({
   selector: 'app-side-nav',
@@ -34,6 +35,10 @@ sidenavWidth=computed(()=>this.collabse()?'60px':'250px');
  translate=inject(TranslateService);
 curentLanguage=signal('ar');
 isRtl=computed(()=>this.curentLanguage()==='ar');
+
+ themeService = inject(ThemeService);
+
+
 constructor(){
   this.translate.setDefaultLang('ar');
   this.translate.use('ar');
@@ -59,5 +64,22 @@ this.curentLanguage.set(newLang);
 this.translate.use(newLang);
 this.updateDirection(newLang);
 }
+
+
+  // Theme toggle method
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
+
+  // Get theme tooltip text
+  getThemeTooltip(): string {
+    return this.themeService.isDarkMode() ? 'Light Mode' : 'Dark Mode';
+  }
+
+  // Get theme icon
+  getThemeIcon(): string {
+    return this.themeService.isDarkMode() ? 'light_mode' : 'dark_mode';
+  }
+
 
 }
