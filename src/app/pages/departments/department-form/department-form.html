@@ -1,5 +1,5 @@
 <div class="card">
-<div class="card-title">
+<div class="card-title text-center">
   {{'ADD_DEPARTMENT'|translate}}
 </div>
 
@@ -22,17 +22,22 @@
 
 </form>
 
-<div>
-  <button mat-stroked-button class="btn-warn" (click)="Close()">
-    <mat-icon>close</mat-icon>
+
+<div class="actions">
+
+  <button mat-flat-button [disabled]="from.invalid">
+
+    {{ 'SAVE' | translate }}
+  </button>
+
+ <button mat-stroked-button class="btn-warn" (click)="Close()">
+
     {{ 'Cancel' | translate }}
   </button>
 
-  <button mat-flat-button [disabled]="from.invalid">
-    <mat-icon>save</mat-icon>
-    {{ 'SAVE' | translate }}
-  </button>
+
 </div>
+
 </div>
 
 

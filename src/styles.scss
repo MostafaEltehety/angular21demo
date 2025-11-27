@@ -2,7 +2,7 @@
 @use '@angular/material' as mat;
 
 // Import Cairo font
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
 
 // Include core Material styles
 @include mat.core();
@@ -11,7 +11,9 @@
 html {
   @include mat.theme((
     color: (
-      primary: mat.$cyan-palette,
+      // primary: mat.$red-palette,
+      // tertiary: mat.$orange-palette,
+       primary: mat.$azure-palette,
       tertiary: mat.$orange-palette,
     ),
     typography: (
@@ -29,7 +31,9 @@ html {
 html.dark-theme {
   @include mat.theme((
     color: (
-      primary: mat.$cyan-palette,
+      // primary: mat.$rose-palette,
+      // tertiary: mat.$orange-palette,
+       primary: mat.$blue-palette,
       tertiary: mat.$orange-palette,
       theme-type: dark,
     ),
@@ -41,7 +45,12 @@ html.dark-theme {
       regular-weight: 400,
     ),
     density: 0,
-  ));
+  )
+
+  );
+  // overrides colors
+  //  --mat-sys-background: #422930;
+
 }
 
 /* ================= BODY STYLES ================= */
@@ -50,7 +59,7 @@ body {
   height: 100%;
   font-family: Cairo, "Roboto", sans-serif;
   background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
+ // color: var(--mat-sys-on-surface);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -175,7 +184,8 @@ html.dark-theme .btn-accent {
     color: #f44336 !important;
 
     &:hover {
-      background-color: rgba(244, 67, 54, 0.1) !important;
+     background-color: rgba(244, 67, 54, 0) !important;
+
     }
 
     .mat-icon {
@@ -187,7 +197,7 @@ html.dark-theme .btn-accent {
     color: #f44336 !important;
 
     &:hover {
-      background-color: rgba(244, 67, 54, 0.1) !important;
+      background-color: rgba(244, 67, 54, 0) !important;
     }
 
     .mat-icon {
@@ -199,7 +209,7 @@ html.dark-theme .btn-accent {
     color: #f44336 !important;
 
     &:hover {
-      background-color: rgba(244, 67, 54, 0.1) !important;
+      background-color: rgba(244, 67, 54, 0) !important;
     }
   }
 }
@@ -503,3 +513,6 @@ html.dark-theme .mat-mdc-form-field.field-warn {
     color: white;
   }
 }
+
+
+
