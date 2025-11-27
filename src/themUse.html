@@ -1,0 +1,507 @@
+# 📖 دليل استخدام نظام الـ Styles - Angular Material 21
+
+## 🎨 نظرة عامة
+هذا النظام يوفر أنماط موحدة ومتسقة لتطبيقات Angular Material مع دعم كامل للثيمات الفاتحة والداكنة.
+
+---
+
+## 🔘 الأزرار (Buttons)
+
+### أنواع الأزرار
+
+#### 1. حسب اللون
+```html
+<!-- Primary (الأساسي) -->
+<button mat-raised-button class="btn-primary">حفظ</button>
+
+<!-- Accent (الثانوي) -->
+<button mat-raised-button class="btn-accent">إلغاء</button>
+
+<!-- Warn (تحذير) -->
+<button mat-raised-button class="btn-warn">حذف</button>
+
+<!-- Success (نجاح) -->
+<button mat-raised-button class="btn-success">تأكيد</button>
+
+<!-- Info (معلومات) -->
+<button mat-raised-button class="btn-info">تفاصيل</button>
+```
+
+#### 2. حسب الشكل
+```html
+<!-- زر مرفوع (Raised) -->
+<button mat-raised-button class="btn-primary">زر مرفوع</button>
+
+<!-- زر محدد (Outlined) -->
+<button mat-outlined-button class="btn-primary">زر محدد</button>
+
+<!-- زر مسطح (Flat) -->
+<button mat-button class="btn-primary">زر مسطح</button>
+
+<!-- زر أيقونة (Icon) -->
+<button mat-icon-button class="btn-primary">
+  <mat-icon>favorite</mat-icon>
+</button>
+```
+
+#### 3. حسب الحجم
+```html
+<!-- زر صغير -->
+<button mat-raised-button class="btn-primary btn-sm">صغير</button>
+
+<!-- زر عادي (افتراضي) -->
+<button mat-raised-button class="btn-primary">عادي</button>
+
+<!-- زر كبير -->
+<button mat-raised-button class="btn-primary btn-lg">كبير</button>
+```
+
+#### 4. أزرار خاصة
+```html
+<!-- زر بتنسيق Card -->
+<button mat-button class="card-button">زر كارد</button>
+```
+
+---
+
+## 📝 حقول النماذج (Form Fields)
+
+### ألوان الحقول
+```html
+<!-- حقل Accent -->
+<mat-form-field class="field-accent">
+  <mat-label>البريد الإلكتروني</mat-label>
+  <input matInput type="email">
+</mat-form-field>
+
+<!-- حقل Warning -->
+<mat-form-field class="field-warn">
+  <mat-label>كلمة المرور</mat-label>
+  <input matInput type="password">
+</mat-form-field>
+
+<!-- حقل Success -->
+<mat-form-field class="field-success">
+  <mat-label>الاسم</mat-label>
+  <input matInput>
+</mat-form-field>
+```
+
+### حقل بعرض كامل
+```html
+<mat-form-field class="full-width">
+  <mat-label>العنوان</mat-label>
+  <input matInput>
+</mat-form-field>
+```
+
+---
+
+## 🎴 البطاقات (Cards)
+
+```html
+<div class="card">
+  <h2 class="card-title">عنوان البطاقة</h2>
+  <p>محتوى البطاقة هنا...</p>
+</div>
+
+<!-- أو باستخدام Material Card -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>عنوان</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    المحتوى
+  </mat-card-content>
+</mat-card>
+```
+
+---
+
+## 🏷️ الشارات (Badges)
+
+```html
+<span class="badge badge-primary">جديد</span>
+<span class="badge badge-accent">مميز</span>
+<span class="badge badge-warn">عاجل</span>
+<span class="badge badge-success">مكتمل</span>
+```
+
+---
+
+## 📁 رفع الملفات (File Upload)
+
+```html
+<div class="file-upload">
+  <div class="file-input-wrapper">
+    <input type="file" id="fileInput" #fileInput (change)="onFileSelect($event)">
+    <label for="fileInput" class="browse-btn">اختر ملف</label>
+    <span class="file-name" [class.muted]="!selectedFile">
+      {{ selectedFile ? selectedFile.name : 'لم يتم اختيار ملف' }}
+    </span>
+  </div>
+
+  <!-- معاينة الصورة (اختياري) -->
+  <div class="image-preview" *ngIf="imagePreview">
+    <img [src]="imagePreview" alt="معاينة">
+  </div>
+</div>
+```
+
+---
+
+## 📏 المسافات (Spacing)
+
+### الهوامش (Margins)
+```html
+<!-- Margin Top -->
+<div class="mt-1">8px</div>
+<div class="mt-2">16px</div>
+<div class="mt-3">24px</div>
+<div class="mt-4">32px</div>
+<div class="mt-5">40px</div>
+
+<!-- Margin Bottom -->
+<div class="mb-1">8px</div>
+<div class="mb-2">16px</div>
+<div class="mb-3">24px</div>
+
+<!-- Margin Left/Right -->
+<div class="ml-1 mr-1">8px</div>
+<div class="ml-2 mr-2">16px</div>
+<div class="ml-3 mr-3">24px</div>
+```
+
+### الحشو (Padding)
+```html
+<!-- Padding Top/Bottom -->
+<div class="pt-1 pb-1">8px</div>
+<div class="pt-2 pb-2">16px</div>
+<div class="pt-3 pb-3">24px</div>
+<div class="pt-4 pb-4">32px</div>
+
+<!-- Padding All Sides -->
+<div class="p-0">بدون حشو</div>
+<div class="p-1">8px</div>
+<div class="p-2">16px</div>
+<div class="p-3">24px</div>
+<div class="p-4">32px</div>
+```
+
+---
+
+## 📐 Flexbox
+
+```html
+<!-- عمود عمودي مع محاذاة -->
+<div class="d-flex flex-column align-items-center gap-2">
+  <div>عنصر 1</div>
+  <div>عنصر 2</div>
+</div>
+
+<!-- صف أفقي مع توزيع -->
+<div class="d-flex flex-row justify-content-between align-items-center gap-3">
+  <div>يمين</div>
+  <div>يسار</div>
+</div>
+
+<!-- محاذاة في المنتصف -->
+<div class="d-flex justify-content-center align-items-center">
+  <div>في المنتصف</div>
+</div>
+```
+
+### خيارات Flexbox
+- **Direction:** `flex-row`, `flex-column`
+- **Justify:** `justify-content-start`, `justify-content-center`, `justify-content-end`, `justify-content-between`
+- **Align:** `align-items-start`, `align-items-center`, `align-items-end`
+- **Gap:** `gap-1` (8px), `gap-2` (16px), `gap-3` (24px)
+
+---
+
+## 📝 النصوص (Typography)
+
+```html
+<!-- محاذاة النص -->
+<p class="text-center">نص في المنتصف</p>
+<p class="text-right">نص لليمين</p>
+<p class="text-left">نص لليسار</p>
+```
+
+---
+
+## 📊 الأحجام (Sizing)
+
+```html
+<!-- عرض كامل -->
+<div class="w-100">عرض 100%</div>
+
+<!-- ارتفاع كامل -->
+<div class="h-100">ارتفاع 100%</div>
+```
+
+---
+
+## 🖱️ المؤشر (Cursor)
+
+```html
+<!-- مؤشر pointer -->
+<div class="cursor-pointer">اضغط هنا</div>
+
+<!-- مؤشر not-allowed -->
+<button class="cursor-not-allowed" disabled>معطل</button>
+```
+
+---
+
+## 🎭 الحركات (Animations)
+
+```html
+<!-- Fade In -->
+<div class="fade-in">يظهر تدريجياً</div>
+
+<!-- Slide from Right -->
+<div class="slide-in-right">ينزلق من اليمين</div>
+```
+
+---
+
+## ⏳ مؤشر التحميل (Loading Spinner)
+
+```html
+<div class="spinner"></div>
+```
+
+---
+
+## 📱 Responsive
+
+### إخفاء حسب حجم الشاشة
+```html
+<!-- يختفي على الموبايل -->
+<div class="hide-mobile">يظهر على الديسكتوب فقط</div>
+
+<!-- يختفي على الديسكتوب -->
+<div class="hide-desktop">يظهر على الموبايل فقط</div>
+```
+
+---
+
+## 🌓 تبديل الثيم (Theme Toggle)
+
+```typescript
+// في الـ Component
+toggleTheme() {
+  const htmlElement = document.documentElement;
+  htmlElement.classList.toggle('dark-theme');
+}
+```
+
+```html
+<!-- في الـ Template -->
+<button mat-icon-button class="theme-toggle-btn" (click)="toggleTheme()">
+  <mat-icon>dark_mode</mat-icon>
+</button>
+```
+
+---
+
+## 🧭 القائمة الجانبية (Navigation)
+
+```html
+<mat-nav-list>
+  <div class="nav-items-top">
+    <a mat-list-item routerLink="/home" routerLinkActive="active-link">
+      <div class="list-item-content">
+        <mat-icon>home</mat-icon>
+        <span>الرئيسية</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="nav-items-bottom">
+    <a mat-list-item routerLink="/settings">
+      <div class="list-item-content">
+        <mat-icon>settings</mat-icon>
+        <span>الإعدادات</span>
+      </div>
+    </a>
+  </div>
+</mat-nav-list>
+```
+
+---
+
+## 🗂️ النماذج (Forms)
+
+### نموذج بسيط
+```html
+<form class="form">
+  <mat-form-field class="full-width">
+    <mat-label>الاسم</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>البريد الإلكتروني</mat-label>
+    <input matInput type="email">
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-button class="card-button">إلغاء</button>
+    <button mat-raised-button class="btn-primary">حفظ</button>
+  </div>
+</form>
+```
+
+### خيارات متعددة
+```html
+<div class="options">
+  <mat-radio-group class="course-type">
+    <mat-radio-button value="online">أونلاين</mat-radio-button>
+    <mat-radio-button value="offline">حضوري</mat-radio-button>
+  </mat-radio-group>
+</div>
+```
+
+---
+
+## 🎨 متغيرات الألوان من Material
+
+النظام يستخدم تلقائياً متغيرات Angular Material الديناميكية:
+
+- `var(--mat-sys-primary)` - اللون الأساسي
+- `var(--mat-sys-on-primary)` - نص على الأساسي
+- `var(--mat-sys-tertiary)` - اللون الثانوي
+- `var(--mat-sys-error)` - لون الخطأ
+- `var(--mat-sys-surface)` - سطح الخلفية
+- `var(--mat-sys-on-surface)` - نص على السطح
+- `var(--mat-sys-outline)` - الحدود
+- `var(--mat-sys-primary-container)` - حاوية أساسية
+
+### مثال استخدام في CSS مخصص
+```scss
+.custom-element {
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
+  border: 1px solid var(--mat-sys-outline-variant);
+}
+```
+
+---
+
+## 🔄 دعم RTL
+
+النظام يدعم اللغة العربية تلقائياً عند إضافة:
+```html
+<html dir="rtl">
+```
+
+---
+
+## ✨ أمثلة عملية
+
+### مثال 1: صفحة تسجيل دخول
+```html
+<div class="container">
+  <div class="card">
+    <h2 class="card-title">تسجيل الدخول</h2>
+    <form class="form">
+      <mat-form-field class="full-width">
+        <mat-label>البريد الإلكتروني</mat-label>
+        <input matInput type="email">
+      </mat-form-field>
+
+      <mat-form-field class="full-width field-warn">
+        <mat-label>كلمة المرور</mat-label>
+        <input matInput type="password">
+      </mat-form-field>
+
+      <div class="actions">
+        <button mat-raised-button class="btn-primary btn-lg w-100">
+          دخول
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+```
+
+### مثال 2: قائمة بالبطاقات
+```html
+<div class="container">
+  <div class="d-flex flex-column gap-3">
+    <mat-card *ngFor="let item of items" class="fade-in">
+      <mat-card-header>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ item.description }}</p>
+        <span class="badge badge-success">متوفر</span>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="btn-info">تفاصيل</button>
+        <button mat-raised-button class="btn-primary">شراء</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+```
+
+### مثال 3: Toolbar مع قائمة جانبية
+```html
+<mat-toolbar>
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>اسم التطبيق</span>
+
+  <div class="toolbar-actions">
+    <button mat-icon-button class="theme-toggle-btn" (click)="toggleTheme()">
+      <mat-icon>dark_mode</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <!-- المحتوى -->
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="container">
+      <!-- محتوى الصفحة -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+```
+
+---
+
+## 📌 ملاحظات مهمة
+
+1. **التوافق التلقائي:** جميع الألوان تتغير تلقائياً عند التبديل بين Light/Dark
+2. **Material Design 3:** النظام يتبع أحدث معايير Material Design
+3. **RTL Support:** دعم كامل للغة العربية
+4. **Responsive:** جميع المكونات متجاوبة مع الشاشات المختلفة
+5. **Performance:** استخدام CSS Variables للأداء الأفضل
+
+---
+
+## 🎯 Best Practices
+
+1. استخدم `btn-*` للأزرار حسب الغرض
+2. استخدم `gap-*` بدلاً من margins متعددة
+3. استخدم `full-width` للحقول بدلاً من `width: 100%`
+4. استخدم Material Components مع الـ Classes المخصصة
+5. اختبر التطبيق في الثيمين (Light & Dark)
+
+---
+
+## 🔗 روابط مفيدة
+
+- [Angular Material Documentation](https://material.angular.io/)
+- [Material Design 3](https://m3.material.io/)
+- [Color System](https://m3.material.io/styles/color/overview)
