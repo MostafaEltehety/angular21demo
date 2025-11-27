@@ -19,7 +19,7 @@ import { MatDialogRef } from '@angular/material/dialog';
     MatFormFieldModule,
     MatCardModule,
     TranslateModule,
-    MatIcon,
+
     MatInputModule,
     MatDividerModule,
 
