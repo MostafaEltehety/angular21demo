@@ -14,6 +14,11 @@
   "DEPARTMENT_DESC":"Department Description",
   "Cancel":"Cancel",
   "USER_NAME":"User Name",
-  "PASSWORD":"Password"
-
+  "PASSWORD":"Password",
+  "SAVE_SUCCESS": "Saved successfully",
+  "DELETE_FAILED": "Delete failed",
+  "ARE_YOU_SURE": "Are you sure?",
+  "LOADING_DATA": "Loading data...",
+  "CLOSE": "Close",
+  "LOGIN_SUCCESS":"Login Successful"
 }
