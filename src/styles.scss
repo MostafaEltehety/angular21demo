@@ -1,21 +1,77 @@
-/* ================= GLOBAL THEME ================= */
-@use '@angular/material' as mat;
+ /* ================= GLOBAL THEME ================= */
 
+
+ @use '@angular/material' as mat;
+@use 'sass:map';
+// Import custom colors using @use instead of @import
+@use 'colors';
 // Import Cairo font
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
 
-// Import custom colors
-@import 'colors';
 
 // Include core Material styles
 @include mat.core();
+
+/* ================= إنشاء Custom Palettes ================= */
+
+// Primary Palette (Indigo - #6366f1)
+$custom-primary: (
+  50: #eef2ff,
+  100: #e0e7ff,
+  200: #c7d2fe,
+  300: #a5b4fc,
+  400: #818cf8,
+  500: #6366f1,
+  600: #4f46e5,
+  700: #4338ca,
+  800: #3730a3,
+  900: #312e81,
+  contrast: (
+    50: #312e81,
+    100: #312e81,
+    200: #312e81,
+    300: #312e81,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+// Tertiary Palette (Pink - #ec4899)
+$custom-tertiary: (
+  50: #fdf2f8,
+  100: #fce7f3,
+  200: #fbcfe8,
+  300: #f9a8d4,
+  400: #f472b6,
+  500: #ec4899,
+  600: #db2777,
+  700: #be185d,
+  800: #9d174d,
+  900: #831843,
+  contrast: (
+    50: #831843,
+    100: #831843,
+    200: #831843,
+    300: #831843,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
 
 /* ================= LIGHT THEME ================= */
 html {
   @include mat.theme((
     color: (
-      primary: mat.$cyan-palette,
-      tertiary: mat.$orange-palette,
+      primary: $custom-primary,
+      tertiary: $custom-tertiary,
     ),
     typography: (
       brand-family: 'Cairo',
@@ -32,8 +88,8 @@ html {
 html.dark-theme {
   @include mat.theme((
     color: (
-      primary: mat.$cyan-palette,
-      tertiary: mat.$orange-palette,
+      primary: $custom-primary,
+      tertiary: $custom-tertiary,
       theme-type: dark,
     ),
     typography: (
@@ -227,21 +283,8 @@ html.dark-theme {
   color: var(--mat-sys-on-surface);
 }
 
-/* ================= RTL SUPPORT ================= */
-// [dir="rtl"] {
-//   .mat-icon {
-//     transform: scaleX(-1);
-//   }
-
-//   button .mat-icon {
-//     margin-left: 0;
-//     margin-right: 8px;
-//   }
-// }
-
 /* ================= UTILITY CLASSES ================= */
 .container {
-  // max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -410,17 +453,17 @@ html.dark-theme {
   }
 
   &.badge-accent {
-    background-color: #ff9800;
+    background-color: var(--accent-500);
     color: white;
   }
 
   &.badge-warn {
-    background-color: #f44336;
+    background-color: var(--warn-500);
     color: white;
   }
 
   &.badge-success {
-    background-color: #4caf50;
+    background-color: var(--success-500);
     color: white;
   }
 }
