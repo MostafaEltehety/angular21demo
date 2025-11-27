@@ -1,11 +1,69 @@
-/* ================= GLOBAL THEME ================= */
-@use '@angular/material' as mat;
+ /* ================= GLOBAL THEME ================= */
 
+
+ @use '@angular/material' as mat;
+@use 'sass:map';
+// Import custom colors using @use instead of @import
+@use 'colors';
 // Import Cairo font
 // @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
 
 // Include core Material styles
 @include mat.core();
+
+/* ================= إنشاء Custom Palettes ================= */
+
+// Primary Palette (Indigo - #6366f1)
+$custom-primary: (
+  50: #eef2ff,
+  100: #e0e7ff,
+  200: #c7d2fe,
+  300: #a5b4fc,
+  400: #818cf8,
+  500: #6366f1,
+  600: #4f46e5,
+  700: #4338ca,
+  800: #3730a3,
+  900: #312e81,
+  contrast: (
+    50: #312e81,
+    100: #312e81,
+    200: #312e81,
+    300: #312e81,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+// Tertiary Palette (Pink - #ec4899)
+$custom-tertiary: (
+  50: #fdf2f8,
+  100: #fce7f3,
+  200: #fbcfe8,
+  300: #f9a8d4,
+  400: #f472b6,
+  500: #ec4899,
+  600: #db2777,
+  700: #be185d,
+  800: #9d174d,
+  900: #831843,
+  contrast: (
+    50: #831843,
+    100: #831843,
+    200: #831843,
+    300: #831843,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
 
 /* ================= LIGHT THEME ================= */
 html {
@@ -76,90 +134,49 @@ html.dark-theme {
 .btn-accent {
   &.mat-mdc-raised-button,
   &.mat-mdc-unelevated-button {
-    background-color: #ff9800 !important;
-    color: white !important;
+    background-color: var(--accent-500) !important;
+    color: var(--text-on-accent) !important;
 
     &:hover {
-      background-color: #f57c00 !important;
+      background-color: var(--accent-700) !important;
     }
 
     .mat-icon {
-      color: white !important;
+      color: var(--text-on-accent) !important;
     }
   }
 
   &.mat-mdc-outlined-button {
-    border-color: #ff9800 !important;
-    color: #ff9800 !important;
+    border-color: var(--accent-500) !important;
+    color: var(--accent-500) !important;
 
     &:hover {
-      background-color: rgba(255, 152, 0, 0.1) !important;
+      background-color: var(--accent-50) !important;
     }
 
     .mat-icon {
-      color: #ff9800 !important;
+      color: var(--accent-500) !important;
     }
   }
 
   &.mat-mdc-button {
-    color: #ff9800 !important;
+    color: var(--accent-500) !important;
 
     &:hover {
-      background-color: rgba(255, 152, 0, 0.1) !important;
+      background-color: var(--accent-50) !important;
     }
 
     .mat-icon {
-      color: #ff9800 !important;
+      color: var(--accent-500) !important;
     }
   }
 
   &.mat-mdc-icon-button {
-    color: #ff9800 !important;
+    color: var(--accent-500) !important;
 
     &:hover {
-      background-color: rgba(255, 152, 0, 0.1) !important;
+      background-color: var(--accent-50) !important;
     }
-  }
-}
-
-html.dark-theme .btn-accent {
-  &.mat-mdc-raised-button,
-  &.mat-mdc-unelevated-button {
-    background-color: #ffb74d !important;
-    color: black !important;
-
-    &:hover {
-      background-color: #ffa726 !important;
-    }
-
-    .mat-icon {
-      color: black !important;
-    }
-  }
-
-  &.mat-mdc-outlined-button {
-    border-color: #ffb74d !important;
-    color: #ffb74d !important;
-
-    &:hover {
-      background-color: rgba(255, 183, 77, 0.1) !important;
-    }
-
-    .mat-icon {
-      color: #ffb74d !important;
-    }
-  }
-
-  &.mat-mdc-button {
-    color: #ffb74d !important;
-
-    .mat-icon {
-      color: #ffb74d !important;
-    }
-  }
-
-  &.mat-mdc-icon-button {
-    color: #ffb74d !important;
   }
 }
 
@@ -167,21 +184,21 @@ html.dark-theme .btn-accent {
 .btn-warn {
   &.mat-mdc-raised-button,
   &.mat-mdc-unelevated-button {
-    background-color: #f44336 !important;
-    color: white !important;
+    background-color: var(--warn-500) !important;
+    color: var(--text-on-warn) !important;
 
     &:hover {
-      background-color: #d32f2f !important;
+      background-color: var(--warn-700) !important;
     }
 
     .mat-icon {
-      color: white !important;
+      color: var(--text-on-warn) !important;
     }
   }
 
   &.mat-mdc-outlined-button {
-    border-color: #f44336 !important;
-    color: #f44336 !important;
+    border-color: var(--warn-500) !important;
+    color: var(--warn-500) !important;
 
     &:hover {
      background-color: rgba(244, 67, 54, 0) !important;
@@ -189,24 +206,24 @@ html.dark-theme .btn-accent {
     }
 
     .mat-icon {
-      color: #f44336 !important;
+      color: var(--warn-500) !important;
     }
   }
 
   &.mat-mdc-button {
-    color: #f44336 !important;
+    color: var(--warn-500) !important;
 
     &:hover {
       background-color: rgba(244, 67, 54, 0) !important;
     }
 
     .mat-icon {
-      color: #f44336 !important;
+      color: var(--warn-500) !important;
     }
   }
 
   &.mat-mdc-icon-button {
-    color: #f44336 !important;
+    color: var(--warn-500) !important;
 
     &:hover {
       background-color: rgba(244, 67, 54, 0) !important;
@@ -223,59 +240,30 @@ html.dark-theme .btn-warn {
     &:hover {
       background-color: #e53935 !important;
     }
-
-    .mat-icon {
-      color: white !important;
-    }
-  }
-
-  &.mat-mdc-outlined-button {
-    border-color: #ef5350 !important;
-    color: #ef5350 !important;
-
-    .mat-icon {
-      color: #ef5350 !important;
-    }
-  }
-
-  &.mat-mdc-button {
-    color: #ef5350 !important;
-
-    .mat-icon {
-      color: #ef5350 !important;
-    }
-  }
-
-  &.mat-mdc-icon-button {
-    color: #ef5350 !important;
   }
 }
 
 /* ================= FORM FIELD ACCENT COLOR ================= */
 .mat-mdc-form-field.field-accent {
-  --mdc-outlined-text-field-focus-outline-color: #ff9800 !important;
-  --mdc-outlined-text-field-focus-label-text-color: #ff9800 !important;
-  --mdc-outlined-text-field-caret-color: #ff9800 !important;
-}
-
-html.dark-theme .mat-mdc-form-field.field-accent {
-  --mdc-outlined-text-field-focus-outline-color: #ffb74d !important;
-  --mdc-outlined-text-field-focus-label-text-color: #ffb74d !important;
-  --mdc-outlined-text-field-caret-color: #ffb74d !important;
+  --mdc-outlined-text-field-focus-outline-color: var(--accent-500) !important;
+  --mdc-outlined-text-field-focus-label-text-color: var(--accent-500) !important;
+  --mdc-outlined-text-field-caret-color: var(--accent-500) !important;
 }
 
 /* ================= FORM FIELD WARN COLOR ================= */
 .mat-mdc-form-field.field-warn {
-  --mdc-outlined-text-field-focus-outline-color: #f44336 !important;
-  --mdc-outlined-text-field-focus-label-text-color: #f44336 !important;
-  --mdc-outlined-text-field-caret-color: #f44336 !important;
-  --mdc-outlined-text-field-error-focus-label-text-color: #f44336 !important;
-  --mdc-outlined-text-field-error-label-text-color: #f44336 !important;
+  --mdc-outlined-text-field-focus-outline-color: var(--warn-500) !important;
+  --mdc-outlined-text-field-focus-label-text-color: var(--warn-500) !important;
+  --mdc-outlined-text-field-caret-color: var(--warn-500) !important;
+  --mdc-outlined-text-field-error-focus-label-text-color: var(--warn-500) !important;
+  --mdc-outlined-text-field-error-label-text-color: var(--warn-500) !important;
 }
 
-html.dark-theme .mat-mdc-form-field.field-warn {
-  --mdc-outlined-text-field-focus-outline-color: #ef5350 !important;
-  --mdc-outlined-text-field-focus-label-text-color: #ef5350 !important;
+/* ================= FORM FIELD SUCCESS COLOR ================= */
+.mat-mdc-form-field.field-success {
+  --mdc-outlined-text-field-focus-outline-color: var(--success-500) !important;
+  --mdc-outlined-text-field-focus-label-text-color: var(--success-500) !important;
+  --mdc-outlined-text-field-caret-color: var(--success-500) !important;
 }
 
 /* ================= SMOOTH TRANSITIONS ================= */
@@ -316,21 +304,8 @@ html.dark-theme .mat-mdc-form-field.field-warn {
   color: var(--mat-sys-on-surface);
 }
 
-/* ================= RTL SUPPORT ================= */
-// [dir="rtl"] {
-//   .mat-icon {
-//     transform: scaleX(-1);
-//   }
-
-//   button .mat-icon {
-//     margin-left: 0;
-//     margin-right: 8px;
-//   }
-// }
-
 /* ================= UTILITY CLASSES ================= */
 .container {
-  // max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -499,17 +474,17 @@ html.dark-theme .mat-mdc-form-field.field-warn {
   }
 
   &.badge-accent {
-    background-color: #ff9800;
+    background-color: var(--accent-500);
     color: white;
   }
 
   &.badge-warn {
-    background-color: #f44336;
+    background-color: var(--warn-500);
     color: white;
   }
 
   &.badge-success {
-    background-color: #4caf50;
+    background-color: var(--success-500);
     color: white;
   }
 }
