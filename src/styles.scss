@@ -232,11 +232,11 @@ mat-toolbar {
   border-radius: 0 !important;
   margin-bottom: 0.15rem !important;
   color: var(--mat-sys-on-surface);
-  transition: all 0.3s ease;
+ // transition: all 0.3s ease;
 
   &:hover {
     background-color: var(--mat-sys-surface-container);
-    transform: translateX(-4px);
+   // transform: translateX(-4px);
   }
 
   &.active-link {
@@ -841,9 +841,9 @@ button {
   }
 
   .mat-mdc-nav-list .mat-mdc-list-item {
-    &:hover {
-      transform: translateX(4px);
-    }
+    // &:hover {
+    //   transform: translateX(4px);
+    // }
 
     &.active-link {
       border-left: none;
