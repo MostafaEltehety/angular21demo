@@ -491,3 +491,172 @@ html.dark-theme .btn-warn {
 
 
 
+
+
+
+
+/* ============================================================
+   GENERIC BUTTON COLOR TEMPLATE
+   ============================================================ */
+@mixin button-color($name, $color, $onColor, $hover, $outlineColor: $color) {
+
+  .btn-#{$name} {
+
+    /* ------- Raised / Filled / Unelevated -------- */
+    &.mat-mdc-raised-button,
+    &.mat-mdc-unelevated-button {
+      background-color: $color !important;
+      color: $onColor !important;
+
+      &:hover {
+        background-color: $hover !important;
+      }
+
+      .mat-icon {
+        color: $onColor !important;
+      }
+    }
+
+    /* ------- Outlined -------- */
+    &.mat-mdc-outlined-button {
+      border-color: $outlineColor !important;
+      color: $outlineColor !important;
+
+      &:hover {
+        background-color: rgba($color, 0.1) !important;
+      }
+
+      .mat-icon {
+        color: $outlineColor !important;
+      }
+    }
+
+    /* ------- Flat Button -------- */
+    &.mat-mdc-button {
+      color: $color !important;
+
+      &:hover {
+        background-color: rgba($color, 0.1) !important;
+      }
+
+      .mat-icon {
+        color: $color !important;
+      }
+    }
+
+    /* ------- Icon Button -------- */
+    &.mat-mdc-icon-button {
+      color: $color !important;
+
+      &:hover {
+        background-color: rgba($color, 0.1) !important;
+      }
+    }
+  }
+}
+
+/* ============================================================
+   LIGHT THEME COLORS
+   ============================================================ */
+@include button-color(
+  primary,
+  var(--primary-500),
+  var(--text-on-primary),
+  var(--primary-700)
+);
+
+@include button-color(
+  accent,
+  var(--accent-500),
+  var(--text-on-accent),
+  var(--accent-700)
+);
+
+@include button-color(
+  warn,
+  var(--warn-500),
+  var(--text-on-warn),
+  var(--warn-700)
+);
+
+@include button-color(
+  success,
+  var(--success-500),
+  white,
+  var(--success-700)
+);
+
+@include button-color(
+  info,
+  var(--info-500),
+  white,
+  var(--info-700)
+);
+
+@include button-color(
+  dark,
+  var(--dark-500),
+  white,
+  var(--dark-700)
+);
+
+@include button-color(
+  light,
+  var(--light-500),
+  black,
+  var(--light-700)
+);
+
+/* ============================================================
+   DARK THEME OVERRIDES
+   ============================================================ */
+html.dark-theme {
+  @include button-color(
+    primary,
+    var(--primary-400),
+    white,
+    var(--primary-300)
+  );
+
+  @include button-color(
+    accent,
+    var(--accent-400),
+    white,
+    var(--accent-300)
+  );
+
+  @include button-color(
+    warn,
+    #ef5350,
+    white,
+    #e53935
+  );
+
+  @include button-color(
+    success,
+    var(--success-400),
+    white,
+    var(--success-300)
+  );
+
+  @include button-color(
+    info,
+    var(--info-400),
+    white,
+    var(--info-300)
+  );
+
+  @include button-color(
+    dark,
+    var(--dark-300),
+    white,
+    var(--dark-200)
+  );
+
+  @include button-color(
+    light,
+    var(--light-300),
+    black,
+    var(--light-200)
+  );
+}

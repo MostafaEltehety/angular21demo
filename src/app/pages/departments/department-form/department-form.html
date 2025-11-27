@@ -25,12 +25,12 @@
 
 <div class="actions">
 
-  <button mat-flat-button [disabled]="from.invalid">
+  <button mat-flat-button  [disabled]="from.invalid">
 
     {{ 'SAVE' | translate }}
   </button>
 
- <button mat-stroked-button class="btn-warn" (click)="Close()">
+ <button mat-raised-button class="btn-warn" (click)="Close()">
 
     {{ 'Cancel' | translate }}
   </button>

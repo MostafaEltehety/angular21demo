@@ -7,7 +7,7 @@ import { MatAnchor } from "@angular/material/button";
 import { MatIcon } from "@angular/material/icon";
 @Component({
   selector: 'app-login',
-  imports: [TranslateModule, MatFormFieldModule, MatInput, ɵInternalFormsSharedModule, ReactiveFormsModule, MatAnchor, MatIcon],
+  imports: [TranslateModule, MatFormFieldModule, MatInput, ɵInternalFormsSharedModule, ReactiveFormsModule, MatAnchor ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
