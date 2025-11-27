@@ -1,0 +1,737 @@
+// _colors.scss - ملف الألوان المركزي
+// استورده في styles.scss: @import 'colors';
+
+/* ===============================================================
+   🎨 LIGHT THEME COLORS - الألوان للوضع الفاتح
+   =============================================================== */
+
+:root {
+  /* === PRIMARY COLORS === */
+  --primary-50: #e0f7fa;
+  --primary-100: #b2ebf2;
+  --primary-200: #80deea;
+  --primary-300: #4dd0e1;
+  --primary-400: #26c6da;
+  --primary-500: #00bcd4;   /* اللون الأساسي */
+  --primary-600: #00acc1;
+  --primary-700: #0097a7;
+  --primary-800: #00838f;
+  --primary-900: #006064;
+
+  /* === ACCENT COLORS (Orange) === */
+  --accent-50: #fff3e0;
+  --accent-100: #ffe0b2;
+  --accent-200: #ffcc80;
+  --accent-300: #ffb74d;
+  --accent-400: #ffa726;
+  --accent-500: #ff9800;    /* اللون الثانوي */
+  --accent-600: #fb8c00;
+  --accent-700: #f57c00;
+  --accent-800: #ef6c00;
+  --accent-900: #e65100;
+
+  /* === WARN/DANGER COLORS (Red) === */
+  --warn-50: #ffebee;
+  --warn-100: #ffcdd2;
+  --warn-200: #ef9a9a;
+  --warn-300: #e57373;
+  --warn-400: #ef5350;
+  --warn-500: #f44336;      /* لون التحذير */
+  --warn-600: #e53935;
+  --warn-700: #d32f2f;
+  --warn-800: #c62828;
+  --warn-900: #b71c1c;
+
+  /* === SUCCESS COLORS (Green) === */
+  --success-50: #e8f5e9;
+  --success-100: #c8e6c9;
+  --success-200: #a5d6a7;
+  --success-300: #81c784;
+  --success-400: #66bb6a;
+  --success-500: #4caf50;   /* لون النجاح */
+  --success-600: #43a047;
+  --success-700: #388e3c;
+  --success-800: #2e7d32;
+  --success-900: #1b5e20;
+
+  /* === INFO COLORS (Blue) === */
+  --info-50: #e3f2fd;
+  --info-100: #bbdefb;
+  --info-200: #90caf9;
+  --info-300: #64b5f6;
+  --info-400: #42a5f5;
+  --info-500: #2196f3;      /* لون المعلومات */
+  --info-600: #1e88e5;
+  --info-700: #1976d2;
+  --info-800: #1565c0;
+  --info-900: #0d47a1;
+
+  /* === SURFACE COLORS === */
+  --surface-background: #fafafa;     /* خلفية الصفحة */
+  --surface-primary: #ffffff;        /* الكروت والصفحات */
+  --surface-secondary: #f5f5f5;      /* خلفيات ثانوية */
+  --surface-tertiary: #eeeeee;       /* خلفيات فاتحة */
+  --surface-hover: #f8f9fa;          /* عند الـ hover */
+  --surface-selected: #e3f2fd;       /* العنصر المختار */
+  --surface-disabled: #f5f5f5;       /* العناصر المعطلة */
+
+  /* === TEXT COLORS === */
+  --text-primary: rgba(0, 0, 0, 0.87);      /* النص الأساسي */
+  --text-secondary: rgba(0, 0, 0, 0.6);     /* النص الثانوي */
+  --text-disabled: rgba(0, 0, 0, 0.38);     /* النص المعطل */
+  --text-hint: rgba(0, 0, 0, 0.38);         /* النص المساعد */
+  --text-on-primary: #ffffff;                /* النص على الأزرق */
+  --text-on-accent: #ffffff;                 /* النص على البرتقالي */
+  --text-on-warn: #ffffff;                   /* النص على الأحمر */
+
+  /* === BORDER & DIVIDER COLORS === */
+  --border-primary: #e0e0e0;         /* حدود أساسية */
+  --border-secondary: #f0f0f0;       /* حدود فاتحة */
+  --border-focus: #00bcd4;           /* عند التركيز */
+  --divider: rgba(0, 0, 0, 0.12);    /* الفواصل */
+
+  /* === SHADOW COLORS === */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --shadow-focus: rgba(0, 188, 212, 0.3);
+
+  /* === COMPONENT SPECIFIC === */
+  --toolbar-bg: #ffffff;
+  --toolbar-text: #00bcd4;
+  --toolbar-border: rgba(114, 160, 160, 0.36);
+
+  --sidenav-bg: #ffffff;
+  --sidenav-text: rgba(0, 0, 0, 0.87);
+  --sidenav-hover: #f5f5f5;
+  --sidenav-active-bg: #e0f7fa;
+  --sidenav-active-text: #00bcd4;
+  --sidenav-border: rgba(0, 0, 0, 0.12);
+
+  --card-bg: #ffffff;
+  --card-border: #e0e0e0;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+
+  --input-bg: #ffffff;
+  --input-border: #e0e0e0;
+  --input-focus-border: #00bcd4;
+  --input-text: rgba(0, 0, 0, 0.87);
+  --input-placeholder: rgba(0, 0, 0, 0.38);
+
+  --dialog-bg: #ffffff;
+  --dialog-backdrop: rgba(0, 0, 0, 0.6);
+
+  --menu-bg: #ffffff;
+  --menu-hover: #f5f5f5;
+  --menu-divider: #e0e0e0;
+
+  --table-header-bg: #f5f5f5;
+  --table-row-hover: #f8f9fa;
+  --table-border: #e0e0e0;
+}
+
+/* ===============================================================
+   🌙 DARK THEME COLORS - الألوان للوضع الداكن
+   =============================================================== */
+
+html.dark-theme {
+  /* === PRIMARY COLORS === */
+  --primary-50: #006064;
+  --primary-100: #00838f;
+  --primary-200: #0097a7;
+  --primary-300: #00acc1;
+  --primary-400: #00bcd4;
+  --primary-500: #26c6da;   /* اللون الأساسي في الداكن */
+  --primary-600: #4dd0e1;
+  --primary-700: #80deea;
+  --primary-800: #b2ebf2;
+  --primary-900: #e0f7fa;
+
+  /* === ACCENT COLORS (Orange) === */
+  --accent-50: #e65100;
+  --accent-100: #ef6c00;
+  --accent-200: #f57c00;
+  --accent-300: #fb8c00;
+  --accent-400: #ff9800;
+  --accent-500: #ffb74d;    /* اللون الثانوي في الداكن */
+  --accent-600: #ffcc80;
+  --accent-700: #ffe0b2;
+  --accent-800: #fff3e0;
+  --accent-900: #fffaf0;
+
+  /* === WARN/DANGER COLORS (Red) === */
+  --warn-50: #b71c1c;
+  --warn-100: #c62828;
+  --warn-200: #d32f2f;
+  --warn-300: #e53935;
+  --warn-400: #f44336;
+  --warn-500: #ef5350;      /* لون التحذير في الداكن */
+  --warn-600: #e57373;
+  --warn-700: #ef9a9a;
+  --warn-800: #ffcdd2;
+  --warn-900: #ffebee;
+
+  /* === SUCCESS COLORS (Green) === */
+  --success-50: #1b5e20;
+  --success-100: #2e7d32;
+  --success-200: #388e3c;
+  --success-300: #43a047;
+  --success-400: #4caf50;
+  --success-500: #66bb6a;   /* لون النجاح في الداكن */
+  --success-600: #81c784;
+  --success-700: #a5d6a7;
+  --success-800: #c8e6c9;
+  --success-900: #e8f5e9;
+
+  /* === INFO COLORS (Blue) === */
+  --info-50: #0d47a1;
+  --info-100: #1565c0;
+  --info-200: #1976d2;
+  --info-300: #1e88e5;
+  --info-400: #2196f3;
+  --info-500: #42a5f5;      /* لون المعلومات في الداكن */
+  --info-600: #64b5f6;
+  --info-700: #90caf9;
+  --info-800: #bbdefb;
+  --info-900: #e3f2fd;
+
+  /* === SURFACE COLORS === */
+  --surface-background: #121212;     /* خلفية الصفحة */
+  --surface-primary: #1e1e1e;        /* الكروت والصفحات */
+  --surface-secondary: #2d2d2d;      /* خلفيات ثانوية */
+  --surface-tertiary: #3a3a3a;       /* خلفيات */
+  --surface-hover: #333333;          /* عند الـ hover */
+  --surface-selected: #1a2332;       /* العنصر المختار */
+  --surface-disabled: #2d2d2d;       /* العناصر المعطلة */
+
+  /* === TEXT COLORS === */
+  --text-primary: rgba(255, 255, 255, 0.87);      /* النص الأساسي */
+  --text-secondary: rgba(255, 255, 255, 0.6);     /* النص الثانوي */
+  --text-disabled: rgba(255, 255, 255, 0.38);     /* النص المعطل */
+  --text-hint: rgba(255, 255, 255, 0.38);         /* النص المساعد */
+  --text-on-primary: #000000;                      /* النص على الأزرق */
+  --text-on-accent: #000000;                       /* النص على البرتقالي */
+  --text-on-warn: #ffffff;                         /* النص على الأحمر */
+
+  /* === BORDER & DIVIDER COLORS === */
+  --border-primary: #404040;         /* حدود أساسية */
+  --border-secondary: #333333;       /* حدود فاتحة */
+  --border-focus: #26c6da;           /* عند التركيز */
+  --divider: rgba(255, 255, 255, 0.12);    /* الفواصل */
+
+  /* === SHADOW COLORS === */
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(0, 0, 0, 0.6);
+  --shadow-focus: rgba(38, 198, 218, 0.3);
+
+  /* === COMPONENT SPECIFIC === */
+  --toolbar-bg: #1e1e1e;
+  --toolbar-text: #26c6da;
+  --toolbar-border: rgba(255, 255, 255, 0.12);
+
+  --sidenav-bg: #1e1e1e;
+  --sidenav-text: rgba(255, 255, 255, 0.87);
+  --sidenav-hover: #2d2d2d;
+  --sidenav-active-bg: #1a2832;
+  --sidenav-active-text: #26c6da;
+  --sidenav-border: rgba(255, 255, 255, 0.12);
+
+  --card-bg: #1e1e1e;
+  --card-border: #404040;
+  --card-shadow: rgba(0, 0, 0, 0.4);
+
+  --input-bg: #2d2d2d;
+  --input-border: #404040;
+  --input-focus-border: #26c6da;
+  --input-text: rgba(255, 255, 255, 0.87);
+  --input-placeholder: rgba(255, 255, 255, 0.38);
+
+  --dialog-bg: #1e1e1e;
+  --dialog-backdrop: rgba(0, 0, 0, 0.75);
+
+  --menu-bg: #2d2d2d;
+  --menu-hover: #3a3a3a;
+  --menu-divider: #404040;
+
+  --table-header-bg: #2d2d2d;
+  --table-row-hover: #333333;
+  --table-border: #404040;
+}
+
+/* ===============================================================
+   📝 USAGE EXAMPLES
+   =============================================================== */
+
+/*
+// في الـ SCSS:
+
+.my-component {
+  background-color: var(--surface-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+
+  &:hover {
+    background-color: var(--surface-hover);
+  }
+}
+
+.primary-button {
+  background-color: var(--primary-500);
+  color: var(--text-on-primary);
+}
+
+.accent-button {
+  background-color: var(--accent-500);
+  color: var(--text-on-accent);
+}
+
+.danger-button {
+  background-color: var(--warn-500);
+  color: var(--text-on-warn);
+}
+
+.success-message {
+  background-color: var(--success-100);
+  color: var(--success-900);
+  border-left: 4px solid var(--success-500);
+}
+
+// في الـ HTML:
+<div style="background: var(--surface-primary); color: var(--text-primary)">
+  Content
+</div>
+*/
+
+html.dark-theme {
+    --primary-50: #006064;
+    --primary-100: #00838f;
+    --primary-200: #0097a7;
+    --primary-300: #00acc1;
+    --primary-400: #00bcd4;
+    --primary-500: #26c6da;
+    --primary-600: #4dd0e1;
+    --primary-700: #80deea;
+    --primary-800: #b2ebf2;
+    --primary-900: #e0f7fa;
+    --accent-50: #e65100;
+    --accent-100: #ef6c00;
+    --accent-200: #f57c00;
+    --accent-300: #fb8c00;
+    --accent-400: #ff9800;
+    --accent-500: #ffb74d;
+    --accent-600: #ffcc80;
+    --accent-700: #ffe0b2;
+    --accent-800: #fff3e0;
+    --accent-900: #fffaf0;
+    --warn-50: #b71c1c;
+    --warn-100: #c62828;
+    --warn-200: #d32f2f;
+    --warn-300: #e53935;
+    --warn-400: #f44336;
+    --warn-500: #ef5350;
+    --warn-600: #e57373;
+    --warn-700: #ef9a9a;
+    --warn-800: #ffcdd2;
+    --warn-900: #ffebee;
+    --success-50: #1b5e20;
+    --success-100: #2e7d32;
+    --success-200: #388e3c;
+    --success-300: #43a047;
+    --success-400: #4caf50;
+    --success-500: #66bb6a;
+    --success-600: #81c784;
+    --success-700: #a5d6a7;
+    --success-800: #c8e6c9;
+    --success-900: #e8f5e9;
+    --info-50: #0d47a1;
+    --info-100: #1565c0;
+    --info-200: #1976d2;
+    --info-300: #1e88e5;
+    --info-400: #2196f3;
+    --info-500: #42a5f5;
+    --info-600: #64b5f6;
+    --info-700: #90caf9;
+    --info-800: #bbdefb;
+    --info-900: #e3f2fd;
+    --surface-background: #121212;
+    --surface-primary: #1e1e1e;
+    --surface-secondary: #2d2d2d;
+    --surface-tertiary: #3a3a3a;
+    --surface-hover: #333333;
+    --surface-selected: #1a2332;
+    --surface-disabled: #2d2d2d;
+    --text-primary: rgba(255, 255, 255, 0.87);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --text-disabled: rgba(255, 255, 255, 0.38);
+    --text-hint: rgba(255, 255, 255, 0.38);
+    --text-on-primary: #000000;
+    --text-on-accent: #000000;
+    --text-on-warn: #ffffff;
+    --border-primary: #404040;
+    --border-secondary: #333333;
+    --border-focus: #26c6da;
+    --divider: rgba(255, 255, 255, 0.12);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --shadow-hover: rgba(0, 0, 0, 0.6);
+    --shadow-focus: rgba(38, 198, 218, 0.3);
+    --toolbar-bg: #1e1e1e;
+    --toolbar-text: #26c6da;
+    --toolbar-border: rgba(255, 255, 255, 0.12);
+    --sidenav-bg: #1e1e1e;
+    --sidenav-text: rgba(255, 255, 255, 0.87);
+    --sidenav-hover: #2d2d2d;
+    --sidenav-active-bg: #1a2832;
+    --sidenav-active-text: #26c6da;
+    --sidenav-border: rgba(255, 255, 255, 0.12);
+    --card-bg: #1e1e1e;
+    --card-border: #404040;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --input-bg: #2d2d2d;
+    --input-border: #404040;
+    --input-focus-border: #26c6da;
+    --input-text: rgba(255, 255, 255, 0.87);
+    --input-placeholder: rgba(255, 255, 255, 0.38);
+    --dialog-bg: #1e1e1e;
+    --dialog-backdrop: rgba(0, 0, 0, 0.75);
+    --menu-bg: #2d2d2d;
+    --menu-hover: #3a3a3a;
+    --menu-divider: #404040;
+    --table-header-bg: #2d2d2d;
+    --table-row-hover: #333333;
+    --table-border: #404040;
+}
+
+html {
+    --mat-sys-background: light-dark(#f7faf9, #101414);
+    --mat-sys-error: light-dark(#ba1a1a, #ffb4ab);
+    --mat-sys-error-container: light-dark(#ffdad6, #93000a);
+    --mat-sys-inverse-on-surface: light-dark(#eff1f0, #2d3131);
+    --mat-sys-inverse-primary: light-dark(#00dddd, #006a6a);
+    --mat-sys-inverse-surface: light-dark(#2d3131, #e0e3e2);
+    --mat-sys-on-background: light-dark(#191c1c, #e0e3e2);
+    --mat-sys-on-error: light-dark(#ffffff, #690005);
+    --mat-sys-on-error-container: light-dark(#93000a, #ffdad6);
+    --mat-sys-on-primary: light-dark(#ffffff, #003737);
+    --mat-sys-on-primary-container: light-dark(#004f4f, #00fbfb);
+    --mat-sys-on-primary-fixed: light-dark(#002020, #002020);
+    --mat-sys-on-primary-fixed-variant: light-dark(#004f4f, #004f4f);
+    --mat-sys-on-secondary: light-dark(#ffffff, #1b3534);
+    --mat-sys-on-secondary-container: light-dark(#324b4b, #cce8e7);
+    --mat-sys-on-secondary-fixed: light-dark(#051f1f, #051f1f);
+    --mat-sys-on-secondary-fixed-variant: light-dark(#324b4b, #324b4b);
+    --mat-sys-on-surface: light-dark(#191c1c, #e0e3e2);
+    --mat-sys-on-surface-variant: light-dark(#3f4948, #dae5e4);
+    --mat-sys-on-tertiary: light-dark(#ffffff, #502400);
+    --mat-sys-on-tertiary-container: light-dark(#723600, #ffdcc7);
+    --mat-sys-on-tertiary-fixed: light-dark(#311300, #311300);
+    --mat-sys-on-tertiary-fixed-variant: light-dark(#723600, #723600);
+    --mat-sys-outline: light-dark(#6f7979, #889392);
+    --mat-sys-outline-variant: light-dark(#bec9c8, #3f4948);
+    --mat-sys-primary: light-dark(#006a6a, #00dddd);
+    --mat-sys-primary-container: light-dark(#00fbfb, #004f4f);
+    --mat-sys-primary-fixed: light-dark(#00fbfb, #00fbfb);
+    --mat-sys-primary-fixed-dim: light-dark(#00dddd, #00dddd);
+    --mat-sys-scrim: light-dark(#000000, #000000);
+    --mat-sys-secondary: light-dark(#4a6363, #b0cccb);
+    --mat-sys-secondary-container: light-dark(#cce8e7, #324b4b);
+    --mat-sys-secondary-fixed: light-dark(#cce8e7, #cce8e7);
+    --mat-sys-secondary-fixed-dim: light-dark(#b0cccb, #b0cccb);
+    --mat-sys-shadow: light-dark(#000000, #000000);
+    --mat-sys-surface: light-dark(#f7faf9, #101414);
+    --mat-sys-surface-bright: light-dark(#f7faf9, #363a39);
+    --mat-sys-surface-container: light-dark(#ebefed, #1c2020);
+    --mat-sys-surface-container-high: light-dark(#e6e9e7, #272b2a);
+    --mat-sys-surface-container-highest: light-dark(#e0e3e2, #313635);
+    --mat-sys-surface-container-low: light-dark(#f1f4f3, #191c1c);
+    --mat-sys-surface-container-lowest: light-dark(#ffffff, #0b0f0e);
+    --mat-sys-surface-dim: light-dark(#d7dbd9, #101414);
+    --mat-sys-surface-tint: light-dark(#006a6a, #00dddd);
+    --mat-sys-surface-variant: light-dark(#dae5e4, #3f4948);
+    --mat-sys-tertiary: light-dark(#964900, #ffb787);
+    --mat-sys-tertiary-container: light-dark(#ffdcc7, #723600);
+    --mat-sys-tertiary-fixed: light-dark(#ffdcc7, #ffdcc7);
+    --mat-sys-tertiary-fixed-dim: light-dark(#ffb787, #ffb787);
+    --mat-sys-neutral-variant20: #293232;
+    --mat-sys-neutral10: #191c1c;
+    --mat-sys-level0: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+    --mat-sys-level1: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --mat-sys-level2: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+    --mat-sys-level3: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    --mat-sys-level4: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    --mat-sys-level5: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+    --mat-sys-body-large: 400 1rem / 1.5rem Cairo;
+    --mat-sys-body-large-font: Cairo;
+    --mat-sys-body-large-line-height: 1.5rem;
+    --mat-sys-body-large-size: 1rem;
+    --mat-sys-body-large-tracking: 0.031rem;
+    --mat-sys-body-large-weight: 400;
+    --mat-sys-body-medium: 400 0.875rem / 1.25rem Cairo;
+    --mat-sys-body-medium-font: Cairo;
+    --mat-sys-body-medium-line-height: 1.25rem;
+    --mat-sys-body-medium-size: 0.875rem;
+    --mat-sys-body-medium-tracking: 0.016rem;
+    --mat-sys-body-medium-weight: 400;
+    --mat-sys-body-small: 400 0.75rem / 1rem Cairo;
+    --mat-sys-body-small-font: Cairo;
+    --mat-sys-body-small-line-height: 1rem;
+    --mat-sys-body-small-size: 0.75rem;
+    --mat-sys-body-small-tracking: 0.025rem;
+    --mat-sys-body-small-weight: 400;
+    --mat-sys-display-large: 400 3.562rem / 4rem Cairo;
+    --mat-sys-display-large-font: Cairo;
+    --mat-sys-display-large-line-height: 4rem;
+    --mat-sys-display-large-size: 3.562rem;
+    --mat-sys-display-large-tracking: -0.016rem;
+    --mat-sys-display-large-weight: 400;
+    --mat-sys-display-medium: 400 2.812rem / 3.25rem Cairo;
+    --mat-sys-display-medium-font: Cairo;
+    --mat-sys-display-medium-line-height: 3.25rem;
+    --mat-sys-display-medium-size: 2.812rem;
+    --mat-sys-display-medium-tracking: 0;
+    --mat-sys-display-medium-weight: 400;
+    --mat-sys-display-small: 400 2.25rem / 2.75rem Cairo;
+    --mat-sys-display-small-font: Cairo;
+    --mat-sys-display-small-line-height: 2.75rem;
+    --mat-sys-display-small-size: 2.25rem;
+    --mat-sys-display-small-tracking: 0;
+    --mat-sys-display-small-weight: 400;
+    --mat-sys-headline-large: 400 2rem / 2.5rem Cairo;
+    --mat-sys-headline-large-font: Cairo;
+    --mat-sys-headline-large-line-height: 2.5rem;
+    --mat-sys-headline-large-size: 2rem;
+    --mat-sys-headline-large-tracking: 0;
+    --mat-sys-headline-large-weight: 400;
+    --mat-sys-headline-medium: 400 1.75rem / 2.25rem Cairo;
+    --mat-sys-headline-medium-font: Cairo;
+    --mat-sys-headline-medium-line-height: 2.25rem;
+    --mat-sys-headline-medium-size: 1.75rem;
+    --mat-sys-headline-medium-tracking: 0;
+    --mat-sys-headline-medium-weight: 400;
+    --mat-sys-headline-small: 400 1.5rem / 2rem Cairo;
+    --mat-sys-headline-small-font: Cairo;
+    --mat-sys-headline-small-line-height: 2rem;
+    --mat-sys-headline-small-size: 1.5rem;
+    --mat-sys-headline-small-tracking: 0;
+    --mat-sys-headline-small-weight: 400;
+    --mat-sys-label-large: 500 0.875rem / 1.25rem Cairo;
+    --mat-sys-label-large-font: Cairo;
+    --mat-sys-label-large-line-height: 1.25rem;
+    --mat-sys-label-large-size: 0.875rem;
+    --mat-sys-label-large-tracking: 0.006rem;
+    --mat-sys-label-large-weight: 500;
+    --mat-sys-label-large-weight-prominent: 700;
+    --mat-sys-label-medium: 500 0.75rem / 1rem Cairo;
+    --mat-sys-label-medium-font: Cairo;
+    --mat-sys-label-medium-line-height: 1rem;
+    --mat-sys-label-medium-size: 0.75rem;
+    --mat-sys-label-medium-tracking: 0.031rem;
+    --mat-sys-label-medium-weight: 500;
+    --mat-sys-label-medium-weight-prominent: 700;
+    --mat-sys-label-small: 500 0.688rem / 1rem Cairo;
+    --mat-sys-label-small-font: Cairo;
+    --mat-sys-label-small-line-height: 1rem;
+    --mat-sys-label-small-size: 0.688rem;
+    --mat-sys-label-small-tracking: 0.031rem;
+    --mat-sys-label-small-weight: 500;
+    --mat-sys-title-large: 400 1.375rem / 1.75rem Cairo;
+    --mat-sys-title-large-font: Cairo;
+    --mat-sys-title-large-line-height: 1.75rem;
+    --mat-sys-title-large-size: 1.375rem;
+    --mat-sys-title-large-tracking: 0;
+    --mat-sys-title-large-weight: 400;
+    --mat-sys-title-medium: 500 1rem / 1.5rem Cairo;
+    --mat-sys-title-medium-font: Cairo;
+    --mat-sys-title-medium-line-height: 1.5rem;
+    --mat-sys-title-medium-size: 1rem;
+    --mat-sys-title-medium-tracking: 0.009rem;
+    --mat-sys-title-medium-weight: 500;
+    --mat-sys-title-small: 500 0.875rem / 1.25rem Cairo;
+    --mat-sys-title-small-font: Cairo;
+    --mat-sys-title-small-line-height: 1.25rem;
+    --mat-sys-title-small-size: 0.875rem;
+    --mat-sys-title-small-tracking: 0.006rem;
+    --mat-sys-title-small-weight: 500;
+    --mat-sys-corner-extra-large: 28px;
+    --mat-sys-corner-extra-large-top: 28px 28px 0 0;
+    --mat-sys-corner-extra-small: 4px;
+    --mat-sys-corner-extra-small-top: 4px 4px 0 0;
+    --mat-sys-corner-full: 9999px;
+    --mat-sys-corner-large: 16px;
+    --mat-sys-corner-large-end: 0 16px 16px 0;
+    --mat-sys-corner-large-start: 16px 0 0 16px;
+    --mat-sys-corner-large-top: 16px 16px 0 0;
+    --mat-sys-corner-medium: 12px;
+    --mat-sys-corner-none: 0;
+    --mat-sys-corner-small: 8px;
+    --mat-sys-dragged-state-layer-opacity: 0.16;
+    --mat-sys-focus-state-layer-opacity: 0.12;
+    --mat-sys-hover-state-layer-opacity: 0.08;
+    --mat-sys-pressed-state-layer-opacity: 0.12;
+}
+
+html.dark-theme {
+    --mat-sys-background: #101414;
+    --mat-sys-error: #ffb4ab;
+    --mat-sys-error-container: #93000a;
+    --mat-sys-inverse-on-surface: #2d3131;
+    --mat-sys-inverse-primary: #006a6a;
+    --mat-sys-inverse-surface: #e0e3e2;
+    --mat-sys-on-background: #e0e3e2;
+    --mat-sys-on-error: #690005;
+    --mat-sys-on-error-container: #ffdad6;
+    --mat-sys-on-primary: #003737;
+    --mat-sys-on-primary-container: #00fbfb;
+    --mat-sys-on-primary-fixed: #002020;
+    --mat-sys-on-primary-fixed-variant: #004f4f;
+    --mat-sys-on-secondary: #1b3534;
+    --mat-sys-on-secondary-container: #cce8e7;
+    --mat-sys-on-secondary-fixed: #051f1f;
+    --mat-sys-on-secondary-fixed-variant: #324b4b;
+    --mat-sys-on-surface: #e0e3e2;
+    --mat-sys-on-surface-variant: #dae5e4;
+    --mat-sys-on-tertiary: #502400;
+    --mat-sys-on-tertiary-container: #ffdcc7;
+    --mat-sys-on-tertiary-fixed: #311300;
+    --mat-sys-on-tertiary-fixed-variant: #723600;
+    --mat-sys-outline: #889392;
+    --mat-sys-outline-variant: #3f4948;
+    --mat-sys-primary: #00dddd;
+    --mat-sys-primary-container: #004f4f;
+    --mat-sys-primary-fixed: #00fbfb;
+    --mat-sys-primary-fixed-dim: #00dddd;
+    --mat-sys-scrim: #000000;
+    --mat-sys-secondary: #b0cccb;
+    --mat-sys-secondary-container: #324b4b;
+    --mat-sys-secondary-fixed: #cce8e7;
+    --mat-sys-secondary-fixed-dim: #b0cccb;
+    --mat-sys-shadow: #000000;
+    --mat-sys-surface: #101414;
+    --mat-sys-surface-bright: #363a39;
+    --mat-sys-surface-container: #1c2020;
+    --mat-sys-surface-container-high: #272b2a;
+    --mat-sys-surface-container-highest: #313635;
+    --mat-sys-surface-container-low: #191c1c;
+    --mat-sys-surface-container-lowest: #0b0f0e;
+    --mat-sys-surface-dim: #101414;
+    --mat-sys-surface-tint: #00dddd;
+    --mat-sys-surface-variant: #3f4948;
+    --mat-sys-tertiary: #ffb787;
+    --mat-sys-tertiary-container: #723600;
+    --mat-sys-tertiary-fixed: #ffdcc7;
+    --mat-sys-tertiary-fixed-dim: #ffb787;
+    --mat-sys-neutral-variant20: #293232;
+    --mat-sys-neutral10: #191c1c;
+    --mat-sys-level0: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+    --mat-sys-level1: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --mat-sys-level2: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+    --mat-sys-level3: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    --mat-sys-level4: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    --mat-sys-level5: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+    --mat-sys-body-large: 400 1rem / 1.5rem Cairo;
+    --mat-sys-body-large-font: Cairo;
+    --mat-sys-body-large-line-height: 1.5rem;
+    --mat-sys-body-large-size: 1rem;
+    --mat-sys-body-large-tracking: 0.031rem;
+    --mat-sys-body-large-weight: 400;
+    --mat-sys-body-medium: 400 0.875rem / 1.25rem Cairo;
+    --mat-sys-body-medium-font: Cairo;
+    --mat-sys-body-medium-line-height: 1.25rem;
+    --mat-sys-body-medium-size: 0.875rem;
+    --mat-sys-body-medium-tracking: 0.016rem;
+    --mat-sys-body-medium-weight: 400;
+    --mat-sys-body-small: 400 0.75rem / 1rem Cairo;
+    --mat-sys-body-small-font: Cairo;
+    --mat-sys-body-small-line-height: 1rem;
+    --mat-sys-body-small-size: 0.75rem;
+    --mat-sys-body-small-tracking: 0.025rem;
+    --mat-sys-body-small-weight: 400;
+    --mat-sys-display-large: 400 3.562rem / 4rem Cairo;
+    --mat-sys-display-large-font: Cairo;
+    --mat-sys-display-large-line-height: 4rem;
+    --mat-sys-display-large-size: 3.562rem;
+    --mat-sys-display-large-tracking: -0.016rem;
+    --mat-sys-display-large-weight: 400;
+    --mat-sys-display-medium: 400 2.812rem / 3.25rem Cairo;
+    --mat-sys-display-medium-font: Cairo;
+    --mat-sys-display-medium-line-height: 3.25rem;
+    --mat-sys-display-medium-size: 2.812rem;
+    --mat-sys-display-medium-tracking: 0;
+    --mat-sys-display-medium-weight: 400;
+    --mat-sys-display-small: 400 2.25rem / 2.75rem Cairo;
+    --mat-sys-display-small-font: Cairo;
+    --mat-sys-display-small-line-height: 2.75rem;
+    --mat-sys-display-small-size: 2.25rem;
+    --mat-sys-display-small-tracking: 0;
+    --mat-sys-display-small-weight: 400;
+    --mat-sys-headline-large: 400 2rem / 2.5rem Cairo;
+    --mat-sys-headline-large-font: Cairo;
+    --mat-sys-headline-large-line-height: 2.5rem;
+    --mat-sys-headline-large-size: 2rem;
+    --mat-sys-headline-large-tracking: 0;
+    --mat-sys-headline-large-weight: 400;
+    --mat-sys-headline-medium: 400 1.75rem / 2.25rem Cairo;
+    --mat-sys-headline-medium-font: Cairo;
+    --mat-sys-headline-medium-line-height: 2.25rem;
+    --mat-sys-headline-medium-size: 1.75rem;
+    --mat-sys-headline-medium-tracking: 0;
+    --mat-sys-headline-medium-weight: 400;
+    --mat-sys-headline-small: 400 1.5rem / 2rem Cairo;
+    --mat-sys-headline-small-font: Cairo;
+    --mat-sys-headline-small-line-height: 2rem;
+    --mat-sys-headline-small-size: 1.5rem;
+    --mat-sys-headline-small-tracking: 0;
+    --mat-sys-headline-small-weight: 400;
+    --mat-sys-label-large: 500 0.875rem / 1.25rem Cairo;
+    --mat-sys-label-large-font: Cairo;
+    --mat-sys-label-large-line-height: 1.25rem;
+    --mat-sys-label-large-size: 0.875rem;
+    --mat-sys-label-large-tracking: 0.006rem;
+    --mat-sys-label-large-weight: 500;
+    --mat-sys-label-large-weight-prominent: 700;
+    --mat-sys-label-medium: 500 0.75rem / 1rem Cairo;
+    --mat-sys-label-medium-font: Cairo;
+    --mat-sys-label-medium-line-height: 1rem;
+    --mat-sys-label-medium-size: 0.75rem;
+    --mat-sys-label-medium-tracking: 0.031rem;
+    --mat-sys-label-medium-weight: 500;
+    --mat-sys-label-medium-weight-prominent: 700;
+    --mat-sys-label-small: 500 0.688rem / 1rem Cairo;
+    --mat-sys-label-small-font: Cairo;
+    --mat-sys-label-small-line-height: 1rem;
+    --mat-sys-label-small-size: 0.688rem;
+    --mat-sys-label-small-tracking: 0.031rem;
+    --mat-sys-label-small-weight: 500;
+    --mat-sys-title-large: 400 1.375rem / 1.75rem Cairo;
+    --mat-sys-title-large-font: Cairo;
+    --mat-sys-title-large-line-height: 1.75rem;
+    --mat-sys-title-large-size: 1.375rem;
+    --mat-sys-title-large-tracking: 0;
+    --mat-sys-title-large-weight: 400;
+    --mat-sys-title-medium: 500 1rem / 1.5rem Cairo;
+    --mat-sys-title-medium-font: Cairo;
+    --mat-sys-title-medium-line-height: 1.5rem;
+    --mat-sys-title-medium-size: 1rem;
+    --mat-sys-title-medium-tracking: 0.009rem;
+    --mat-sys-title-medium-weight: 500;
+    --mat-sys-title-small: 500 0.875rem / 1.25rem Cairo;
+    --mat-sys-title-small-font: Cairo;
+    --mat-sys-title-small-line-height: 1.25rem;
+    --mat-sys-title-small-size: 0.875rem;
+    --mat-sys-title-small-tracking: 0.006rem;
+    --mat-sys-title-small-weight: 500;
+    --mat-sys-corner-extra-large: 28px;
+    --mat-sys-corner-extra-large-top: 28px 28px 0 0;
+    --mat-sys-corner-extra-small: 4px;
+    --mat-sys-corner-extra-small-top: 4px 4px 0 0;
+    --mat-sys-corner-full: 9999px;
+    --mat-sys-corner-large: 16px;
+    --mat-sys-corner-large-end: 0 16px 16px 0;
+    --mat-sys-corner-large-start: 16px 0 0 16px;
+    --mat-sys-corner-large-top: 16px 16px 0 0;
+    --mat-sys-corner-medium: 12px;
+    --mat-sys-corner-none: 0;
+    --mat-sys-corner-small: 8px;
+    --mat-sys-dragged-state-layer-opacity: 0.16;
+    --mat-sys-focus-state-layer-opacity: 0.12;
+    --mat-sys-hover-state-layer-opacity: 0.08;
+    --mat-sys-pressed-state-layer-opacity: 0.12;
+}

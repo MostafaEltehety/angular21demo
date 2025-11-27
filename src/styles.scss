@@ -4,6 +4,9 @@
 // Import Cairo font
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
 
+// Import custom colors
+@import 'colors';
+
 // Include core Material styles
 @include mat.core();
 
@@ -67,90 +70,49 @@ html.dark-theme {
 .btn-accent {
   &.mat-mdc-raised-button,
   &.mat-mdc-unelevated-button {
-    background-color: #ff9800 !important;
-    color: white !important;
+    background-color: var(--accent-500) !important;
+    color: var(--text-on-accent) !important;
 
     &:hover {
-      background-color: #f57c00 !important;
+      background-color: var(--accent-700) !important;
     }
 
     .mat-icon {
-      color: white !important;
+      color: var(--text-on-accent) !important;
     }
   }
 
   &.mat-mdc-outlined-button {
-    border-color: #ff9800 !important;
-    color: #ff9800 !important;
+    border-color: var(--accent-500) !important;
+    color: var(--accent-500) !important;
 
     &:hover {
-      background-color: rgba(255, 152, 0, 0.1) !important;
+      background-color: var(--accent-50) !important;
     }
 
     .mat-icon {
-      color: #ff9800 !important;
+      color: var(--accent-500) !important;
     }
   }
 
   &.mat-mdc-button {
-    color: #ff9800 !important;
+    color: var(--accent-500) !important;
 
     &:hover {
-      background-color: rgba(255, 152, 0, 0.1) !important;
+      background-color: var(--accent-50) !important;
     }
 
     .mat-icon {
-      color: #ff9800 !important;
+      color: var(--accent-500) !important;
     }
   }
 
   &.mat-mdc-icon-button {
-    color: #ff9800 !important;
+    color: var(--accent-500) !important;
 
     &:hover {
-      background-color: rgba(255, 152, 0, 0.1) !important;
+      background-color: var(--accent-50) !important;
     }
-  }
-}
-
-html.dark-theme .btn-accent {
-  &.mat-mdc-raised-button,
-  &.mat-mdc-unelevated-button {
-    background-color: #ffb74d !important;
-    color: black !important;
-
-    &:hover {
-      background-color: #ffa726 !important;
-    }
-
-    .mat-icon {
-      color: black !important;
-    }
-  }
-
-  &.mat-mdc-outlined-button {
-    border-color: #ffb74d !important;
-    color: #ffb74d !important;
-
-    &:hover {
-      background-color: rgba(255, 183, 77, 0.1) !important;
-    }
-
-    .mat-icon {
-      color: #ffb74d !important;
-    }
-  }
-
-  &.mat-mdc-button {
-    color: #ffb74d !important;
-
-    .mat-icon {
-      color: #ffb74d !important;
-    }
-  }
-
-  &.mat-mdc-icon-button {
-    color: #ffb74d !important;
   }
 }
 
@@ -158,114 +120,73 @@ html.dark-theme .btn-accent {
 .btn-warn {
   &.mat-mdc-raised-button,
   &.mat-mdc-unelevated-button {
-    background-color: #f44336 !important;
-    color: white !important;
+    background-color: var(--warn-500) !important;
+    color: var(--text-on-warn) !important;
 
     &:hover {
-      background-color: #d32f2f !important;
+      background-color: var(--warn-700) !important;
     }
 
     .mat-icon {
-      color: white !important;
+      color: var(--text-on-warn) !important;
     }
   }
 
   &.mat-mdc-outlined-button {
-    border-color: #f44336 !important;
-    color: #f44336 !important;
+    border-color: var(--warn-500) !important;
+    color: var(--warn-500) !important;
 
     &:hover {
-      background-color: rgba(244, 67, 54, 0.1) !important;
+      background-color: var(--warn-50) !important;
     }
 
     .mat-icon {
-      color: #f44336 !important;
+      color: var(--warn-500) !important;
     }
   }
 
   &.mat-mdc-button {
-    color: #f44336 !important;
+    color: var(--warn-500) !important;
 
     &:hover {
-      background-color: rgba(244, 67, 54, 0.1) !important;
+      background-color: var(--warn-50) !important;
     }
 
     .mat-icon {
-      color: #f44336 !important;
+      color: var(--warn-500) !important;
     }
   }
 
   &.mat-mdc-icon-button {
-    color: #f44336 !important;
+    color: var(--warn-500) !important;
 
     &:hover {
-      background-color: rgba(244, 67, 54, 0.1) !important;
+      background-color: var(--warn-50) !important;
     }
-  }
-}
-
-html.dark-theme .btn-warn {
-  &.mat-mdc-raised-button,
-  &.mat-mdc-unelevated-button {
-    background-color: #ef5350 !important;
-    color: white !important;
-
-    &:hover {
-      background-color: #e53935 !important;
-    }
-
-    .mat-icon {
-      color: white !important;
-    }
-  }
-
-  &.mat-mdc-outlined-button {
-    border-color: #ef5350 !important;
-    color: #ef5350 !important;
-
-    .mat-icon {
-      color: #ef5350 !important;
-    }
-  }
-
-  &.mat-mdc-button {
-    color: #ef5350 !important;
-
-    .mat-icon {
-      color: #ef5350 !important;
-    }
-  }
-
-  &.mat-mdc-icon-button {
-    color: #ef5350 !important;
   }
 }
 
 /* ================= FORM FIELD ACCENT COLOR ================= */
 .mat-mdc-form-field.field-accent {
-  --mdc-outlined-text-field-focus-outline-color: #ff9800 !important;
-  --mdc-outlined-text-field-focus-label-text-color: #ff9800 !important;
-  --mdc-outlined-text-field-caret-color: #ff9800 !important;
-}
-
-html.dark-theme .mat-mdc-form-field.field-accent {
-  --mdc-outlined-text-field-focus-outline-color: #ffb74d !important;
-  --mdc-outlined-text-field-focus-label-text-color: #ffb74d !important;
-  --mdc-outlined-text-field-caret-color: #ffb74d !important;
+  --mdc-outlined-text-field-focus-outline-color: var(--accent-500) !important;
+  --mdc-outlined-text-field-focus-label-text-color: var(--accent-500) !important;
+  --mdc-outlined-text-field-caret-color: var(--accent-500) !important;
 }
 
 /* ================= FORM FIELD WARN COLOR ================= */
 .mat-mdc-form-field.field-warn {
-  --mdc-outlined-text-field-focus-outline-color: #f44336 !important;
-  --mdc-outlined-text-field-focus-label-text-color: #f44336 !important;
-  --mdc-outlined-text-field-caret-color: #f44336 !important;
-  --mdc-outlined-text-field-error-focus-label-text-color: #f44336 !important;
-  --mdc-outlined-text-field-error-label-text-color: #f44336 !important;
+  --mdc-outlined-text-field-focus-outline-color: var(--warn-500) !important;
+  --mdc-outlined-text-field-focus-label-text-color: var(--warn-500) !important;
+  --mdc-outlined-text-field-caret-color: var(--warn-500) !important;
+  --mdc-outlined-text-field-error-focus-label-text-color: var(--warn-500) !important;
+  --mdc-outlined-text-field-error-label-text-color: var(--warn-500) !important;
 }
 
-html.dark-theme .mat-mdc-form-field.field-warn {
-  --mdc-outlined-text-field-focus-outline-color: #ef5350 !important;
-  --mdc-outlined-text-field-focus-label-text-color: #ef5350 !important;
+/* ================= FORM FIELD SUCCESS COLOR ================= */
+.mat-mdc-form-field.field-success {
+  --mdc-outlined-text-field-focus-outline-color: var(--success-500) !important;
+  --mdc-outlined-text-field-focus-label-text-color: var(--success-500) !important;
+  --mdc-outlined-text-field-caret-color: var(--success-500) !important;
 }
 
 /* ================= SMOOTH TRANSITIONS ================= */
