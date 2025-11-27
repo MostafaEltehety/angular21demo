@@ -25,7 +25,7 @@
 
 <div class="actions">
 
-  <button mat-flat-button  [disabled]="from.invalid">
+  <button mat-flat-button [ngClass]="{'btn-primary':from.valid}" [disabled]="from.invalid">
 
     {{ 'SAVE' | translate }}
   </button>

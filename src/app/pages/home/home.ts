@@ -6,10 +6,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterOutlet } from "@angular/router";
 import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle';
 import { MatFormField, MatLabel } from "@angular/material/form-field";
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-home',
-  imports: [MatFormField, MatLabel,MatIconModule],
+  imports: [MatFormField, MatLabel,MatIconModule,MatInputModule,MatButtonModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

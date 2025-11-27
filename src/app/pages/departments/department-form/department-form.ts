@@ -6,10 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogRef } from '@angular/material/dialog';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-department-form',
@@ -19,11 +19,10 @@ import { MatDialogRef } from '@angular/material/dialog';
     MatFormFieldModule,
     MatCardModule,
     TranslateModule,
-
     MatInputModule,
     MatDividerModule,
-
-  ],
+    NgClass
+],
   templateUrl: './department-form.html',
   styleUrl: './department-form.scss',
 })
