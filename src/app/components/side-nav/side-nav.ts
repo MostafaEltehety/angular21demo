@@ -3,11 +3,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListItem, MatNavList } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatBadgeModule} from '@angular/material/badge';
 import { ThemeService } from '../../services/theme';
 
 @Component({
@@ -23,7 +24,7 @@ import { ThemeService } from '../../services/theme';
     MatNavList,
     MatMenuModule,
     TranslateModule,
-MatTooltipModule
+MatTooltipModule,MatBadgeModule
 ],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
@@ -38,7 +39,7 @@ isRtl=computed(()=>this.curentLanguage()==='ar');
 
  themeService = inject(ThemeService);
 
-  constructor() {
+  constructor(){
     // Attempt to retrieve saved language from localStorage
     const savedLang = localStorage.getItem('language');
     if (savedLang) {

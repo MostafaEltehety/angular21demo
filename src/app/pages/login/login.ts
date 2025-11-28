@@ -50,6 +50,7 @@ export class Login {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
         duration: 3000,
+        direction:this._translate.instant('LOGIN_SUCCESS')
       }
     );
   }

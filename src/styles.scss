@@ -881,9 +881,55 @@ button {
   padding-left: 0.5rem !important;
 }
 
+/* ================= language-btn ================= */
+.lang-btn {
+  position: relative;
+}
 
-/*=================== Button Language ===================*/
-    .btn-lang{
-   //    color: var(--mat-sys-on-surface);
-       color: red;
-    }
+.lang-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 9px;
+  font-weight: bold;
+  background:var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  z-index: 1;
+}
+
+// Top-right (overlapping the icon)
+.lang-indicator {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+    transform: translateX(21%);
+  // ... rest of styles
+}
+
+// Or for center-right position
+.lang-indicator {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-11%);
+  // ... rest of styles
+}
+
+// Or for top-center position
+.lang-indicator {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(21%);
+  // ... rest of styles
+}
+button{
+  border-radius: 8px !important;
+}

@@ -7,14 +7,25 @@
   </div>
 
   <div class="toolbar-actions">
+<button
+  [matTooltip]="curentLanguage() === 'ar' ? 'English' : 'عربى'"
+  mat-icon-button
+  (click)="SwitchLang()"
+  class="lang-btn">
+  <mat-icon>language</mat-icon>
+  <span class="lang-indicator">{{ curentLanguage() === 'ar' ? 'EN' : 'ع' }}</span>
+</button>
+
     <!-- Language Toggle -->
-    @if(curentLanguage() !== 'ar' ){
+    <!-- @if(curentLanguage() !== 'ar' ){
       <button
       matTooltip="عربى"
       mat-icon-button
       (click)="SwitchLang()"
      class="btn-lang" >
-      <mat-icon>font_download</mat-icon>
+
+
+
     </button>
     }@else {
        <button
@@ -25,7 +36,7 @@
       [class.dark-mode]="themeService.isDarkMode()" >
       <mat-icon>explicit</mat-icon>
     </button>
-    }
+    } -->
 
     <!-- Theme Toggle -->
     <button

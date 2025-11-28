@@ -25,12 +25,12 @@
 
 <div class="actions">
 
-  <button mat-flat-button [ngClass]="{'btn-primary':from.valid}" [disabled]="from.invalid">
+  <button mat-stroked-button [ngClass]="{'btn-primary':from.valid}" [disabled]="from.invalid">
 
     {{ 'SAVE' | translate }}
   </button>
 
- <button mat-raised-button class="btn-warn" (click)="Close()">
+ <button mat-stroked-button class="btn-warn" (click)="Close()">
 
     {{ 'Cancel' | translate }}
   </button>
