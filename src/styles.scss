@@ -242,7 +242,7 @@ mat-toolbar {
   }
 
   &.active-link {
-    background-color: var(--mat-sys-primary-container);
+    background-color: var(--mat-sys-on-backgroud);
     color: var(--mat-sys-on-primary-container);
     border-left: 4px solid var(--mat-sys-primary);
 

@@ -78,6 +78,17 @@
           </div>
         </a>
 
+<!-- Employees -->
+ <a mat-list-item routerLink="/employees" routerLinkActive="active-link">
+  <div class="list-item-content">
+<mat-icon [matTooltip]="'Employees'|translate">group</mat-icon>
+@if(!collabse()){
+<span>{{'Employees'|translate}}</span>
+}
+  </div>
+
+ </a>
+
         <!-- About -->
         <a mat-list-item routerLink="/about" routerLinkActive="active-link">
           <div class="list-item-content">

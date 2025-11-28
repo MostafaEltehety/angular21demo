@@ -22,5 +22,6 @@
   "CLOSE": "Close",
   "LOGIN_SUCCESS":"Login Successful",
   "LIGHT_MODE":"Light Mode",
-    "DARK_MODE":"Dark Mode"
+    "DARK_MODE":"Dark Mode",
+    "Employees":"Employees"
 }

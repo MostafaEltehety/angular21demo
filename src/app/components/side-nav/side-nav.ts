@@ -5,7 +5,7 @@ import { MatListItem, MatNavList } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -25,7 +25,8 @@ import { ThemeService } from '../../services/theme';
     MatNavList,
     MatMenuModule,
     TranslateModule,
-MatTooltipModule,MatBadgeModule
+    MatTooltipModule, MatBadgeModule,
+    RouterLinkActive
 ],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
