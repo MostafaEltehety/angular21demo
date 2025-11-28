@@ -8,18 +8,31 @@
 
   <div class="toolbar-actions">
     <!-- Language Toggle -->
-    <button
-      matTooltip="En-Ar"
+    @if(curentLanguage() !== 'ar' ){
+      <button
+      matTooltip="عربى"
       mat-icon-button
       (click)="SwitchLang()"
-      class="toolbar-btn">
-      <mat-icon>g_translate</mat-icon>
+     class="btn-lang" >
+      <mat-icon>font_download</mat-icon>
     </button>
+    }@else {
+       <button
+      matTooltip="English"
+      mat-icon-button
+      (click)="SwitchLang()"
+    class="btn-lang"
+      [class.dark-mode]="themeService.isDarkMode()" >
+      <mat-icon>explicit</mat-icon>
+    </button>
+    }
 
     <!-- Theme Toggle -->
     <button
-      [matTooltip]="(themeService.isDarkMode() ? 'LIGHT_MODE' : 'DARK_MODE') | translate"
-      mat-icon-button
+
+[matTooltip]="getThemeTooltip()"
+
+    mat-icon-button
       (click)="toggleTheme()"
       class="toolbar-btn theme-toggle-btn"
       [class.dark-mode]="themeService.isDarkMode()">

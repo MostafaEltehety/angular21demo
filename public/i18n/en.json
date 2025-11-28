@@ -20,5 +20,7 @@
   "ARE_YOU_SURE": "Are you sure?",
   "LOADING_DATA": "Loading data...",
   "CLOSE": "Close",
-  "LOGIN_SUCCESS":"Login Successful"
+  "LOGIN_SUCCESS":"Login Successful",
+  "LIGHT_MODE":"Light Mode",
+    "DARK_MODE":"Dark Mode"
 }

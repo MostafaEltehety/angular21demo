@@ -89,8 +89,14 @@ htmlTag.setAttribute('lang','en');
   }
 
   // Get theme tooltip text
-  getThemeTooltip(): string {
-    return this.themeService.isDarkMode() ? 'Light Mode' : 'Dark Mode';
+  getThemeTooltip() {
+    if(this.themeService.isDarkMode()){
+return this.curentLanguage()==='ar'?this.translate.instant('LIGHT_MODE')
+:this.translate.instant('LIGHT_MODE') ;
+    }else{
+return this.curentLanguage()==='ar'?this.translate.instant('DARK_MODE')
+:this.translate.instant('DARK_MODE') ;
+    }
   }
 
   // Get theme icon
