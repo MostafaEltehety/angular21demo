@@ -13,6 +13,7 @@ import { ThemeService } from '../../services/theme';
 
 @Component({
   selector: 'app-side-nav',
+  standalone:true,
   imports: [
     MatButtonModule,
     MatSidenavModule,
@@ -31,7 +32,8 @@ MatTooltipModule,MatBadgeModule
    encapsulation: ViewEncapsulation.None
 })
 export class SideNav {
-collabse=signal(false);
+
+  collabse=signal(false);
 sidenavWidth=computed(()=>this.collabse()?'60px':'250px');
  translate=inject(TranslateService);
 curentLanguage=signal('ar');

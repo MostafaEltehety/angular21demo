@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
@@ -17,6 +17,7 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { NgClass } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   imports: [
@@ -27,11 +28,20 @@ import { NgClass } from '@angular/common';
     ReactiveFormsModule,
     MatAnchor,
     NgClass,
+
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
 export class Login {
+router = inject(Router);
+
+  login() {
+ this.openSnackBar();
+  this.router.navigate(['home']); // ✅ غيرنا لـ /app/home
+
+}
+
   form = new FormGroup({
     userName: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
@@ -50,8 +60,9 @@ export class Login {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
         duration: 3000,
-        direction:this._translate.instant('LOGIN_SUCCESS')
+        direction: this._translate.instant('LOGIN_SUCCESS'),
       }
     );
   }
+
 }
