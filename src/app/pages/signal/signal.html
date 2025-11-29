@@ -1,22 +1,17 @@
 <div class="card">
   <div class="card-title">Learn Angular Signal Forms</div>
-
-
-  <form class="form-body">
-
+  <form class="form-body" (submit)="save($event)">
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Email</mat-label>
       <input matInput type="email" [field]="loginForm.email">
-
     </mat-form-field>
   @if(loginForm.email().invalid() && loginForm.email().touched()){
       @for (error of loginForm.email().errors(); track error.kind) {
       <mat-error class="mb-2">
         {{"Validations.email."+error.kind |translate}}
       </mat-error>
+        }
       }
-      }
-
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Password</mat-label>
       <input matInput type="password" [field]="loginForm.password">
@@ -26,13 +21,14 @@
 @for (item of loginForm.password().errors(); track item.kind) {
 <mat-error>{{"Validations.password."+item.kind | translate}}</mat-error>
 }
-
      }
-
     <mat-checkbox   [field]="loginForm.rememberMy">
       <mat-label>{{"Remember_my"|translate}}</mat-label>
     </mat-checkbox>
-
+<div class="actions">
+<button mat-stroked-button type="submit" [disabled]="loginForm().invalid()" [ngClass]="{'btn-primary':loginForm().valid()}">{{'LOGIN'|translate}}</button>
+<button mat-stroked-button type="reset" class="btn-warn">{{'CLOSE'|translate}}</button>
+</div>
   </form>
 </div>
 
