@@ -14,14 +14,26 @@
   "DEPARTMENT_DESC": "وصف القسم",
   "Cancel": "إلغاء",
   "USER_NAME": "أسم المستخدم",
-  "PASSWORD":"كلمة المرور",
- "SAVE_SUCCESS": "تم الحفظ بنجاح",
+  "PASSWORD": "كلمة المرور",
+  "SAVE_SUCCESS": "تم الحفظ بنجاح",
   "DELETE_FAILED": "فشل الحذف",
   "ARE_YOU_SURE": "هل أنت متأكد؟",
   "LOADING_DATA": "جاري تحميل البيانات...",
   "CLOSE": "إغلاق",
-  "LOGIN_SUCCESS":"تم تسجيل الدخول بنجاح",
-  "LIGHT_MODE":"الوضع الفاتح",
-    "DARK_MODE":"الوضع الغامق",
-    "Employees":"الموظفين"
+  "LOGIN_SUCCESS": "تم تسجيل الدخول بنجاح",
+  "LIGHT_MODE": "الوضع الفاتح",
+  "DARK_MODE": "الوضع الغامق",
+  "Employees": "الموظفين",
+  "Signal": "Signal",
+
+  "Validations": {
+    "email": {
+      "required": "يجب كتابة البريد الالكترونى",
+      "email": "البريد الالكترونى غير صالح"
+    },
+    "password": {
+      "required":"يجب كتابة كلمة المرور"
+    }
+  },
+  "Remember_my": "تذكرني"
 }

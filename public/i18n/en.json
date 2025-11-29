@@ -23,5 +23,19 @@
   "LOGIN_SUCCESS":"Login Successful",
   "LIGHT_MODE":"Light Mode",
     "DARK_MODE":"Dark Mode",
-    "Employees":"Employees"
+    "Employees":"Employees",
+       "Signal":"Signal",
+ "Validations": {
+"email": {
+"required": "Email address must be entered",
+
+"email": "Invalid email address"
+},
+
+ "password": {
+      "required":"Password must be entered"
+    }
+  },
+
+"Remember_my": "Remember me"
 }
