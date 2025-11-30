@@ -93,7 +93,7 @@ h2 {
       &:hover {
         background-color: transparent !important;
         opacity: 0.8;
-          box-shadow: 0 4px 8px color-mix(in srgb, #0000 60%, #{$bg-color});
+          box-shadow: 0 4px 8px color-mix(in srgb, #0000 80%, #{$bg-color});
 
     transform: translateY(-2px);
         filter: brightness(1.1);
