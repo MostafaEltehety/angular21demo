@@ -35,11 +35,23 @@
 },
 
  "password": {
-      "required":"Password must be entered"
-    }
+      "required":"Password must be entered",
+        "pattern":"Password must be at least 6 characters long and contain only letters, numbers, underscores, or @.",
+        "misMatch":"Confirm password is invalid or does not match the original password."
+    },
+
+"mobile":{
+"required":"The mobile number must be entered",
+"pattern":"The mobile number must begin with 010, 011, 012, or 015 and consist of 11 digits."
+}
+
   },
 
 "Remember_my": "Remember me",
   "SIGNUP":"Singup",
-  "FULL_NAME":"Full name"
+  "FULL_NAME":"Full name",
+  "EMAIL":"Email",
+  "CONFIRM_PASSWORD":"Confirm password",
+  "MOBILE":"Mobile",
+"ACCEPT": "Yes, I accepted the terms."
 }
