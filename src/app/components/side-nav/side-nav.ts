@@ -37,7 +37,7 @@ export class SideNav {
   collabse=signal(false);
 sidenavWidth=computed(()=>this.collabse()?'60px':'250px');
  translate=inject(TranslateService);
-curentLanguage=signal('ar');
+ public curentLanguage=signal('ar');
 isRtl=computed(()=>this.curentLanguage()==='ar');
 
  themeService = inject(ThemeService);
@@ -59,7 +59,7 @@ isRtl=computed(()=>this.curentLanguage()==='ar');
 
 
 
-toggle() {
+ public toggle() {
 this.collabse.update(x=>x=!x);
 }
 
@@ -76,7 +76,7 @@ htmlTag.setAttribute('lang','en');
 
 
 
- SwitchLang() {
+ public SwitchLang() {
     const newLang = this.curentLanguage() === 'ar' ? 'en' : 'ar';
     this.curentLanguage.set(newLang);
     this.translate.use(newLang);
@@ -88,12 +88,12 @@ htmlTag.setAttribute('lang','en');
 
 
   // Theme toggle method
-  toggleTheme() {
+  public  toggleTheme() {
     this.themeService.toggleTheme();
   }
 
   // Get theme tooltip text
-  getThemeTooltip() {
+  public  getThemeTooltip() {
     if(this.themeService.isDarkMode()){
 return this.curentLanguage()==='ar'?this.translate.instant('LIGHT_MODE')
 :this.translate.instant('LIGHT_MODE') ;
@@ -104,7 +104,7 @@ return this.curentLanguage()==='ar'?this.translate.instant('DARK_MODE')
   }
 
   // Get theme icon
-  getThemeIcon(): string {
+ public   getThemeIcon(): string {
     return this.themeService.isDarkMode() ? 'light_mode' : 'dark_mode';
   }
 

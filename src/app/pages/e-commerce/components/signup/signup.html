@@ -4,7 +4,7 @@
   </div>
 
 
-  <form class="form-body"   (submit)="save($event)">
+  <form   (submit)="save($event)">
     <mat-form-field class="w-100 mb-2" appearance="outline">
       <mat-label>{{'FULL_NAME'|translate}}</mat-label>
       <input matInput [field]="signUpForm.fullName">
