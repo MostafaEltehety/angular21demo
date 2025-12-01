@@ -1,1 +1,10 @@
-<p>auth-layout works!</p>
+<mat-toolbar>
+  <div>
+    <button mat-flat-button routerLink="/auth/login" routerLinkActive="active-link">
+      {{'LOGIN'|translate}}</button>
+    <button mat-flat-button routerLink="/auth/signup" routerLinkActive="active-link">
+      {{'SIGNUP'|translate}}</button>
+  </div>
+  <button mat-icon-button> <mat-icon>storefront</mat-icon></button>
+</mat-toolbar>
+<router-outlet></router-outlet>

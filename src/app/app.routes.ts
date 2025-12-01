@@ -27,7 +27,7 @@ export const routes: Routes = [
     path: 'blank',
     loadComponent: () => import('./pages/e-commerce/layouts/blank-layout/blank-layout').then((m) => m.BlankLayout),
     children: [
-
+{path:'',redirectTo:'home',pathMatch:'full'},
       {path: 'home',loadComponent: () => import('./pages/e-commerce/components/home/home').then((m) => m.Home)},
       { path: 'product', loadComponent: () => import('./pages/e-commerce/components/product/product').then(m => m.Product) },
       { path: 'cart', loadComponent: () => import('./pages/e-commerce/components/cart/cart').then(m => m.Cart) }
@@ -36,7 +36,12 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadComponent: () => import('./pages/e-commerce/layouts/auth-layout/auth-layout').then((m) => m.AuthLayout)
+    loadComponent: () => import('./pages/e-commerce/layouts/auth-layout/auth-layout').then((m) => m.AuthLayout),
+    children:[
+      {path:'',redirectTo:'login',pathMatch:'full'},
+      {path:'login',loadComponent:()=>import('./pages/e-commerce/components/login/login').then(m=>m.Login)},
+      {path:'signup',loadComponent:()=>import('./pages/e-commerce/components/signup/signup').then(m=>m.Signup)}
+    ]
   },
   { path: '**', redirectTo: '/login' },
 ];
