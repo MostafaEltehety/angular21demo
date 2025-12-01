@@ -25,7 +25,7 @@
   "DARK_MODE": "الوضع الغامق",
   "Employees": "الموظفين",
   "Signal": "Signal",
-
+"E-COMMERCE":"متجر الاكترونى",
   "Validations": {
     "email": {
       "required": "يجب كتابة البريد الالكترونى",
@@ -36,5 +36,6 @@
     }
   },
   "Remember_my": "تذكرني",
-  "SIGNUP":"إشتراك"
+  "SIGNUP":"إشتراك",
+  "FULL_NAME":"الاسم كامل"
 }

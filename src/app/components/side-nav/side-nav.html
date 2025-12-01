@@ -98,7 +98,20 @@
             }
           </div>
         </a>
+
+<!-- E-commerce -->
+<a mat-list-item routerLink="/auth" routerLinkActive="active-link">
+<div class="list-item-content">
+<mat-icon [matTooltip]="'E-COMMERCE'|translate">storefront</mat-icon>
+  @if (!collabse()) {
+    <span>{{'E-COMMERCE'|translate}}</span>
+  }
+</div>
+</a>
       </div>
+
+
+
 
       <div class="nav-items-bottom">
         <!-- Logout -->

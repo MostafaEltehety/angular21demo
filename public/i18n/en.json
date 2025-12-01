@@ -25,6 +25,8 @@
     "DARK_MODE":"Dark Mode",
     "Employees":"Employees",
        "Signal":"Signal",
+       "E-COMMERCE":"E-COMMERCE",
+
  "Validations": {
 "email": {
 "required": "Email address must be entered",
@@ -38,5 +40,6 @@
   },
 
 "Remember_my": "Remember me",
-  "SIGNUP":"Singup"
+  "SIGNUP":"Singup",
+  "FULL_NAME":"Full name"
 }
