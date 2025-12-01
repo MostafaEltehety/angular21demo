@@ -1,3 +1,5 @@
+
+
 <div class="card">
   <div class="card-title">
     {{'LOGIN'|translate}}
@@ -19,7 +21,7 @@
       <input matInput [value]="formLogin.password().value()"
         (input)="formLogin.password().setControlValue($event.target.value)"
         [attr.type]="hidePassword ? 'password' : 'text'">
-      <button mat-icon-button matSuffix  (click)="togglePassword()">
+      <button type="button" mat-icon-button matSuffix  (click)="togglePassword()">
         <mat-icon>{{hidePassword? 'visibility_off': 'visibility'}}</mat-icon>
       </button>
       @for (error of formLogin.password().errors(); track error.kind) {
@@ -40,3 +42,4 @@
 
 
 </div>
+
