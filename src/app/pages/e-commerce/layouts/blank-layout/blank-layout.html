@@ -1,2 +1,58 @@
-<p>blank-layout works!</p>
- <router-outlet></router-outlet>
+ <mat-toolbar>
+
+  <div class="toolbar-actions">
+<button
+  [matTooltip]="menuServices.curentLanguage() === 'ar' ? 'English' : 'عربى'"
+  mat-icon-button
+  (click)="menuServices.SwitchLang()"
+  class="lang-btn">
+  <mat-icon>language</mat-icon>
+  <span class="lang-indicator">{{ menuServices.curentLanguage() === 'ar' ? 'EN' : 'ع' }}</span>
+</button>
+
+    <!-- Theme Toggle -->
+    <button
+
+[matTooltip]="menuServices.getThemeTooltip()"
+
+    mat-icon-button
+      (click)="menuServices.toggleTheme()"
+      class="toolbar-btn theme-toggle-btn"
+      [class.dark-mode]="menuServices.themeService.isDarkMode()">
+      <mat-icon>{{ menuServices.getThemeIcon() }}</mat-icon>
+    </button>
+
+
+
+    <!-- Profile Menu -->
+    <button
+      [matTooltip]="'PROFILE' | translate"
+      mat-icon-button
+      [matMenuTriggerFor]="menuId"
+      class="toolbar-btn">
+      <mat-icon>person</mat-icon>
+    </button>
+
+<mat-label>{{userName|uppercase}}</mat-label>
+
+  </div>
+
+
+    <mat-menu #menuId>
+    <div mat-menu-item class="list-item-content">
+      <mat-icon>account_box</mat-icon>
+      <span>Eltehety</span>
+    </div>
+    <div mat-menu-item class="list-item-content" routerLink="/login">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>{{ 'LOGOUT' | translate }}</span>
+    </div>
+  </mat-menu>
+
+  <button mat-icon-button> <mat-icon>storefront</mat-icon></button>
+</mat-toolbar>
+
+<div    class="container"
+   >
+  <router-outlet></router-outlet>
+</div>

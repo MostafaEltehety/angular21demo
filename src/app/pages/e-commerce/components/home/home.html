@@ -1,1 +1,12 @@
-<p>home works!</p>
+
+ <div class="row">
+  @for (product of products(); track product.id) {
+    <div class="col-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ product.name | textTrim:2 }}</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  }
+</div>

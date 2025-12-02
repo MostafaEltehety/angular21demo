@@ -5,6 +5,7 @@ import { Departments } from './pages/departments/departments';
 import { SideNav } from './components/side-nav/side-nav';
 import { Employee } from './pages/employee/employee';
 import { Signal } from './pages/signal/signal';
+import { authEcommerceGuard } from './pages/e-commerce/guards/auth-ecommerce-guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -25,6 +26,7 @@ export const routes: Routes = [
 
   {
     path: 'blank',
+    canActivate:[authEcommerceGuard],
     loadComponent: () => import('./pages/e-commerce/layouts/blank-layout/blank-layout').then((m) => m.BlankLayout),
     children: [
 {path:'',redirectTo:'home',pathMatch:'full'},

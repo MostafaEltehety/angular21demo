@@ -9,6 +9,7 @@ import { NgClass } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {  MatIconModule } from "@angular/material/icon";
 import {  MatSnackBar, MatSnackBarModule,MatSnackBarVerticalPosition,MatSnackBarHorizontalPosition  } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,7 @@ translation=inject(TranslateService);
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
-
+router=inject(Router);
   loginModel = signal<login_eCommerce>({
     userName: '',
     password: '',
@@ -48,6 +49,13 @@ this.snackBar.open(this.translation.instant("LOGIN_SUCCESS"),this.translation.in
   horizontalPosition:this.horizontalPosition,
   verticalPosition:this.verticalPosition
 });
+const login=this.formLogin().value();
+
+localStorage.setItem("loginInfo",JSON.stringify(login));
+ 
+this.router.navigate(['/blank'])
+
+
   }
 
 
