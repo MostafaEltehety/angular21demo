@@ -53,5 +53,8 @@
   "EMAIL":"Email",
   "CONFIRM_PASSWORD":"Confirm password",
   "MOBILE":"Mobile",
-"ACCEPT": "Yes, I accepted the terms."
+"ACCEPT": "Yes, I accepted the terms.",
+"CATEGORY":"Category",
+"PRICE":"Price",
+"INSTOKE":"In Stoke"
 }

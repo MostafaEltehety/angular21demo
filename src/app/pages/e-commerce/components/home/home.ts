@@ -1,10 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { product } from '../../../../models/e-commerce/product';
-import {MatCardModule} from '@angular/material/card';
+import {MatCardImage, MatCardModule} from '@angular/material/card';
 import { TextTrimPipe } from '../../pipes/text-trim-pipe';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule,TextTrimPipe],
+  imports: [MatCardModule, TextTrimPipe, MatCardImage, MatFormFieldModule,TranslateModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -18,7 +20,7 @@ export class Home {
       name: "Wireless Bluetooth Headphones",
       price: 49.99,
       category: "Electronics",
-      image: "https://via.placeholder.com/150",
+      image: "https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0880.jpg?auto=webp&quality=75&width=1024",
       stock: 32
     },
     {

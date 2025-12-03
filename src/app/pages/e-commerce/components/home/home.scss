@@ -1,104 +1,273 @@
-/* ====== GRID SYSTEM ====== */
+ // ========================================
+// Bootstrap 5 Grid System - SCSS
+// ========================================
 
-/* ROW */
+// المتغيرات الأساسية
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Container Max Widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// ========================================
+// Mixins
+// ========================================
+
+// Media Query Mixin
+@mixin media-breakpoint-up($name) {
+  $min: map-get($breakpoints, $name);
+  @if $min == 0 {
+    @content;
+  } @else {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+}
+
+// ========================================
+// Container
+// ========================================
+
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  width: 100%;
+  padding-right: calc($grid-gutter-width * 0.5);
+  padding-left: calc($grid-gutter-width * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Container with max-width
+@each $breakpoint, $max-width in $container-max-widths {
+  @include media-breakpoint-up($breakpoint) {
+    .container,
+    .container-#{$breakpoint} {
+      max-width: $max-width;
+    }
+  }
+}
+
+// Container fluid (full width)
+.container-fluid {
+  max-width: 100%;
+}
+
+// ========================================
+// Row
+// ========================================
+
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* use g-2 spacing */
+  margin-right: calc($grid-gutter-width * -0.5);
+  margin-left: calc($grid-gutter-width * -0.5);
 }
 
-/* BASE COLUMN (extra small < 576px) */
- [class*="col-"] {
-  box-sizing: border-box;
-  /* make columns flex items */
+// ========================================
+// Columns
+// ========================================
+
+// Base column styles
+[class*="col-"] {
+  position: relative;
+  width: 100%;
+  padding-right: calc($grid-gutter-width * 0.5);
+  padding-left: calc($grid-gutter-width * 0.5);
+}
+
+// Auto column
+.col {
+  flex: 1 0 0%;
+}
+
+.col-auto {
   flex: 0 0 auto;
+  width: auto;
 }
 
+// Generate columns for each breakpoint
+@each $breakpoint, $min-width in $breakpoints {
+  @include media-breakpoint-up($breakpoint) {
 
-/* ===== XS (default) ===== */
-.col-1  { width: 8.33%; }
-.col-2  { width: 16.66%; }
-.col-3  { width: 25%; }
-.col-4  { width: 33.33%; }
-.col-5  { width: 41.66%; }
-.col-6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-.col-7  { width: 58.33%; }
-.col-8  { width: 66.66%; }
-.col-9  { width: 75%; }
-.col-10 { width: 83.33%; }
-.col-11 { width: 91.66%; }
-.col-12 { width: 100%; }
+    // Prefix for breakpoint (empty for xs)
+    $infix: if($breakpoint == xs, "", "-#{$breakpoint}");
 
-/* ===== SM >= 576px ===== */
-@media (min-width: 576px) {
-  .col-sm-1  { width: 8.33%; }
-  .col-sm-2  { width: 16.66%; }
-  .col-sm-3  { width: 25%; }
-  .col-sm-4  { width: 33.33%; }
-  .col-sm-5  { width: 41.66%; }
-  .col-sm-6  { width: 50%; }
-  .col-sm-7  { width: 58.33%; }
-  .col-sm-8  { width: 66.66%; }
-  .col-sm-9  { width: 75%; }
-  .col-sm-10 { width: 83.33%; }
-  .col-sm-11 { width: 91.66%; }
-  .col-sm-12 { width: 100%; }
-}
+    // Auto column
+    .col#{$infix} {
+      flex: 1 0 0%;
+    }
 
-/* ===== MD >= 768px ===== */
-@media (min-width: 768px) {
-  .col-md-1  { width: 8.33%; }
-  .col-md-2  { width: 16.66%; }
-  .col-md-3  { width: 25%; }
-  .col-md-4  { width: 33.33%; }
-  .col-md-5  { width: 41.66%; }
-  .col-md-6  { width: 50%; }
-  .col-md-7  { width: 58.33%; }
-  .col-md-8  { width: 66.66%; }
-  .col-md-9  { width: 75%; }
-  .col-md-10 { width: 83.33%; }
-  .col-md-11 { width: 91.66%; }
-  .col-md-12 { width: 100%; }
-}
+    .col#{$infix}-auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
 
-/* ===== LG >= 992px ===== */
-@media (min-width: 992px) {
-  .col-lg-1  { width: 8.33%; }
-  .col-lg-2  { width: 16.66%; }
-  .col-lg-3  { width: 25%; }
-  .col-lg-4  { width: 33.33%; }
-  .col-lg-5  { width: 41.66%; }
-  .col-lg-6  { width: 50%; }
-  .col-lg-7  { width: 58.33%; }
-  .col-lg-8  { width: 66.66%; }
-  .col-lg-9  { width: 75%; }
-  .col-lg-10 { width: 83.33%; }
-  .col-lg-11 { width: 91.66%; }
-  .col-lg-12 { width: 100%; }
+    // Generate columns 1-12
+    @for $i from 1 through $grid-columns {
+      .col#{$infix}-#{$i} {
+        flex: 0 0 auto;
+        width: percentage($i / $grid-columns);
+      }
+    }
+
+    // Offset
+    @for $i from 0 through ($grid-columns - 1) {
+      .offset#{$infix}-#{$i} {
+        margin-left: percentage($i / $grid-columns);
+      }
+    }
+
+    // Order
+    .order#{$infix}-first {
+      order: -1;
+    }
+
+    .order#{$infix}-last {
+      order: $grid-columns + 1;
+    }
+
+    @for $i from 0 through 5 {
+      .order#{$infix}-#{$i} {
+        order: $i;
+      }
+    }
+  }
 }
 
-/* ===== XL >= 1200px ===== */
-@media (min-width: 1200px) {
-  .col-xl-1  { width: 8.33%; }
-  .col-xl-2  { width: 16.66%; }
-  .col-xl-3  { width: 25%; }
-  .col-xl-4  { width: 33.33%; }
-  .col-xl-5  { width: 41.66%; }
-  .col-xl-6  { width: 50%; }
-  .col-xl-7  { width: 58.33%; }
-  .col-xl-8  { width: 66.66%; }
-  .col-xl-9  { width: 75%; }
-  .col-xl-10 { width: 83.33%; }
-  .col-xl-11 { width: 91.66%; }
-  .col-xl-12 { width: 100%; }
+// ========================================
+// Row Columns
+// ========================================
+
+@each $breakpoint, $min-width in $breakpoints {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: if($breakpoint == xs, "", "-#{$breakpoint}");
+
+    @for $i from 1 through 6 {
+      .row-cols#{$infix}-#{$i} > * {
+        flex: 0 0 auto;
+        width: percentage(1 / $i);
+      }
+    }
+  }
 }
 
-.g-0 { gap: 0px; }
-.g-1 { gap: 4px; }
-.g-2 { gap: 8px; }
-.g-3 { gap: 16px; }
-.g-4 { gap: 24px; }
-.g-5 { gap: 32px; }
+// ========================================
+// Gutters (المسافات بين الأعمدة)
+// ========================================
+
+$gutters: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem
+);
+
+@each $size, $gutter in $gutters {
+  // All gutters (horizontal + vertical)
+  .g-#{$size} {
+    margin-right: calc($gutter * -0.5);
+    margin-left: calc($gutter * -0.5);
+    margin-top: calc($gutter * -1);
+
+    > * {
+      padding-right: calc($gutter * 0.5);
+      padding-left: calc($gutter * 0.5);
+      padding-top: $gutter;
+    }
+  }
+
+  // Horizontal gutters only
+  .gx-#{$size} {
+    margin-right: calc($gutter * -0.5);
+    margin-left: calc($gutter * -0.5);
+
+    > * {
+      padding-right: calc($gutter * 0.5);
+      padding-left: calc($gutter * 0.5);
+    }
+  }
+
+  // Vertical gutters only
+  .gy-#{$size} {
+    margin-top: calc($gutter * -1);
+
+    > * {
+      padding-top: $gutter;
+    }
+  }
+}
+
+// ========================================
+// Alignment
+// ========================================
+
+// Horizontal alignment
+.justify-content-start { justify-content: flex-start; }
+.justify-content-end { justify-content: flex-end; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-around { justify-content: space-around; }
+.justify-content-evenly { justify-content: space-evenly; }
+
+// Vertical alignment
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+.align-items-center { align-items: center; }
+.align-items-baseline { align-items: baseline; }
+.align-items-stretch { align-items: stretch; }
+
+// Self alignment
+.align-self-start { align-self: flex-start; }
+.align-self-end { align-self: flex-end; }
+.align-self-center { align-self: center; }
+.align-self-baseline { align-self: baseline; }
+.align-self-stretch { align-self: stretch; }
+
+// ========================================
+// Display utilities
+// ========================================
+
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-inline-flex { display: inline-flex; }
+
+// Responsive display
+@each $breakpoint, $min-width in $breakpoints {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: if($breakpoint == xs, "", "-#{$breakpoint}");
+
+    .d#{$infix}-none { display: none; }
+    .d#{$infix}-block { display: block; }
+    .d#{$infix}-flex { display: flex; }
+    .d#{$infix}-inline { display: inline; }
+    .d#{$infix}-inline-block { display: inline-block; }
+    .d#{$infix}-inline-flex { display: inline-flex; }
+  }
+}
