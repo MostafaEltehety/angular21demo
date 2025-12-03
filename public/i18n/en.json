@@ -56,5 +56,7 @@
 "ACCEPT": "Yes, I accepted the terms.",
 "CATEGORY":"Category",
 "PRICE":"Price",
-"INSTOKE":"In Stoke"
+"INSTOKE":"In Stoke",
+"ADDTOCARD":"Add to Card",
+"FAVORITE":"Favorite"
 }

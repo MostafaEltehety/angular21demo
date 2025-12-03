@@ -50,5 +50,7 @@
 "ACCEPT":"نعم قبلت بالشروط",
 "CATEGORY":"الصنف",
 "PRICE":"السعر",
-"INSTOKE":""
+"INSTOKE":"فى المخزن",
+"ADDTOCARD":"إضافة إلى البطاقة",
+"FAVORITE":"مفضل"
 }

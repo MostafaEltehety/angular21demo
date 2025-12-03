@@ -4,9 +4,13 @@ import {MatCardImage, MatCardModule} from '@angular/material/card';
 import { TextTrimPipe } from '../../pipes/text-trim-pipe';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { TranslateModule } from '@ngx-translate/core';
+import { CurrencyPipe } from '@angular/common';
+import { MatButtonModule } from "@angular/material/button";
+import { MatIcon } from "@angular/material/icon";
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule, TextTrimPipe, MatCardImage, MatFormFieldModule,TranslateModule],
+  imports: [MatCardModule, CurrencyPipe,MatTooltipModule, TextTrimPipe, MatCardImage, MatFormFieldModule, TranslateModule, MatButtonModule, MatIcon],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -28,7 +32,7 @@ export class Home {
       name: "Smart LED TV 55 Inch",
       price: 699.99,
       category: "Electronics",
-      image: "https://via.placeholder.com/150",
+      image: "https://m.media-amazon.com/images/I/71CCbu6PLmL._AC_SL1500_.jpg",
       stock: 12
     },
     {
@@ -36,7 +40,7 @@ export class Home {
       name: "Men's Running Shoes",
       price: 59.99,
       category: "Fashion",
-      image: "https://via.placeholder.com/150",
+      image: "https://sc04.alicdn.com/kf/Haebb5ef2c8354c308608863737a9ebc0k.jpg",
       stock: 75
     },
     {
@@ -44,7 +48,7 @@ export class Home {
       name: "Gaming Laptop",
       price: 1199.99,
       category: "Computers",
-      image: "https://via.placeholder.com/150",
+      image: "https://i.rtings.com/assets/pages/6dRuEBex/best-gaming-laptops-20242028-medium.jpg?format=auto",
       stock: 8
     },
     {
@@ -52,7 +56,7 @@ export class Home {
       name: "Classic Leather Wallet",
       price: 25.99,
       category: "Accessories",
-      image: "https://via.placeholder.com/150",
+      image: "https://m.media-amazon.com/images/I/91m4V4txjzL._AC_SX300_SY300_QL70_ML2_.jpg",
       stock: 100
     },
     {
@@ -60,7 +64,7 @@ export class Home {
       name: "Portable Power Bank 20000mAh",
       price: 34.99,
       category: "Electronics",
-      image: "https://via.placeholder.com/150",
+      image: "https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/43/3950301/1.jpg?5425",
       stock: 60
     },
     {
@@ -68,7 +72,7 @@ export class Home {
       name: "Digital Wrist Watch",
       price: 19.99,
       category: "Fashion",
-      image: "https://via.placeholder.com/150",
+      image: "https://m.media-amazon.com/images/I/71JSM9kTEwS._AC_SL1500_.jpg",
       stock: 46
     },
     {
@@ -76,7 +80,7 @@ export class Home {
       name: "Office Chair Ergonomic",
       price: 129.99,
       category: "Furniture",
-      image: "https://via.placeholder.com/150",
+      image: "https://m.media-amazon.com/images/I/61yOUl49vRL.jpg",
       stock: 22
     },
     {
@@ -84,7 +88,7 @@ export class Home {
       name: "Stainless Steel Water Bottle",
       price: 12.99,
       category: "Home",
-      image: "https://via.placeholder.com/150",
+      image: "https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/06/2876331/1.jpg?3316",
       stock: 150
     },
     {
@@ -92,7 +96,7 @@ export class Home {
       name: "Wireless Keyboard & Mouse",
       price: 39.99,
       category: "Computers",
-      image: "https://via.placeholder.com/150",
+      image: "https://m.media-amazon.com/images/I/81KZLendeML._AC_SL1500_.jpg",
       stock: 28
     }
   ]);
