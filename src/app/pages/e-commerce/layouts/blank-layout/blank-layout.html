@@ -1,4 +1,4 @@
- <mat-toolbar>
+ <mat-toolbar  >
 
   <div class="toolbar-actions">
 <button
@@ -49,10 +49,9 @@
     </div>
   </mat-menu>
 
-  <button mat-icon-button> <mat-icon>storefront</mat-icon></button>
+  <button mat-icon-button routerLink="/blank" matTooltip="{{'HOME'|translate}}"> <mat-icon>storefront</mat-icon></button>
 </mat-toolbar>
 
-<div    class="container"
-   >
+<div class="container">
   <router-outlet></router-outlet>
 </div>

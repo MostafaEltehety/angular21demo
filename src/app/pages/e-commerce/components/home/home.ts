@@ -1,22 +1,26 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { product } from '../../../../models/e-commerce/product';
 import {MatCardImage, MatCardModule} from '@angular/material/card';
 import { TextTrimPipe } from '../../pipes/text-trim-pipe';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIcon } from "@angular/material/icon";
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { Router } from '@angular/router';
+import { Footer } from "../footer/footer";
+import{MatExpansionModule}from "@angular/material/expansion";
+import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule, CurrencyPipe,MatTooltipModule, TextTrimPipe, MatCardImage, MatFormFieldModule, TranslateModule, MatButtonModule, MatIcon],
+  imports: [MatCardModule,TitleCasePipe,UpperCasePipe ,CurrencyPipe, MatFormFieldModule, MatInputModule, MatTooltipModule, MatExpansionModule, MatCardImage, MatFormFieldModule, TranslateModule, MatButtonModule, MatIcon],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
 
-
+router=inject(Router);
 
   products=signal<product[]>(  [
     {
@@ -100,5 +104,11 @@ export class Home {
       stock: 28
     }
   ]);
+
+
+goToDetailes(id:number){
+this.router.navigate(['/blank/product-details',id]);
+}
+
 
 }

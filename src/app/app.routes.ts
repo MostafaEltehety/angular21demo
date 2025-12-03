@@ -32,6 +32,7 @@ export const routes: Routes = [
 {path:'',redirectTo:'home',pathMatch:'full'},
       {path: 'home',loadComponent: () => import('./pages/e-commerce/components/home/home').then((m) => m.Home)},
       { path: 'product', loadComponent: () => import('./pages/e-commerce/components/product/product').then(m => m.Product) },
+   {path:'product-details/:id',loadComponent:()=>import('./pages/e-commerce/components/product/product-details/product-details').then(m=>m.ProductDetails)},
       { path: 'cart', loadComponent: () => import('./pages/e-commerce/components/cart/cart').then(m => m.Cart) }
 
     ]
