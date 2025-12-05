@@ -11,7 +11,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
- @Component({
+import { carouselImage, Carousel } from '../../../../components/carousel/carousel';
+@Component({
   selector: 'app-home',
   imports: [
     MatCardModule,
@@ -27,8 +28,8 @@ import { MatInputModule } from '@angular/material/input';
     TranslateModule,
     MatButtonModule,
     MatIcon,
-
-  ],
+    Carousel
+],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -121,6 +122,50 @@ export class Home {
       stock: 28,
     },
   ]);
+
+  imageCarousel: carouselImage[] = [
+    {
+      imageSrc:
+        'https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0880.jpg?auto=webp&quality=75&width=1024',
+      imageAlt: 'bluetoothheadphones',
+    },
+    {
+      imageSrc: 'https://m.media-amazon.com/images/I/71CCbu6PLmL._AC_SL1500_.jpg',
+      imageAlt: '',
+    },
+    {
+      imageSrc: 'https://sc04.alicdn.com/kf/Haebb5ef2c8354c308608863737a9ebc0k.jpg',
+      imageAlt: '',
+    },
+    {
+      imageSrc: 'https://i.rtings.com/assets/pages/6dRuEBex/best-gaming-laptops-20242028-medium.jpg?format=auto',
+      imageAlt: '',
+    },
+    {
+      imageSrc: 'https://m.media-amazon.com/images/I/91m4V4txjzL._AC_SX300_SY300_QL70_ML2_.jpg',
+      imageAlt: '',
+    },
+    {
+      imageSrc: 'https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/43/3950301/1.jpg?5425',
+      imageAlt: '',
+    },
+    {
+      imageSrc: 'https://m.media-amazon.com/images/I/71JSM9kTEwS._AC_SL1500_.jpg',
+      imageAlt: '',
+    },
+    {
+      imageSrc: 'https://m.media-amazon.com/images/I/61yOUl49vRL.jpg',
+      imageAlt: '',
+    },
+    {
+      imageSrc: 'https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/06/2876331/1.jpg?3316',
+      imageAlt: '',
+    },
+    {
+      imageSrc: 'https://m.media-amazon.com/images/I/81KZLendeML._AC_SL1500_.jpg',
+      imageAlt: '',
+    },
+  ];
 
   goToDetailes(id: number) {
     this.router.navigate(['/blank/product-details', id]);

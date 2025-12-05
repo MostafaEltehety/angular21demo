@@ -1,0 +1,31 @@
+@if(images && images.length >0){
+<div class="carousel-container">
+  @for (img of images; track $index) {
+  <img [src]="img.imageSrc" [alt]="img.imageAlt" [ngClass]="{'image-active':selectedIndex===$index}" class="fade">
+  }
+
+  @if(indicators){
+  <div class="carousel-dot-container">
+    @for (dot of images; track $index) {
+    <span class="dot" [ngClass]="{'active':selectedIndex===$index}" (click)="selectedImage($index)"></span>
+    }
+  </div>
+  }
+
+  @if(controls){
+    <div class="btn-carousel btn-prev">
+<button (click)="onPrevClick()" matIconButton class="icon-carousel">
+  <mat-icon class="icon-prev">arrow_circle_left</mat-icon>
+</button>
+    </div>
+
+   <div class="btn-carousel btn-next">
+<button (click)="onNextClick()" matIconButton class="icon-carousel">
+  <mat-icon class="icon-next">arrow_circle_right</mat-icon>
+</button>
+    </div>
+
+  }
+
+</div>
+}

@@ -1,4 +1,7 @@
 
+<app-carousel [images]="imageCarousel" [indicators]="true" [autoSlide]="true" [slideInterval]="1000"></app-carousel>
+
+
 <div class="container-fluid">
   <div class="row justify-content-center">
     @for (product of products(); track product.id) {
