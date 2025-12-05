@@ -1,7 +1,8 @@
  import { NgClass } from '@angular/common';
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { SideNav } from '../side-nav/side-nav';
 
 export interface carouselImage {
   imageSrc: string;
@@ -13,38 +14,30 @@ export interface carouselImage {
   imports: [NgClass, MatButtonModule, MatIcon],
   templateUrl: './carousel.html',
   styleUrl: './carousel.scss',
+  providers:[SideNav]
 })
-export class Carousel implements OnInit, OnDestroy {
+export class Carousel implements OnInit   {
 
   @Input({ required: true }) images: carouselImage[] = [];
   @Input() indicators = true;
   @Input() controls = true;
-  @Input() autoSlide = false;
+  @Input() autoSlide = true;
   @Input() slideInterval = 3000;
 
   selectedIndex: number = 0;
-  private intervalId: any;
+servicesSideNav=inject(SideNav);
 
   ngOnInit(): void {
     if (this.autoSlide) {
-      this.startAutoSlide();
+alert("sdfsfs");
+this.autoSlideImages();
     }
   }
 
-  ngOnDestroy(): void {
-    this.stopAutoSlide();
-  }
-
-  startAutoSlide() {
-    this.intervalId = setInterval(() => {
+  autoSlideImages():void{
+    setInterval(()=>{
       this.onNextClick();
-    }, this.slideInterval);
-  }
-
-  stopAutoSlide() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
+    },this.slideInterval);
   }
 
   onNextClick() {

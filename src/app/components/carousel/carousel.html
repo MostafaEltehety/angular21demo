@@ -14,13 +14,13 @@
 
   @if(controls){
     <div class="btn-carousel btn-prev">
-<button (click)="onPrevClick()" matIconButton class="icon-carousel">
+<button (click)="servicesSideNav.isRtl()? onNextClick():onPrevClick()" matIconButton class="icon-carousel">
   <mat-icon class="icon-prev">arrow_circle_left</mat-icon>
 </button>
     </div>
 
    <div class="btn-carousel btn-next">
-<button (click)="onNextClick()" matIconButton class="icon-carousel">
+<button (click)="servicesSideNav.isRtl()?onPrevClick():onNextClick()" matIconButton class="icon-carousel">
   <mat-icon class="icon-next">arrow_circle_right</mat-icon>
 </button>
     </div>
