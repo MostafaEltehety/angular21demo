@@ -1,54 +1,64 @@
-
-<app-carousel [images]="imageCarousel" [indicators]="true"  [autoSlide]="true"></app-carousel>
+<app-carousel [images]="imageCarousel" [indicators]="true" [autoSlide]="true"></app-carousel>
 
 
 <div class="container-fluid">
   <div class="row justify-content-center">
-    @for (product of products(); track product.id) {
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 m-3">
-        <mat-card class="product-card h-100 d-flex flex-column">
-          <mat-card-header>
-            <!-- <mat-card-title>{{ product.name | textTrim:2 }}</mat-card-title> -->
-            <mat-card-title>{{ product.name }}</mat-card-title>
-          </mat-card-header>
-<hr  class="w-100 mb-4">
+    @for (product of products; track product.id) {
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 m-3">
+      <mat-card class="product-card h-100 d-flex flex-column">
+        <mat-card-header>
+          <!-- <mat-card-title>{{ product.name | textTrim:2 }}</mat-card-title> -->
+          <mat-card-title>{{ product.name }}</mat-card-title>
+        </mat-card-header>
+        <hr class="w-100 mb-4">
 
-<img mat-card-image [src]="product.image" [alt]="product.name" style="cursor: pointer;" (click)="goToDetailes(product.id)">
+        <img mat-card-image [src]="product.image" [alt]="product.name" style="cursor: pointer;"
+          (click)="goToDetailes(product.id)">
 
-          <mat-card-content class="flex-grow-1">
-            <div class="mb-2">
-              <mat-label class="fw-bold">{{'CATEGORY'|translate}}: </mat-label>
-              <span>{{product.category}}</span>
+        <mat-card-content class="flex-grow-1">
+          <div class="mb-2">
+            <mat-label class="fw-bold">{{'CATEGORY'|translate}}: </mat-label>
+            <span>{{product.category}}</span>
+          </div>
+
+          <div class="mb-2">
+            <mat-label class="fw-bold">{{'PRICE'|translate}}: </mat-label>
+            <span>{{product.price | currency:'EGP '}}</span>
+          </div>
+
+          <div class="mb-2">
+            <mat-label class="fw-bold">{{'INSTOKE'|translate}}: </mat-label>
+            <span>
+              {{product.stock}}
+            </span>
+          </div>
+          <div class="d-flex w-100 justify-content-between align-items-center fw-blod">
+            <div>
+              <mat-label class="fw-bold">{{'RATING'|translate}}: </mat-label>
+              <span>{{product.rating.rate}}</span>
             </div>
-
-            <div class="mb-2">
-              <mat-label class="fw-bold">{{'PRICE'|translate}}: </mat-label>
-              <span  >{{product.price | currency:'EGP '}}</span>
-            </div>
-
-            <div class="mb-2">
-              <mat-label class="fw-bold">{{'INSTOKE'|translate}}: </mat-label>
-              <span >
-                {{product.stock}}
+            <div>
+              <span>
+                @for (star of [].constructor(product.rating.count); track $index) {<mat-icon
+                  [style.color]="ServicesTheme.isDarkMode()?'yellow':'green'">star</mat-icon>}
               </span>
             </div>
-          </mat-card-content>
 
-          <hr width="100%">
-          <mat-card-actions class="d-flex justify-content-around mt-auto">
-            <button mat-icon-button
-                    [matTooltip]="'ADDTOCARD'|translate"
-                    [disabled]="product.stock === 0">
-              <mat-icon>shopping_cart</mat-icon>
-            </button>
-            <button mat-icon-button
-                    [matTooltip]="'FAVORITE'|translate"
-                    class="text-danger">
-              <mat-icon>favorite</mat-icon>
-            </button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
+
+          </div>
+        </mat-card-content>
+
+        <hr width="100%">
+        <mat-card-actions class="d-flex justify-content-around mt-auto">
+          <button mat-icon-button [matTooltip]="'ADDTOCARD'|translate" [disabled]="product.stock === 0">
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+          <button mat-icon-button [matTooltip]="'FAVORITE'|translate" class="text-danger">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
     }
   </div>
 </div>
@@ -56,25 +66,25 @@
 
 
 <mat-card class="text-center" style="margin-left: -2rem; margin-right: -2rem;margin-bottom: -2rem;margin-top: 2rem;">
-<mat-card-title>
-<h3 class="text-center"> {{'Subscribe to get offers in your Inbox'| translate |titlecase}}</h3>
-</mat-card-title>
-<mat-card-content>
-  <mat-label class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor architecto optio ducimus quisquam ipsa iure cum autem facilis, rerum beatae?</mat-label>
-  <form class="row justify-content-center mt-5" >
-   <mat-form-field appearance="outline" class="col-10">
-<mat-label>{{'EMIAL'|translate}}</mat-label>
-<input matInput placeholder="Enter your email">
-   </mat-form-field>
-   <button mat-stroked-button class="btn-lg"> {{'subscribe' |translate  |uppercase}}
-    <mat-icon>loyalty</mat-icon>
-   </button>
-  </form>
-</mat-card-content>
-<hr class="w-50">
-<mat-card-footer>
-  <p>{{'All Rights Reserved'|translate}} &copy; 2025</p>
-</mat-card-footer>
+  <mat-card-title>
+    <h3 class="text-center"> {{'Subscribe to get offers in your Inbox'| translate |titlecase}}</h3>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-label class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor architecto optio
+      ducimus quisquam ipsa iure cum autem facilis, rerum beatae?</mat-label>
+    <form class="row justify-content-center mt-5">
+      <mat-form-field appearance="outline" class="col-10">
+        <mat-label>{{'EMIAL'|translate}}</mat-label>
+        <input matInput placeholder="Enter your email">
+      </mat-form-field>
+      <button mat-stroked-button class="btn-lg"> {{'subscribe' |translate |uppercase}}
+        <mat-icon>loyalty</mat-icon>
+      </button>
+    </form>
+  </mat-card-content>
+  <hr class="w-50">
+  <mat-card-footer>
+    <p>{{'All Rights Reserved'|translate}} &copy; 2025</p>
+  </mat-card-footer>
 
 </mat-card>
-

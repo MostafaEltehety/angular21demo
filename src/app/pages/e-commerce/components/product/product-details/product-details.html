@@ -1,1 +1,31 @@
-<p>product-details works!</p>
+<div class="container">
+  <div class="row">
+    <!-- عمود الصورة -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <img [src]="product.image" style="max-width: 350px; max-height: 350px; object-fit: contain;">
+    </div>
+
+    <!-- عمود النص -->
+    <div class="col-md-6 d-flex flex-column justify-content-center gap-3">
+      <p class="fs-4 fw-medium">{{product.name}}</p>
+      <p class="text-muted">{{product.category}}</p>
+
+      <div>
+        <h5 class="mb-2">{{'Description'|translate}}</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae obcaecati provident labore ducimus dolore adipisci reprehenderit dignissimos laboriosam odit pariatur, ipsam consequatur commodi, fugiat, odio numquam qui eaque? Repellat laboriosam reiciendis veniam esse optio commodi cum maiores, molestias consectetur sunt magnam rerum eaque soluta quibusdam placeat saepe facilis laudantium eveniet!</p>
+      </div>
+
+      <div class="d-flex w-100 justify-content-between align-items-center fw-bold">
+        <span class="fs-5">{{product.price | currency : "EGP"}}</span>
+
+        <span class="d-flex align-items-center">
+          @for (star of [].constructor(product.rating.count); track $index) {
+            <mat-icon [style.color]="ServicesTheme.isDarkMode() ? 'yellow' : 'green'">
+              star
+            </mat-icon>
+          }
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

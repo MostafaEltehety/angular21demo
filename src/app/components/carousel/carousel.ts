@@ -29,7 +29,6 @@ servicesSideNav=inject(SideNav);
 
   ngOnInit(): void {
     if (this.autoSlide) {
-alert("sdfsfs");
 this.autoSlideImages();
     }
   }

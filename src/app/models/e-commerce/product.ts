@@ -4,5 +4,9 @@ export interface product{
     price : number,
     category : string,
     image : string,
-    stock : number
+    stock : number,
+     rating:{
+        count:number,
+        rate:number
+      }
 }
