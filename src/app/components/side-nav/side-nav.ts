@@ -7,14 +7,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatBadgeModule } from '@angular/material/badge';
 import { ThemeService } from '../../services/theme';
-import { NgIf } from '@angular/common';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-side-nav',
-  standalone:true,
+  standalone: true,
   imports: [
     MatButtonModule,
     MatSidenavModule,
@@ -26,25 +26,25 @@ import { NgIf } from '@angular/common';
     MatNavList,
     MatMenuModule,
     TranslateModule,
-    MatTooltipModule, MatBadgeModule,
+    MatTooltipModule,
+    MatBadgeModule,
     RouterLinkActive,
-    NgIf
-],
+    NgTemplateOutlet,
+  ],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
-   encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class SideNav {
+  collabse = signal(false);
+  sidenavWidth = computed(() => (this.collabse() ? '60px' : '275px'));
+  translate = inject(TranslateService);
+  public curentLanguage = signal('ar');
+  isRtl = computed(() => this.curentLanguage() === 'ar');
 
-  collabse=signal(false);
-sidenavWidth=computed(()=>this.collabse()?'60px':'250px');
- translate=inject(TranslateService);
- public curentLanguage=signal('ar');
-isRtl=computed(()=>this.curentLanguage()==='ar');
+  themeService = inject(ThemeService);
 
- themeService = inject(ThemeService);
-
-  constructor(){
+  constructor() {
     // Attempt to retrieve saved language from localStorage
     const savedLang = localStorage.getItem('language');
     if (savedLang) {
@@ -59,29 +59,31 @@ isRtl=computed(()=>this.curentLanguage()==='ar');
     }
   }
 
-  employeesOpen = false;
+  employeesOpen = signal(false);
 
-toggleEmployees() {
-  this.employeesOpen = !this.employeesOpen;
-}
+  toggleEmployees() {
+    if (this.collabse()) {
+      this.collabse.update((x) => x == false);
+    }
+    this.employeesOpen.set(!this.employeesOpen());
+  }
 
+  public toggle() {
+    this.collabse.update((x) => (x = !x));
+  }
 
- public toggle() {
-this.collabse.update(x=>x=!x);
-}
+  private updateDirection(lang: string) {
+    const htmlTag = document.documentElement;
+    if (lang === 'ar') {
+      htmlTag.setAttribute('dir', 'rtl');
+      htmlTag.setAttribute('lang', 'ar');
+    } else {
+      htmlTag.setAttribute('dir', 'ltr');
+      htmlTag.setAttribute('lang', 'en');
+    }
+  }
 
-private updateDirection(lang:string){
-const htmlTag=document.documentElement;
-if(lang==='ar'){
-htmlTag.setAttribute('dir','rtl');
-htmlTag.setAttribute('lang','ar');
-}else{
-htmlTag.setAttribute('dir','ltr');
-htmlTag.setAttribute('lang','en');
-}
-}
-
- public SwitchLang() {
+  public SwitchLang() {
     const newLang = this.curentLanguage() === 'ar' ? 'en' : 'ar';
     this.curentLanguage.set(newLang);
     this.translate.use(newLang);
@@ -92,25 +94,25 @@ htmlTag.setAttribute('lang','en');
   }
 
   // Theme toggle method
-  public  toggleTheme() {
+  public toggleTheme() {
     this.themeService.toggleTheme();
   }
 
   // Get theme tooltip text
-  public  getThemeTooltip() {
-    if(this.themeService.isDarkMode()){
-return this.curentLanguage()==='ar'?this.translate.instant('LIGHT_MODE')
-:this.translate.instant('LIGHT_MODE') ;
-    }else{
-return this.curentLanguage()==='ar'?this.translate.instant('DARK_MODE')
-:this.translate.instant('DARK_MODE') ;
+  public getThemeTooltip() {
+    if (this.themeService.isDarkMode()) {
+      return this.curentLanguage() === 'ar'
+        ? this.translate.instant('LIGHT_MODE')
+        : this.translate.instant('LIGHT_MODE');
+    } else {
+      return this.curentLanguage() === 'ar'
+        ? this.translate.instant('DARK_MODE')
+        : this.translate.instant('DARK_MODE');
     }
   }
 
   // Get theme icon
- public   getThemeIcon(): string {
+  public getThemeIcon(): string {
     return this.themeService.isDarkMode() ? 'light_mode' : 'dark_mode';
   }
-
-
 }

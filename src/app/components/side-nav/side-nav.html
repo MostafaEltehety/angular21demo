@@ -1,4 +1,4 @@
- <mat-toolbar>
+<mat-toolbar>
   <div>
     <button mat-icon-button (click)="toggle()">
       <mat-icon>menu</mat-icon>
@@ -7,33 +7,20 @@
   </div>
 
   <div class="toolbar-actions">
-<button
-  [matTooltip]="curentLanguage() === 'ar' ? 'English' : 'عربى'"
-  mat-icon-button
-  (click)="SwitchLang()"
-  class="lang-btn">
-  <mat-icon>language</mat-icon>
-  <span class="lang-indicator">{{ curentLanguage() === 'ar' ? 'EN' : 'ع' }}</span>
-</button>
+    <button [matTooltip]="curentLanguage() === 'ar' ? 'English' : 'عربى'" mat-icon-button (click)="SwitchLang()"
+      class="lang-btn">
+      <mat-icon>language</mat-icon>
+      <span class="lang-indicator">{{ curentLanguage() === 'ar' ? 'EN' : 'ع' }}</span>
+    </button>
 
     <!-- Theme Toggle -->
-    <button
-
-[matTooltip]="getThemeTooltip()"
-
-    mat-icon-button
-      (click)="toggleTheme()"
-      class="toolbar-btn theme-toggle-btn"
-      [class.dark-mode]="themeService.isDarkMode()">
+    <button [matTooltip]="getThemeTooltip()" mat-icon-button (click)="toggleTheme()"
+      class="toolbar-btn theme-toggle-btn" [class.dark-mode]="themeService.isDarkMode()">
       <mat-icon>{{ getThemeIcon() }}</mat-icon>
     </button>
 
     <!-- Profile Menu -->
-    <button
-      [matTooltip]="'PROFILE' | translate"
-      mat-icon-button
-      [matMenuTriggerFor]="menuId"
-      class="toolbar-btn">
+    <button [matTooltip]="'PROFILE' | translate" mat-icon-button [matMenuTriggerFor]="menuId" class="toolbar-btn">
       <mat-icon>person</mat-icon>
     </button>
   </div>
@@ -51,11 +38,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav
-    mode="side"
-    opened
-    [style.width]="sidenavWidth()"
-    class="app-sidenav">
+  <mat-sidenav mode="side" opened [style.width]="sidenavWidth()" class="app-sidenav">
     <mat-nav-list>
       <div class="nav-items-top">
         <!-- Home -->
@@ -63,52 +46,88 @@
           <div class="list-item-content">
             <mat-icon [matTooltip]="'HOME' | translate">home</mat-icon>
             @if (!collabse()) {
-              <span>{{ 'HOME' | translate }}</span>
+            <span>{{ 'HOME' | translate }}</span>
             }
           </div>
         </a>
 
         <!-- Departments -->
-        <a mat-list-item routerLink="/departments" routerLinkActive="active-link">
+        <!-- <a mat-list-item routerLink="/departments" routerLinkActive="active-link">
           <div class="list-item-content">
             <mat-icon [matTooltip]="'DEPARTMENT' | translate">account_tree</mat-icon>
             @if (!collabse()) {
-              <span>{{ 'DEPARTMENT' | translate }}</span>
+            <span>{{ 'DEPARTMENT' | translate }}</span>
+            }
+          </div>
+        </a> -->
+
+        <!-- Employees -->
+        <!-- <a mat-list-item routerLink="/employees" routerLinkActive="active-link">
+          <div class="list-item-content">
+            <mat-icon [matTooltip]="'Employees'|translate">group</mat-icon>
+            @if(!collabse()){
+            <span>{{'Employees'|translate}}</span>
+            }
+          </div>
+
+        </a> -->
+
+        <a mat-list-item (click)="toggleEmployees()">
+          <div class="list-item-content" style="display: flex;  justify-content: space-between; text-align: center;">
+            <mat-icon [matTooltip]="'HR'|translate">schema</mat-icon>
+            @if (!collabse()) {
+            <span>{{'HR'|translate}}</span>
+            @if(employeesOpen()){
+            <mat-icon>keyboard_arrow_up</mat-icon>
+            }@else {
+            <mat-icon>keyboard_arrow_down</mat-icon>
+            }
             }
           </div>
         </a>
 
-<!-- Employees -->
- <a mat-list-item routerLink="/employees" routerLinkActive="active-link">
-  <div class="list-item-content">
-<mat-icon [matTooltip]="'Employees'|translate">group</mat-icon>
-@if(!collabse()){
-<span>{{'Employees'|translate}}</span>
-}
-  </div>
-
- </a>
-
-
+        @if(employeesOpen()){
+        <ng-container *ngTemplateOutlet="subItemsHR"></ng-container>
+        }
+        <ng-template #subItemsHR>
+          <a mat-list-item routerLink="/employees" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'Employees'|translate">groups</mat-icon>
+              @if(!collabse()){
+              <span> {{'Employees'|translate}}</span>
+              }
+            </div>
+          </a>
+          <a mat-list-item routerLink="/departments" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'DEPARTMENT' | translate">account_tree</mat-icon>
+              @if(!collabse()){
+              <span> {{'DEPARTMENT'|translate}}</span>
+              }
+            </div>
+          </a>
+        </ng-template>
 
         <a mat-list-item routerLink="/signal" routerLinkActive="active-link">
           <div class="list-item-content">
             <mat-icon [matTooltip]="'Signal' | translate">cast</mat-icon>
             @if (!collabse()) {
-              <span>{{ 'Signal' | translate }}</span>
+            <span>{{ 'Signal' | translate }}</span>
             }
           </div>
         </a>
 
-<!-- E-commerce -->
-<a mat-list-item routerLink="/auth" routerLinkActive="active-link">
-<div class="list-item-content">
-<mat-icon [matTooltip]="'E-COMMERCE'|translate">storefront</mat-icon>
-  @if (!collabse()) {
-    <span>{{'E-COMMERCE'|translate}}</span>
-  }
-</div>
-</a>
+        <!-- E-commerce -->
+        <a mat-list-item routerLink="/auth" routerLinkActive="active-link">
+          <div class="list-item-content">
+            <mat-icon [matTooltip]="'E-COMMERCE'|translate">storefront</mat-icon>
+            @if (!collabse()) {
+            <span>{{'E-COMMERCE'|translate}}</span>
+            }
+          </div>
+        </a>
       </div>
 
 
@@ -120,7 +139,7 @@
           <div class="list-item-content">
             <mat-icon [matTooltip]="'LOGOUT' | translate">exit_to_app</mat-icon>
             @if (!collabse()) {
-              <span>{{ 'LOGOUT' | translate }}</span>
+            <span>{{ 'LOGOUT' | translate }}</span>
             }
           </div>
         </a>
@@ -128,12 +147,8 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content
-    class="container"
-    [style.margin-left]="isRtl() ? '0' : sidenavWidth()"
+  <mat-sidenav-content class="container" [style.margin-left]="isRtl() ? '0' : sidenavWidth()"
     [style.margin-right]="!isRtl() ? '0' : sidenavWidth()">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-
