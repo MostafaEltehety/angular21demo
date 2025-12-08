@@ -39,7 +39,7 @@
   </div>
 
   <mat-menu #menuId>
-    <div mat-menu-item class="list-item-content">
+    <div mat-menu-item class="list-item-content" routerLink="/home">
       <mat-icon>account_box</mat-icon>
       <span>Eltehety</span>
     </div>
@@ -89,7 +89,8 @@
 
  </a>
 
-        <!-- About -->
+
+
         <a mat-list-item routerLink="/signal" routerLinkActive="active-link">
           <div class="list-item-content">
             <mat-icon [matTooltip]="'Signal' | translate">cast</mat-icon>

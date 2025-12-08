@@ -10,6 +10,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
 import { ThemeService } from '../../services/theme';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-side-nav',
@@ -26,7 +27,8 @@ import { ThemeService } from '../../services/theme';
     MatMenuModule,
     TranslateModule,
     MatTooltipModule, MatBadgeModule,
-    RouterLinkActive
+    RouterLinkActive,
+    NgIf
 ],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
@@ -57,6 +59,11 @@ isRtl=computed(()=>this.curentLanguage()==='ar');
     }
   }
 
+  employeesOpen = false;
+
+toggleEmployees() {
+  this.employeesOpen = !this.employeesOpen;
+}
 
 
  public toggle() {
@@ -74,8 +81,6 @@ htmlTag.setAttribute('lang','en');
 }
 }
 
-
-
  public SwitchLang() {
     const newLang = this.curentLanguage() === 'ar' ? 'en' : 'ar';
     this.curentLanguage.set(newLang);
@@ -85,7 +90,6 @@ htmlTag.setAttribute('lang','en');
     // Save the selected language in localStorage
     localStorage.setItem('language', newLang);
   }
-
 
   // Theme toggle method
   public  toggleTheme() {
