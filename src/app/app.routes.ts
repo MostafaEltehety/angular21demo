@@ -14,12 +14,14 @@ export const routes: Routes = [
   {
     path: '',
     component: SideNav,
+    canActivate:[authEcommerceGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: Home },
-      { path: 'departments', component: Departments },
-      { path: 'employees', component: Employee },
-      { path: 'signal', component: Signal }
+      { path: 'home', loadComponent:()=>import('./pages/home/home').then((m)=>m.Home) },
+      { path: 'departments',loadComponent:()=>import('./pages/departments/departments').then((m)=>m.Departments) },
+      { path: 'employees', loadComponent:()=>import('./pages/employee/employee').then((m)=>m.Employee)},
+      { path: 'signal', loadComponent:()=>import('./pages/signal/signal').then((m)=>m.Signal) },
+      {path:'users',loadComponent:()=>import('./pages/user/user').then(m=>m.User)}
     ],
   },
 

@@ -108,6 +108,16 @@
               }
             </div>
           </a>
+
+<a mat-list-item routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+<div class="list-item-content">
+<mat-icon [matTooltip]="'USERS'|translate">contacts</mat-icon>
+@if (!collabse()) {
+  <span> {{'USERS'|translate}} </span>
+}
+</div>
+</a>
+
         </ng-template>
 
         <a mat-list-item routerLink="/signal" routerLinkActive="active-link">
