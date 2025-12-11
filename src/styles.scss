@@ -938,6 +938,14 @@ button{
   border-radius: 8px !important;
 }
 
+table {
+  width: 100%;
+}
+
+.mat-mdc-row:hover{
+  background-color: var(--mat-sys-primary);
+  color:  var(--mat-sys-on-primary);
+}
 
 
 

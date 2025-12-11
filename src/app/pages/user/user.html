@@ -1,30 +1,33 @@
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" ></mat-paginator>
 
-<table mat-table [dataSource]="dataSource" class="card" >
+  <mat-form-field class="w-100" appearance="outline">
+<input matInput #name (keyup)="applyFilter(name.value)" [placeholder]="'Search'|translate">
+</mat-form-field>
+
+<table mat-table matSort [dataSource]="dataSource" class="card" >
 
 <!--
 يحتوي على تعريف عمود واحد.
 كل عمود له Header Cell و Cell.
 -->
   <ng-container matColumnDef="id">
-<th mat-header-cell *matHeaderCellDef>{{'Num'|translate}}</th>
+<th mat-header-cell mat-sort-header *matHeaderCellDef>{{'Num'|translate}}</th>
 <td mat-cell *matCellDef="let u">{{u.id}}</td>
   </ng-container>
 
-  <ng-contrainer matColumnDef="name">
-<th mat-header-cell *matHeaderCellDef>{{'FULL_NAME'|translate}}</th>
+  <ng-container  matColumnDef="name">
+<th mat-header-cell mat-sort-header  *matHeaderCellDef>{{'FULL_NAME'|translate}}</th>
 <td mat-cell *matCellDef="let u">{{u.name}}</td>
-  </ng-contrainer>
+  </ng-container>
 
-  <ng-contrainer matColumnDef="username">
+  <ng-container matColumnDef="username">
 <th mat-header-cell *matHeaderCellDef>{{'USER_NAME'|translate}}</th>
 <td mat-cell *matCellDef="let u">{{u.username}}</td>
-  </ng-contrainer>
+  </ng-container>
 
-    <ng-contrainer matColumnDef="address">
+    <ng-container matColumnDef="address">
 <th mat-header-cell *matHeaderCellDef>{{'address'|translate}}</th>
 <td mat-cell *matCellDef="let u">{{u.address.street}}</td>
-  </ng-contrainer>
+  </ng-container>
 
 <!-- يمثل صفوف الجدول:
 
@@ -33,5 +36,13 @@ Header Row: العناوين
 Row: كل صف بيانات -->
 
   <tr mat-header-row *matHeaderRowDef="displayCol"></tr>
-  <tr mat-row *matRowDef="let row;columns:displayCol"></tr>
+  <tr mat-row *matRowDef="let row;columns:displayCol" (click)="onRowClick(row)"></tr>
 </table>
+
+  <mat-paginator    [pageSizeOptions]="[5, 10, 20]" ></mat-paginator>
+@if (selectedRow) {
+  <div>
+    <h4>{{selectedRow.name}}</h4>
+    <h4>{{selectedRow.username}}</h4>
+  </div>
+}

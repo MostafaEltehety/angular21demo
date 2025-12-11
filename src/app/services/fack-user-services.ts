@@ -12,4 +12,8 @@ export class FackUserServices {
   getUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(this.url);
   }
+
+
+
 }
+
