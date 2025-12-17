@@ -3,23 +3,29 @@
   <mat-icon>add_circle</mat-icon>
  {{'ADD_DEPARTMENT'|translate}}
 </button>
-
 <br><hr><br>
+<!-- <div class="container" style="width: 50%;"> -->
+<div class="container" >
+  <div class="card-wrapper">
+    <div class="card-header">
+      <h5 class="card-title">{{'DEPARTMENT'|translate}}</h5>
+    </div>
+
 <div class="card-body">
   <table mat-table [dataSource]="departmentsDataSource">
     <!--matColumnDef (Material Column Definition): unique column identifier-->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <th mat-header-cell *matHeaderCellDef>{{'Num'|translate}}</th>
       <!--*matCellDef (Material Cell Definition)-->
       <td mat-cell *matCellDef="let department">{{department.id}}</td>
     </ng-container>
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <th mat-header-cell *matHeaderCellDef>{{'DEPARTMENT_NAME'|translate}}</th>
       <!--*matCellDef (Material Cell Definition)-->
       <td mat-cell *matCellDef="let department">{{department.name}}</td>
     </ng-container>
     <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef>*matHeaderCellDef</th>
+      <th mat-header-cell *matHeaderCellDef>{{'Description'|translate}}</th>
       <!--*matCellDef (Material Cell Definition)-->
       <td mat-cell *matCellDef="let department">{{department.description}}</td>
     </ng-container>
@@ -27,4 +33,6 @@
     <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
     <tr mat-row *matRowDef="let deptRow; columns:displayColumns"></tr>
   </table>
+</div>
+  </div>
 </div>

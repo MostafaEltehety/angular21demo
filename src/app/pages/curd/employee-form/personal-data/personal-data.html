@@ -1,0 +1,41 @@
+<!-- <form [formGroup]="personalFrm" class="form-body">
+  <div class="d-flex">
+    <mat-form-field appearance="outline" class="m-2 w-50">
+      <mat-label>{{'FULL_NAME'|translate}}</mat-label>
+      <input matInput formControlName="fullName">
+      @if(personalFrm.get('fullName')?.hasError('required') && personalFrm.get('fullName')?.touched){
+      <mat-error>{{'REQUIRED'|translate}}</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="m-2 w-50">
+      <mat-label>{{'birthdate'|translate}}</mat-label>
+      <input matInput formControlName="birthDate" [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker matSuffix></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="d-flex">
+    <mat-form-field appearance="outline" class="m-2 w-50">
+      <mat-label>{{'nationalId'|translate}}</mat-label>
+      <input matInput formControlName="nationalId">
+
+      @if((personalFrm.get('nationalId')?.hasError('required') )&&
+      personalFrm.get('nationalId')?.touched){
+      <mat-error>{{'Validations.nationalId.required'|translate}}</mat-error>
+      }
+      @if((personalFrm.get('nationalId')?.hasError('pattern'))&& personalFrm.get('nationalId')?.touched){
+      <mat-error>{{'Validations.nationalId.pattern'|translate}}</mat-error>
+      }
+
+    </mat-form-field>
+    <mat-radio-group formControlName="gender" class="m-2 w-50">
+      <mat-label class="m-2">{{'gender'|translate}} : </mat-label>
+      <mat-radio-button value="male">{{'male'|translate}}</mat-radio-button>
+      <mat-radio-button value="female">{{'female'|translate}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+
+</form>
+
+ -->

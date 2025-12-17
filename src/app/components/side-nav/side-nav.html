@@ -109,14 +109,14 @@
             </div>
           </a>
 
-<a mat-list-item routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-<div class="list-item-content">
-<mat-icon [matTooltip]="'USERS'|translate">contacts</mat-icon>
-@if (!collabse()) {
-  <span> {{'USERS'|translate}} </span>
-}
-</div>
-</a>
+          <a mat-list-item routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'USERS'|translate">contacts</mat-icon>
+              @if (!collabse()) {
+              <span> {{'USERS'|translate}} </span>
+              }
+            </div>
+          </a>
 
         </ng-template>
 
@@ -125,6 +125,25 @@
             <mat-icon [matTooltip]="'Signal' | translate">cast</mat-icon>
             @if (!collabse()) {
             <span>{{ 'Signal' | translate }}</span>
+            }
+          </div>
+        </a>
+
+        <a mat-list-item routerLink="/crud" routerLinkActive="active-link">
+          <div class="list-item-content">
+            <mat-icon matTooltip='CURD'>dashboard</mat-icon>
+            @if(!collabse()){
+            <span>CURD</span>
+            }
+          </div>
+        </a>
+
+
+ <a mat-list-item routerLink="/tdf" routerLinkActive="active-link">
+          <div class="list-item-content">
+            <mat-icon matTooltip='TDF'>dashboard</mat-icon>
+            @if(!collabse()){
+            <span>TDF</span>
             }
           </div>
         </a>

@@ -14,39 +14,83 @@ export const routes: Routes = [
   {
     path: '',
     component: SideNav,
-    canActivate:[authEcommerceGuard],
+    canActivate: [authEcommerceGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadComponent:()=>import('./pages/home/home').then((m)=>m.Home) },
-      { path: 'departments',loadComponent:()=>import('./pages/departments/departments').then((m)=>m.Departments) },
-      { path: 'employees', loadComponent:()=>import('./pages/employee/employee').then((m)=>m.Employee)},
-      { path: 'signal', loadComponent:()=>import('./pages/signal/signal').then((m)=>m.Signal) },
-      {path:'users',loadComponent:()=>import('./pages/user/user').then(m=>m.User)}
+      { path: 'home', loadComponent: () => import('./pages/home/home').then((m) => m.Home) },
+      {
+        path: 'departments',
+        loadComponent: () => import('./pages/departments/departments').then((m) => m.Departments),
+      },
+      {
+        path: 'employees',
+        loadComponent: () => import('./pages/employee/employee').then((m) => m.Employee),
+      },
+      {
+        path: 'signal',
+        loadComponent: () => import('./pages/signal/signal').then((m) => m.Signal),
+      },
+      { path: 'users', loadComponent: () => import('./pages/user/user').then((m) => m.User) },
+      {
+        path: 'crud',
+        loadComponent: () =>
+          import('./pages/curd/curd').then((m) => m.Curd),
+      },{
+        path:'employee-form',loadComponent:()=>import('./pages/curd/employee-form/employee-form').then(m=>m.EmployeeForm)
+      },
+      {
+        path: 'tdf',
+        loadComponent: () => import('./pages/tdf/tdf').then((m) => m.Tdf),
+      }
     ],
   },
 
-
   {
     path: 'blank',
-    canActivate:[authEcommerceGuard],
-    loadComponent: () => import('./pages/e-commerce/layouts/blank-layout/blank-layout').then((m) => m.BlankLayout),
+    canActivate: [authEcommerceGuard],
+    loadComponent: () =>
+      import('./pages/e-commerce/layouts/blank-layout/blank-layout').then((m) => m.BlankLayout),
     children: [
-{path:'',redirectTo:'home',pathMatch:'full'},
-      {path: 'home',loadComponent: () => import('./pages/e-commerce/components/home/home').then((m) => m.Home)},
-      { path: 'product', loadComponent: () => import('./pages/e-commerce/components/product/product').then(m => m.Product) },
-   {path:'product-details/:id',loadComponent:()=>import('./pages/e-commerce/components/product/product-details/product-details').then(m=>m.ProductDetails)},
-      { path: 'cart', loadComponent: () => import('./pages/e-commerce/components/cart/cart').then(m => m.Cart) }
-
-    ]
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      {
+        path: 'home',
+        loadComponent: () => import('./pages/e-commerce/components/home/home').then((m) => m.Home),
+      },
+      {
+        path: 'product',
+        loadComponent: () =>
+          import('./pages/e-commerce/components/product/product').then((m) => m.Product),
+      },
+      {
+        path: 'product-details/:id',
+        loadComponent: () =>
+          import('./pages/e-commerce/components/product/product-details/product-details').then(
+            (m) => m.ProductDetails
+          ),
+      },
+      {
+        path: 'cart',
+        loadComponent: () => import('./pages/e-commerce/components/cart/cart').then((m) => m.Cart),
+      },
+    ],
   },
   {
     path: 'auth',
-    loadComponent: () => import('./pages/e-commerce/layouts/auth-layout/auth-layout').then((m) => m.AuthLayout),
-    children:[
-      {path:'',redirectTo:'login',pathMatch:'full'},
-      {path:'login',loadComponent:()=>import('./pages/e-commerce/components/login/login').then(m=>m.Login)},
-      {path:'signup',loadComponent:()=>import('./pages/e-commerce/components/signup/signup').then(m=>m.Signup)}
-    ]
+    loadComponent: () =>
+      import('./pages/e-commerce/layouts/auth-layout/auth-layout').then((m) => m.AuthLayout),
+    children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      {
+        path: 'login',
+        loadComponent: () =>
+          import('./pages/e-commerce/components/login/login').then((m) => m.Login),
+      },
+      {
+        path: 'signup',
+        loadComponent: () =>
+          import('./pages/e-commerce/components/signup/signup').then((m) => m.Signup),
+      }
+    ],
   },
   { path: '**', redirectTo: '/login' },
 ];

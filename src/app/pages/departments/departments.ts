@@ -7,11 +7,11 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import { DialogModule, DialogRef } from '@angular/cdk/dialog';
 import { DepartmentForm } from './department-form/department-form';
 import { from } from 'rxjs';
-import { MatTable, MatColumnDef, MatCellDef, MatHeaderRowDef, MatRowDef, MatHeaderCellDef, MatTableDataSource } from "@angular/material/table";
+import { MatTableDataSource, MatTableModule } from "@angular/material/table";
 
 @Component({
   selector: 'app-departments',
-  imports: [MatAnchor, TranslateModule, MatIconModule, MatDialogModule, MatTable, MatColumnDef, MatCellDef, MatHeaderRowDef, MatRowDef, MatHeaderCellDef],
+  imports: [MatAnchor, TranslateModule, MatIconModule, MatDialogModule, MatTableModule ],
   templateUrl: './departments.html',
   styleUrl: './departments.scss',
   standalone:true

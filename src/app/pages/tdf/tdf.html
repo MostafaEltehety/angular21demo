@@ -1,0 +1,52 @@
+<div class="card">
+<div class="card-title">
+  Ng Form (NgModel)
+</div>
+
+  <form #userFrm="ngForm"  class="card-body">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Name</mat-label>
+      <input matInput name="name" ngModel [(ngModel)]="userModel.name" >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" name="email" ngModel [(ngModel)]="userModel.email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Tel</mat-label>
+      <input matInput type="tel" name="mobile" ngModel [(ngModel)]="userModel.mobile">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>I'm Interested In</mat-label>
+      <mat-select name="interested" ngModel [(ngModel)]="userModel.interested">
+
+        @for (topic of topics; track $index) {
+        <mat-option [value]="topic" >{{topic}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+
+  <mat-label>Time Selection : </mat-label><br>
+  <mat-radio-group name="timeSelection" ngModel [(ngModel)]="userModel.timeSelection">
+    <mat-radio-button  value="evening" >Evening (5PM-8PM)</mat-radio-button>
+    <mat-radio-button value="morning" >Morning (9AM - 12PM)</mat-radio-button>
+  </mat-radio-group>
+<br>
+<mat-checkbox name="offers" ngModel [ngModel]="userModel.offers">Send me new offers</mat-checkbox>
+<br>
+<button mat-flat-button type="submit" class="w-100">Submit</button>
+<button mat-stroked-button  type="reset"  class="w-100">Reset</button>
+
+  </form>
+</div>
+
+{{userFrm.value|json}}
+<br>
+<hr>
+{{userModel|json}}
+
+

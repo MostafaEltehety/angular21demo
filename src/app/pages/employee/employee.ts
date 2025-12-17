@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { employee } from '../../models/employee';
+import {employeeTest } from '../../models/employee';
 import {form}from '@angular/forms/signals';
 
 @Component({
@@ -9,7 +9,7 @@ import {form}from '@angular/forms/signals';
   styleUrl: './employee.scss',
 })
 export class Employee {
-emp=signal<employee>({
+emp=signal<employeeTest>({
   id:0,
   firstName:'',
 lastName:'',

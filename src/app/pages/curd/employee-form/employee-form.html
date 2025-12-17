@@ -1,0 +1,25 @@
+<div class="card w-90">
+  <mat-stepper >
+    <!-- <mat-step [stepControl]="formGroup.get('personal')" [label]="'Personal-data'|translate">
+      <app-personal-data></app-personal-data>
+      <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
+    </mat-step> -->
+    <mat-step [label]="'Job-data'|translate">
+      <app-job-data></app-job-data>
+      <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
+      <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
+
+    </mat-step>
+    <mat-step [label]="'SkillsAndLanguages'|translate">
+      <app-skills-languages></app-skills-languages>
+       <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
+      <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
+    </mat-step>
+    <mat-step [label]="'Profile'|translate">
+      <app-profile></app-profile>
+       <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
+
+    </mat-step>
+  </mat-stepper>
+
+</div>

@@ -26,7 +26,7 @@
     "Employees":"Employees",
        "Signal":"Signal",
        "E-COMMERCE":"E-COMMERCE",
-
+    "AddEmployee":"Add Employee",
  "Validations": {
 "email": {
 "required": "Email address must be entered",
@@ -43,6 +43,10 @@
 "mobile":{
 "required":"The mobile number must be entered",
 "pattern":"The mobile number must begin with 010, 011, 012, or 015 and consist of 11 digits."
+},
+"nationalId":{
+"required":"The national id must be entered",
+"pattern":"The national id must be numbers."
 }
 
   },
@@ -68,5 +72,16 @@
 "USERS":"Users",
 "Num":"No.",
 "address":"Address",
-"Search":"Search"
+"Search":"Search",
+"Personal-data":"Personal Data",
+"Job-data":"Job Data",
+"SkillsAndLanguages":"Skills and languages",
+"Profile":"Profile",
+"birthdate":"Birth Date",
+"gender":"Gender",
+"male":"Male",
+"female":"Female",
+"nationalId":"National Id",
+"next":"Next",
+"previous":"Previous"
 }
