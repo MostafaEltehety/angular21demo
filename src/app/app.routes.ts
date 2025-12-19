@@ -41,6 +41,9 @@ export const routes: Routes = [
       {
         path: 'tdf',
         loadComponent: () => import('./pages/tdf/tdf').then((m) => m.Tdf),
+      },{
+        path:'reactive',
+        loadComponent:()=>import('./pages/reactive-form/reactive-form').then(m=>m.ReactiveForm)
       }
     ],
   },

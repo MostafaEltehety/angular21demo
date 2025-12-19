@@ -143,11 +143,18 @@
           <div class="list-item-content">
             <mat-icon matTooltip='TDF'>dashboard</mat-icon>
             @if(!collabse()){
-            <span>TDF</span>
+            <span>Template Driven Forms (TDF)</span>
             }
           </div>
         </a>
-
+<a mat-list-item routerLink="/reactive" routerLinkActive="active-link">
+          <div class="list-item-content">
+            <mat-icon matTooltip='Reactive Form'>dashboard</mat-icon>
+            @if(!collabse()){
+            <span>Reactive Form</span>
+            }
+          </div>
+        </a>
         <!-- E-commerce -->
         <a mat-list-item routerLink="/auth" routerLinkActive="active-link">
           <div class="list-item-content">
