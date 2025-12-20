@@ -6,7 +6,7 @@ import { NG_VALIDATORS, AbstractControl, ValidationErrors, Validator } from '@an
   providers: [
     {
       provide: NG_VALIDATORS,
-      useExisting: forwardRef(()=>Mobile),
+      useExisting: forwardRef(() => Mobile),
       multi: true,
     },
   ],
@@ -14,10 +14,8 @@ import { NG_VALIDATORS, AbstractControl, ValidationErrors, Validator } from '@an
 export class Mobile implements Validator {
   constructor() {}
   validate(control: AbstractControl): ValidationErrors | null {
-
     if (!control.value) return null;
     const egyptMobileRegex = /^(01)[0-2,5]{1}[0-9]{8}$/;
     return egyptMobileRegex.test(control.value) ? null : { mobile: true };
   }
-
 }

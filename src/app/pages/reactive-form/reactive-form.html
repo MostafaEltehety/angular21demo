@@ -1,1 +1,55 @@
-<p>reactive-form works!</p>
+<div class="card">
+
+  <div class="card-title">
+    Reactive Form
+  </div>
+  <form class="form-body" novalidate [formGroup]="registrationForm">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="User name" formControlName="userName">
+      @if(getUserName()?.errors?.['required'] && getUserName()?.touched){
+      <mat-error>User Name is required</mat-error>
+      }
+      @if(getUserName()?.errors?.['minlength'] && getUserName()?.touched) {
+      <mat-error>User Name must at last 5 char</mat-error>
+      }
+      @if (getUserName()?.errors?.['forbiddenName'] && getUserName()?.touched) {
+        <mat-error>{{getUserName()?.errors?.['forbiddenName']?.value}} is not allowed</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Password" formControlName="password">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+      @if(getconfirmPassword()?.errors?.['misMatch'] && getconfirmPassword()?.touched){
+        <mat-error>Confirm password not match password</mat-error>
+      }
+    </mat-form-field>
+
+    <div formGroupName="address">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city" placeholder="City">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Street</mat-label>
+        <input matInput formControlName="street" placeholder="Street">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Postal Code</mat-label>
+        <input matInput formControlName="postalCode" placeholder="Postal Code">
+      </mat-form-field>
+    </div>
+
+    <button mat-flat-button type="submit" class="w-100">Submit</button>
+    <button mat-raised-button (click)="loadData()" class="w-100">Get API Data (setValue())</button>
+    <button mat-raised-button (click)="loadDataPatchValue()" class="w-100">Get API Data (patchValue())</button>
+    <button mat-stroked-button type="reset" class="w-100">Reset</button>
+
+  </form>
+</div>
