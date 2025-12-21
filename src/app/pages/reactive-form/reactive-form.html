@@ -46,6 +46,15 @@
       </mat-form-field>
     </div>
 
+     <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="person@example.com">
+      </mat-form-field>
+
+
+        <mat-checkbox formControlName="subscribe">Send me new offers</mat-checkbox>
+
+
     <button mat-flat-button type="submit" class="w-100">Submit</button>
     <button mat-raised-button (click)="loadData()" class="w-100">Get API Data (setValue())</button>
     <button mat-raised-button (click)="loadDataPatchValue()" class="w-100">Get API Data (patchValue())</button>

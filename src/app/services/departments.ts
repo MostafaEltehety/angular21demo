@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { department } from '../models/demaprtment';
+import { deparmtentsSelect, department } from '../models/demaprtment';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({
@@ -11,5 +11,8 @@ export class Departments {
 
   createDepartment(department:department){
 this.http.post<department>(environment.apiUrl+'/Departments/CreateDepartment',department);
+  }
+  getDeparmtentsSelect(){
+    return this.http.get<deparmtentsSelect>(environment.apiUrl+'/Departments/GetDeparmtentsSelect');
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatStepperModule } from '@angular/material/stepper';
 import { PersonalData } from './personal-data/personal-data';
 import { JobData } from './job-data/job-data';
@@ -14,6 +14,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
+import { Departments } from '../../../services/departments';
+import { deparmtentsSelect } from '../../../models/demaprtment';
 @Component({
   selector: 'app-employee-form',
   imports: [
@@ -30,23 +33,30 @@ import {
   styleUrl: './employee-form.scss',
 })
 export class EmployeeForm {
+  fb = inject(FormBuilder);
+services=inject(Departments);
+departments:deparmtentsSelect[]=[];
+  employeeForm = this.fb.group({
+    personal: this.fb.group({
+      fullName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      birthDate: ['', Validators.required],
+      gender: new FormControl(''),
+      nationalId: new FormControl(''),
+    }),
+    job: this.fb.group({
+      department: ['', Validators.required],
+      departmentId:[0],
+      salary: ['', Validators.required],
+    }),
+    skills: this.fb.array([]),
+  });
 
-   constructor(
-    private fb: FormBuilder,
+  get personalGroup(): FormGroup {
+    return this.employeeForm.get('personal') as FormGroup;
+  }
 
-  ) {}
-
-  // employeeForm = this.fb.group({
-  //   personal: this.fb.group({
-  //     name: ['', Validators.required],
-  //     email: ['', [Validators.required, Validators.email]],
-  //     birthDate: ['', Validators.required]
-  //   }),
-  //   job: this.fb.group({
-  //     department: ['', Validators.required],
-  //     salary: ['', Validators.required]
-  //   }),
-  //   skills: this.fb.array([])
-  // });
-
+  get jobGroup():FormGroup{
+    return this.employeeForm.get('job') as FormGroup;
+  }
 }

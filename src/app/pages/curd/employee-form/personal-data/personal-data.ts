@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatFormFieldModule, MatSuffix } from '@angular/material/form-field';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatInputModule } from '@angular/material/input';
@@ -24,5 +24,5 @@ import { MatNativeDateModule, MAT_DATE_FORMATS, DateAdapter } from '@angular/mat
   styleUrl: './personal-data.scss',
 })
 export class PersonalData {
-
+ @Input() personalFrm!:FormGroup;
 }

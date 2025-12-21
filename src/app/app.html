@@ -1,2 +1,22 @@
 
  <router-outlet></router-outlet>
+
+
+ <h1>@ViewChild() Decorator</h1>
+<h3>
+يمكن الكومبوننت تايب سكربت كلاس (.ts)من الحصول على reference لعنصر إتش تي إم إل أو كومبوننت أو دايركتف موجود في الكومبوننت تمبلت (.html)
+</h3>
+<h2>Example 1 (HTML Element)</h2>
+<!--productName: Template Reference Variable-->
+<input #productName/>
+<br><br>
+<button (click)="focusProdName()">Focus Product Name Input</button>
+
+<br><br>
+ <app-greetings></app-greetings>
+ <br><br>
+<h2>Example 2 (Child Component)</h2>
+<br>
+<button (click)="callGreetUserMethodFromGreetings()">
+  Call greetUser() method from TestChild Component
+</button>

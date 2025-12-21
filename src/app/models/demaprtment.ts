@@ -3,3 +3,7 @@ export interface department{
   name:string;
   description:string;
 }
+export interface deparmtentsSelect{
+  id:number;
+  name:string;
+}

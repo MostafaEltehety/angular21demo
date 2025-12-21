@@ -12,25 +12,25 @@ export interface employeeTest {
 
 export interface employee {
   id: number;
-  fullName: string;
+  fullName: string; //
   position: string;
   salary: number;
-  birthDate: Date;
+  birthDate: Date; //
   attendanceTime: Date;
   joinDateTime: Date;
   isActive: boolean;
   male: boolean;
   female: boolean;
-  english: boolean;
+  english: boolean; 
   french: boolean;
   german: boolean;
   phoneNumber: string;
-  email: string;
+  email: string; //
   notes: string;
   appraisal: boolean;
   departmentId: number;
   profileFile: File;
   profilePath: string;
-  nationalId:string;
-  gender:string;
+  nationalId: string; //
+  gender: string; //
 }

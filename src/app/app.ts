@@ -1,10 +1,11 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from './services/theme';
+import { Greetings } from "./greetings/greetings";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Greetings],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -84,6 +85,32 @@ export class App {
     getThemeIcon(): string {
       return this.themeService.isDarkMode() ? 'light_mode' : 'dark_mode';
     }
+
+
+
+
+
+    ///////////////////// @ViewChild() Decorator /////////////////////
+    //Example 01 (HTML Element)
+    // @ViewChild(Template Reference Variable)
+    // @ViewChild('productName')
+    // productNameInput!: ElementRef;
+    //or
+    @ViewChild('productName') productNameInput!: ElementRef;
+
+    focusProdName(){
+      this.productNameInput.nativeElement.focus();
+    }
+
+    //Example 02 (Child Component)
+    // @ViewChild(Greetings)
+    // greetings!: Greetings;
+    @ViewChild(Greetings) greetings!: Greetings;
+
+    callGreetUserMethodFromGreetings(): void{
+      this.greetings.greetUser();
+    }
+    ////////////////////////////////////////////////////////////////////
 
 
 }

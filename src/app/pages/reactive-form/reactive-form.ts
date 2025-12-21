@@ -12,10 +12,11 @@ import { MatInput } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { ForbiddenNameValidator } from '../../directives/validators/forbiddenName.validator';
 import { ConfirmPasswordValidator } from '../../directives/validators/confirmPassword.validators';
+import { MatCheckbox } from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-reactive-form',
-  imports: [MatFormFieldModule, MatInput, ReactiveFormsModule, MatButtonModule, MatMenuModule],
+  imports: [MatFormFieldModule, MatInput, ReactiveFormsModule, MatButtonModule, MatMenuModule, MatCheckbox],
   templateUrl: './reactive-form.html',
   styleUrl: './reactive-form.scss',
 })
@@ -46,6 +47,8 @@ export class ReactiveForm {
       street: [''],
       postalCode: [''],
     }),
+    email:[''],
+    subscribe:[false]
   },
   { validators: [ConfirmPasswordValidator] }
 );
@@ -68,6 +71,8 @@ getconfirmPassword(){
         street: 'assuit',
         postalCode: '131',
       },
+      email:'mostafa.eltehety@gmail.com',
+      subscribe:true
     });
   }
 
