@@ -30,7 +30,7 @@ import { NgIf, NgTemplateOutlet, NgStyle } from '@angular/common';
     MatBadgeModule,
     RouterLinkActive,
     NgTemplateOutlet,
-    NgStyle
+
 ],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
@@ -61,6 +61,7 @@ export class SideNav {
   }
 
   employeesOpen = signal(false);
+directiveOpen=signal(false);
 
   toggleEmployees() {
     if (this.collabse()) {
@@ -68,6 +69,12 @@ export class SideNav {
     }
     this.employeesOpen.set(!this.employeesOpen());
   }
+
+toggleDirective(){
+  if(this.collabse()){
+this.collabse.update((x)=>x==false);
+  }this.directiveOpen.set(!this.directiveOpen());
+}
 
   public toggle() {
     this.collabse.update((x) => (x = !x));

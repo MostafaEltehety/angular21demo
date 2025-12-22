@@ -6,29 +6,46 @@
 <h3>
 يمكن الكومبوننت تايب سكربت كلاس (.ts)من الحصول على reference لعنصر إتش تي إم إل أو كومبوننت أو دايركتف موجود في الكومبوننت تمبلت (.html)
 </h3>
+
+
+
 <h2>Example 1 (HTML Element)</h2>
 <!--productName: Template Reference Variable-->
-<input #productName/>
+<label>Product Name</label><input #productName #productInput/>
+<label>Product Description</label><input #productDescription #productInput/>
 <br><br>
 <button (click)="focusProdName()">Focus Product Name Input</button>
+<button (click)="setProductInputBorders()">Set Product Input Borders</button>
+
+
 
 <br><br>
+ <app-greetings></app-greetings>
+ <app-greetings></app-greetings>
  <app-greetings></app-greetings>
  <br><br>
 <h2>Example 2 (Child Component)</h2>
 <br>
-<button (click)="callGreetUserMethodFromGreetings()" appElementBgColor>
-  Call greetUser() method from TestChild Component
+<button (click)="callGreetUserMethodFromGreetings()">
+  Call greetUser() method from Greetings Component
 </button>
 
+
+<button (click)="callGreetUserMethodFromAllGreetings()">
+  Call greetUser() method from All Greetings Components
+</button>
+
+
 <br><hr><br>
-<h2>Example 3 (Directive)</h2>
+<h2 appElementBgColor>Example 3 (Directive)</h2>
+<h3>Courses</h3>
 <ul appElementBgColor>
   <li>JavaScript</li>
   <li>TypeScript</li>
   <li>Angular</li>
 </ul>
-
-<p appElementBgColor>Test @ViewChild() with Directive</p>
+<p>Without appElementBgColor Directive</p>
+<p appElementBgColor>With appElementBgColor Directive</p>
 
 <button (click)="makeBeige()">Change Background Color to Beige</button>
+<button (click)="makeMultipleCoral()">Change Multiple Background Colors to Coral</button>

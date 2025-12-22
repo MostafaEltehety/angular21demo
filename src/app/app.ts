@@ -1,4 +1,12 @@
-import { Component, computed, ElementRef, inject, signal, ViewChild } from '@angular/core';
+import {
+  Component,
+  computed,
+  ElementRef,
+  inject,
+  signal,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from './services/theme';
@@ -6,7 +14,7 @@ import { Greetings } from './greetings/greetings';
 import { ElementBgColor } from './element-bg-color';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Greetings,ElementBgColor],
+  imports: [RouterOutlet, Greetings, ElementBgColor],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -94,6 +102,12 @@ export class App {
     this.productNameInput.nativeElement.focus();
   }
 
+  @ViewChildren('productInput') productInputs!: Array<ElementRef>;
+  setProductInputBorders(): void {
+    this.productInputs.forEach((productInput) => {
+      productInput.nativeElement.style.border = '3px solid blue';
+    });
+  }
   //Example 02 (Child Component)
   // @ViewChild(Greetings)
   // greetings!: Greetings;
@@ -103,10 +117,23 @@ export class App {
     this.greetings.greetUser();
   }
 
+  @ViewChildren(Greetings) allGreetings!: Array<Greetings>;
+  callGreetUserMethodFromAllGreetings(): void{
+    this.allGreetings.forEach(greeting => greeting.greetUser());
+  }
+
   //Example 03 (Directive)
   @ViewChild(ElementBgColor) elementBgColor!: ElementBgColor;
   makeBeige(): void {
     this.elementBgColor.setColor('beige');
+  }
+
+  // @ViewChildren(ElementBgColor)
+  // allElementsBgColor!: Array<ElementBgColor>;
+  @ViewChildren(ElementBgColor) allElementsBgColor!: Array<ElementBgColor>;
+
+  makeMultipleCoral(){
+    this.allElementsBgColor.forEach(elBgColor => elBgColor.setColor('coral'));
   }
   ////////////////////////////////////////////////////////////////////
 }
