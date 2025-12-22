@@ -44,6 +44,9 @@ export const routes: Routes = [
       },{
         path:'reactive',
         loadComponent:()=>import('./pages/reactive-form/reactive-form').then(m=>m.ReactiveForm)
+      },{
+        path:'ViewChild',
+        loadComponent:()=>import('./pages/view-child-tutorial/view-child-tutorial').then(m=>m.ViewChildTutorial)
       }
     ],
   },

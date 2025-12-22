@@ -10,7 +10,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ThemeService } from '../../services/theme';
-import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgIf, NgTemplateOutlet, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-side-nav',
@@ -30,7 +30,8 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
     MatBadgeModule,
     RouterLinkActive,
     NgTemplateOutlet,
-  ],
+    NgStyle
+],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
   encapsulation: ViewEncapsulation.None,

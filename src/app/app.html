@@ -17,6 +17,18 @@
  <br><br>
 <h2>Example 2 (Child Component)</h2>
 <br>
-<button (click)="callGreetUserMethodFromGreetings()">
+<button (click)="callGreetUserMethodFromGreetings()" appElementBgColor>
   Call greetUser() method from TestChild Component
 </button>
+
+<br><hr><br>
+<h2>Example 3 (Directive)</h2>
+<ul appElementBgColor>
+  <li>JavaScript</li>
+  <li>TypeScript</li>
+  <li>Angular</li>
+</ul>
+
+<p appElementBgColor>Test @ViewChild() with Directive</p>
+
+<button (click)="makeBeige()">Change Background Color to Beige</button>
