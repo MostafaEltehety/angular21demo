@@ -1,0 +1,170 @@
+<div class="card">
+<h2 mat-dialog-title class="card-title">
+  {{ action }}
+</h2>
+
+<form [formGroup]="tableForm" (ngSubmit)="onSubmit()" class="form">
+
+  <!-- <mat-dialog-content class="dialog-content"> -->
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Country</mat-label>
+      <input matInput formControlName="country" />
+      <mat-error *ngIf="tableForm.get('country')?.invalid">
+        {{ errors['country'] }}
+      </mat-error>
+    </mat-form-field>
+
+    <div class="grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Cases</mat-label>
+        <input matInput formControlName="cases" type="number" />
+        <mat-error>{{ errors['cases'] }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Today Cases</mat-label>
+        <input matInput formControlName="todayCases" type="number" />
+        <mat-error>{{ errors['todayCases'] }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Deaths</mat-label>
+        <input matInput formControlName="deaths" type="number" />
+        <mat-error>{{ errors['deaths'] }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Today Deaths</mat-label>
+        <input matInput formControlName="todayDeaths" type="number" />
+        <mat-error>{{ errors['todayDeaths'] }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Recovered</mat-label>
+        <input matInput formControlName="recovered" type="number" />
+        <mat-error>{{ errors['recovered'] }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Active</mat-label>
+        <input matInput formControlName="active" type="number" />
+        <mat-error>{{ errors['active'] }}</mat-error>
+      </mat-form-field>
+    </div>
+
+  <!-- </mat-dialog-content> -->
+
+  <!-- <mat-dialog-actions align="end" class="dialog-actions"> -->
+<div class="actions">
+    <button mat-stroked-button type="button" (click)="closeDialog()">
+      {{ cancel }}
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="tableForm.invalid">
+      {{ action }}
+    </button>
+  </div>
+  <!-- </mat-dialog-actions> -->
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div>
+  <h1 mat-dialog-title>{{action}}</h1>
+</div>
+<form
+  novalidate
+  [formGroup]="tableForm"
+  (ngSubmit)="onSubmit()"
+  role="form">
+  <div mat-dialog-content>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch">
+      <div fxFlex="100">
+        <mat-form-field style="width: 100%;" appearance="outline">
+          <input placeholder="Country" matInput formControlName="country">
+          <mat-error>
+            {{errors['country']}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch">
+      <div fxFlex="48" fxFlex.lt-md="100">
+        <mat-form-field style="width: 100%;" appearance="outline">
+          <input placeholder="Cases" matInput formControlName="cases">
+          <mat-error>
+            {{errors['cases']}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="48" fxFlex.lt-md="100">
+        <mat-form-field style="width: 100%;" appearance="outline">
+          <input placeholder="Today Cases" matInput formControlName="todayCases">
+          <mat-error>
+            {{errors['todayCases']}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch">
+      <div fxFlex="48" fxFlex.lt-md="100">
+        <mat-form-field appearance="outline">
+          <input placeholder="Deaths" matInput formControlName="deaths">
+          <mat-error>
+            {{errors['deaths']}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="48" fxFlex.lt-md="100">
+        <mat-form-field appearance="outline">
+          <input placeholder="Today Deaths" matInput formControlName="todayDeaths">
+          <mat-error>
+            {{errors['todayDeaths']}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch">
+      <div fxFlex="48" fxFlex.lt-md="100">
+        <mat-form-field appearance="outline">
+          <input placeholder="Recovered" matInput formControlName="recovered">
+          <mat-error>
+            {{errors['recovered']}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="48" fxFlex.lt-md="100">
+        <mat-form-field appearance="outline">
+          <input placeholder="Active" matInput formControlName="active">
+          <mat-error>
+            {{errors['active']}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions style="float: right;">
+    <div>
+      <button class="dialog-btn" mat-raised-button type="button" (click)="closeDialog()">{{cancel}}</button>
+      <button class="dialog-btn" mat-raised-button color="primary" type="submit"
+        [disabled]="tableForm.invalid">{{action}}</button>
+    </div>
+  </div>
+</form> -->

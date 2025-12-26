@@ -1,0 +1,43 @@
+// .header,
+// .dialog-message {
+//   text-transform: lowercase;
+// }
+// .header::first-letter,
+// .dialog-message::first-letter {
+//   text-transform: uppercase;
+// }
+
+
+.dialog-title {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.dialog-form {
+  width: 100%;
+}
+
+.dialog-content {
+  padding-top: 8px;
+}
+
+.full {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.dialog-actions {
+  margin-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

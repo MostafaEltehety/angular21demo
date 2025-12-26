@@ -166,7 +166,14 @@
             }
           </div>
         </a>
-
+<a mat-list-item routerLink="/responsive-table" routerLinkActive="active-link">
+    <div class="list-item-content">
+            <mat-icon matTooltip='Reactive Form'>dashboard</mat-icon>
+            @if(!collabse()){
+            <span>Responsive-table</span>
+            }
+          </div>
+</a>
 
 <a mat-list-item (click)="toggleDirective()">
           <div class="list-item-content" style="display: flex;  justify-content: space-between; text-align: center;">

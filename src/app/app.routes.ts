@@ -47,6 +47,9 @@ export const routes: Routes = [
       },{
         path:'ViewChild',
         loadComponent:()=>import('./pages/view-child-tutorial/view-child-tutorial').then(m=>m.ViewChildTutorial)
+      },{
+        path:'responsive-table',
+        loadComponent:()=>import('./pages/techNetzz/responsive-table/responsive-table').then(m=>m.ResponsiveTable)
       }
     ],
   },
