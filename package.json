@@ -39,6 +39,7 @@
     "jquery": "^3.7.1",
     "mat-table-exporter": "^14.0.2",
     "moment": "^2.30.1",
+    "ngx-mat-select-search": "^8.0.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

@@ -9,7 +9,7 @@
 
     </mat-step>
     <mat-step [stepControl]="jobGroup" [label]="'Job-data'|translate">
-      <app-job-data ></app-job-data>
+      <app-job-data [departments]="departments" [jobGroup]="jobGroup"></app-job-data>
       <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
       <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
 

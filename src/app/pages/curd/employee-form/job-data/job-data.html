@@ -1,11 +1,25 @@
+ <form [formGroup]="jobGroup" class="card-body">
+  <mat-form-field appearance="outline" class="w-50">
+    <mat-label>{{ 'DEPARTMENT' | translate }}</mat-label>
 
- <div class="card">
-  <form formGroup="jobGroup" class="card-body">
-<mat-form-field class="w-90">
-<mat-label>{{"DEPARTMENT"|translate}</mat-label>
-<mat-select>
-  
-</mat-select>
-</mat-form-field>
-  </form>
- </div>
+    <mat-select formControlName="departmentId">
+
+      <!-- Search Input -->
+      <mat-option>
+        <ngx-mat-select-search
+          [formControl]="searchCtrl"
+          placeholderLabel="Search department"
+          noEntriesFoundLabel="No results">
+        </ngx-mat-select-search>
+      </mat-option>
+
+      <!-- Options -->
+      <mat-option
+        *ngFor="let dept of filteredDepartments | async"
+        [value]="dept.id">
+        {{ dept.name }}
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+</form>

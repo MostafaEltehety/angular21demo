@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatStepperModule } from '@angular/material/stepper';
 import { PersonalData } from './personal-data/personal-data';
 import { JobData } from './job-data/job-data';
@@ -28,14 +28,22 @@ import { deparmtentsSelect } from '../../../models/demaprtment';
     SkillsLanguages,
     Profile,
     MatAnchor,
+
   ],
   templateUrl: './employee-form.html',
   styleUrl: './employee-form.scss',
 })
-export class EmployeeForm {
+export class EmployeeForm implements OnInit {
+  ngOnInit(): void {
+    this.services.getDeparmtentsSelect().subscribe((res) => {
+      if (res) {
+        this.departments = res.data;
+      }
+    });
+  }
   fb = inject(FormBuilder);
-services=inject(Departments);
-departments:deparmtentsSelect[]=[];
+  services = inject(Departments);
+  departments: deparmtentsSelect[] = [];
   employeeForm = this.fb.group({
     personal: this.fb.group({
       fullName: ['', Validators.required],
@@ -46,7 +54,7 @@ departments:deparmtentsSelect[]=[];
     }),
     job: this.fb.group({
       department: ['', Validators.required],
-      departmentId:[0],
+      departmentId: [0],
       salary: ['', Validators.required],
     }),
     skills: this.fb.array([]),
@@ -56,7 +64,7 @@ departments:deparmtentsSelect[]=[];
     return this.employeeForm.get('personal') as FormGroup;
   }
 
-  get jobGroup():FormGroup{
+  get jobGroup(): FormGroup {
     return this.employeeForm.get('job') as FormGroup;
   }
 }
