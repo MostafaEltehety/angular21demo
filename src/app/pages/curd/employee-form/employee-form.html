@@ -14,8 +14,8 @@
       <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
 
     </mat-step>
-    <mat-step [label]="'SkillsAndLanguages'|translate">
-      <app-skills-languages></app-skills-languages>
+    <mat-step [label]="'SkillsAndLanguages'|translate" [stepControl]="skillsGroup">
+      <app-skills-languages [skills]="skillsGroup"></app-skills-languages>
        <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
       <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
     </mat-step>
