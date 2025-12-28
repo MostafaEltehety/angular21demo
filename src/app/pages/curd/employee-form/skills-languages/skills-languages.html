@@ -1,1 +1,8 @@
-<p>skills-languages works!</p>
+
+<form [formGroup]="skills" class="form-body">
+<mat-button-toggle-group multiple appearance="legacy">
+<mat-button-toggle formControlName="english">English</mat-button-toggle>
+<mat-button-toggle formControlName="french">French</mat-button-toggle>
+<mat-button-toggle formControlName="german">German</mat-button-toggle>
+</mat-button-toggle-group>
+</form>

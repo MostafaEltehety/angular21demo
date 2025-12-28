@@ -45,6 +45,7 @@ export class EmployeeForm implements OnInit {
   services = inject(Departments);
   departments: deparmtentsSelect[] = [];
   employeeForm = this.fb.group({
+
     personal: this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -52,6 +53,7 @@ export class EmployeeForm implements OnInit {
       gender: new FormControl(''),
       nationalId: new FormControl(''),
     }),
+
     job: this.fb.group({
       departmentId: [0],
       salary: [0, Validators.required],
@@ -61,7 +63,13 @@ export class EmployeeForm implements OnInit {
       isActive: [false],
       appraisal: [false]
     }),
-    skills: this.fb.array([]),
+
+    skills: this.fb.group({
+      english:[false],
+      french:[false],
+      german:[false]
+    }),
+
   });
 
   get personalGroup(): FormGroup {
@@ -70,5 +78,8 @@ export class EmployeeForm implements OnInit {
 
   get jobGroup(): FormGroup {
     return this.employeeForm.get('job') as FormGroup;
+  }
+  get skillsGroup():FormGroup {
+    return this.employeeForm.get('skills') as FormGroup;
   }
 }
