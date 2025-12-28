@@ -78,5 +78,8 @@
 "female":"أنثى",
 "nationalId":"الرقم القومى",
 "next":"التالى",
-"previous":"السابق"
+"previous":"السابق",
+"chooseDepartment":"اختر القسم",
+"position":"المسمى الوظيفى",
+"joinDateTime":"تاريخ ووقت الانضمام"
 }

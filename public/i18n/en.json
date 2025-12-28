@@ -83,5 +83,8 @@
 "female":"Female",
 "nationalId":"National Id",
 "next":"Next",
-"previous":"Previous"
+"previous":"Previous",
+"chooseDepartment":"choose department",
+"position":"Position",
+"joinDateTime":"Join DateTime"
 }

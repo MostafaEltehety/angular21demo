@@ -53,9 +53,13 @@ export class EmployeeForm implements OnInit {
       nationalId: new FormControl(''),
     }),
     job: this.fb.group({
-      department: ['', Validators.required],
       departmentId: [0],
-      salary: ['', Validators.required],
+      salary: [0, Validators.required],
+      position: [''],
+      joinDateTime: [new Date()],
+      attendanceTime: [new Date()],
+      isActive: [false],
+      appraisal: [false]
     }),
     skills: this.fb.array([]),
   });
