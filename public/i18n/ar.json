@@ -81,5 +81,7 @@
 "previous":"السابق",
 "chooseDepartment":"اختر القسم",
 "position":"المسمى الوظيفى",
-"joinDateTime":"تاريخ ووقت الانضمام"
+"joinDateTime":"تاريخ ووقت الانضمام",
+"attendanceTime":"وقت الحضور"
+
 }

@@ -86,5 +86,6 @@
 "previous":"Previous",
 "chooseDepartment":"choose department",
 "position":"Position",
-"joinDateTime":"Join DateTime"
+"joinDateTime":"Join DateTime",
+"attendanceTime":"Attendance Time"
 }

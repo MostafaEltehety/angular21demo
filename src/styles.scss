@@ -1218,4 +1218,74 @@ table {
   align-items: center;
 }
 
+// .cdk-overlay-pane ngx-material-timepicker {
+//   --clock-face-hand-color: var(--mdc-theme-primary);
+//   --clock-face-time-active-color: var(--mdc-theme-primary);
+//   --button-color: var(--mdc-theme-primary);
+// }
 
+
+
+// .timepicker__header {
+//   background-color: var(--mat-sys-primary) !important;
+// }
+
+// .timepicker-dial__item_active,.timepicker-dial__item {
+//   background-color: var(--mat-sys-primary) !important;
+//   color:  var(--mat-sys-on-primary) !important;
+// }
+
+// .timepicker-button {
+//    background-color: var(--mat-sys-primary) !important;
+//   color:  var(--mat-sys-on-primary) !important;
+// }
+
+
+.timepicker__header {
+  background-color: var(--mat-sys-primary) !important;
+}
+
+.timepicker-dial__item_active {
+  background-color: var(--mat-sys-primary) !important;
+  color: var(--mat-sys-on-primary) !important;
+}
+
+// .timepicker-dial__item:hover {
+//   background-color: var(--mat-sys-primary-container) !important;
+//   color: var(--mat-sys-on-primary-container) !important;
+// }
+
+.timepicker-button {
+  background-color: var(--mat-sys-primary) !important;
+  color: var(--mat-sys-on-primary) !important;
+}
+
+/* العقارب */
+.clock-face__clock-hand {
+  background-color: var(--mat-sys-primary) !important;
+}
+
+.clock-face__clock-hand::before {
+  border-color: var(--mat-sys-primary) !important;
+  background-color: var(--mat-sys-primary) !important;
+}
+
+.clock-face__clock-hand::after {
+  background-color: var(--mat-sys-primary) !important;
+}
+
+.clock-face__clock-hand_minute::before {
+  border-color: var(--mat-sys-primary) !important;
+  background-color: var(--mat-sys-primary) !important;
+}
+
+/* النقطة في المنتصف */
+.clock-face__inner-dot {
+  background-color: var(--mat-sys-primary) !important;
+}
+
+/* الوقت المحدد على الساعة */
+.clock-face__number > span.active {
+  background-color: var(--mat-sys-primary) !important;
+  color: var(--mat-sys-on-primary) !important;
+}

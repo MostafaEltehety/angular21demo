@@ -1,15 +1,17 @@
-<form [formGroup]="jobGroup" class="card-body d-flex">
-  <mat-form-field appearance="outline" class="m-2 w-50">
-    <mat-label>{{ 'DEPARTMENT' | translate }}</mat-label>
+<form [formGroup]="jobGroup" class="card-body">
 
-    <mat-select formControlName="departmentId">
-      <mat-option>{{'chooseDepartment'|translate}}</mat-option>
-      @for (dept of departments; track dept.id) {
-      <mat-option>{{dept.name}}</mat-option>
-      }
-    </mat-select>
+  <div class="d-flex">
+    <mat-form-field appearance="outline" class="m-2 w-50">
+      <mat-label>{{ 'DEPARTMENT' | translate }}</mat-label>
 
-    <!--
+      <mat-select formControlName="departmentId">
+        <mat-option>{{'chooseDepartment'|translate}}</mat-option>
+        @for (dept of departments; track dept.id) {
+        <mat-option>{{dept.name}}</mat-option>
+        }
+      </mat-select>
+
+      <!--
     <mat-select formControlName="departmentId">
 
       <mat-option>
@@ -28,13 +30,33 @@
 
     </mat-select> -->
 
-  </mat-form-field>
+    </mat-form-field>
 
 
-  <mat-form-field appearance="outline" class="m-2 w-50">
-    <mat-label>{{'position'|translate}}</mat-label>
-    <input matInput formControlName="position">
-  </mat-form-field>
+    <mat-form-field appearance="outline" class="m-2 w-50">
+      <mat-label>{{'position'|translate}}</mat-label>
+      <input matInput formControlName="position">
+    </mat-form-field>
 
- 
+  </div>
+  <div class="d-flex">
+    <mat-form-field appearance="outline" class="w-50 m-2">
+      <mat-label>{{'joinDateTime'|translate}}</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="joinDateTime">
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-50 m-2">
+      <input matInput [ngxTimepicker]="time" [placeholder]="'attendanceTime'|translate"
+        formControlName="attendanceTime">
+      <ngx-material-timepicker #time></ngx-material-timepicker>
+      <ngx-material-timepicker-toggle matSuffix [for]="time">
+        <mat-icon>access_time</mat-icon>
+      </ngx-material-timepicker-toggle>
+    </mat-form-field>
+
+  </div>
+
+
 </form>

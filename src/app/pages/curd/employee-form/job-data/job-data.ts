@@ -4,13 +4,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { deparmtentsSelect } from '../../../../models/demaprtment';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatInputModule } from '@angular/material/input';
-
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { map, Observable, startWith } from 'rxjs';
 import { MatSelectModule } from '@angular/material/select';
-
-import { MatMomentDateModule } from '@angular/material-moment-adapter';
-
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import {  MatDatepickerModule } from "@angular/material/datepicker";
+import { MatIcon } from "@angular/material/icon";
 @Component({
   selector: 'app-job-data',
   imports: [
@@ -21,8 +20,10 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatInputModule,
     NgxMatSelectSearchModule,
     TranslateModule,
-   
-  ],
+    NgxMaterialTimepickerModule,
+    MatDatepickerModule,
+    MatIcon
+],
   templateUrl: './job-data.html',
   styleUrl: './job-data.scss',
   standalone: true,
@@ -34,17 +35,14 @@ export class JobData implements OnInit {
   searchCtrl = new FormControl('');
   filteredDepartments!: Observable<deparmtentsSelect[]>;
 
-
   ngOnInit(): void {
     this.filteredDepartments = this.searchCtrl.valueChanges.pipe(
       startWith(''),
       map((search: string | null) =>
-        (this.departments || []).filter(d =>
+        (this.departments || []).filter((d) =>
           d.name.toLowerCase().includes((search || '').toLowerCase())
         )
       )
     );
   }
-
-
 }
