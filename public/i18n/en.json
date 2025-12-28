@@ -87,5 +87,7 @@
 "chooseDepartment":"choose department",
 "position":"Position",
 "joinDateTime":"Join DateTime",
-"attendanceTime":"Attendance Time"
+"attendanceTime":"Attendance Time",
+"isActive":"Is Active",
+"appraisal":"Appraisal"
 }

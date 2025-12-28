@@ -10,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {  MatDatepickerModule } from "@angular/material/datepicker";
 import { MatIcon } from "@angular/material/icon";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { MatCheckbox } from "@angular/material/checkbox";
 @Component({
   selector: 'app-job-data',
   imports: [
@@ -22,7 +24,9 @@ import { MatIcon } from "@angular/material/icon";
     TranslateModule,
     NgxMaterialTimepickerModule,
     MatDatepickerModule,
-    MatIcon
+    MatIcon,
+    MatSlideToggleModule,
+    MatCheckbox
 ],
   templateUrl: './job-data.html',
   styleUrl: './job-data.scss',
@@ -45,4 +49,6 @@ export class JobData implements OnInit {
       )
     );
   }
+
+
 }

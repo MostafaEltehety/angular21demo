@@ -629,6 +629,11 @@ button {
   color: var(--mat-sys-on-surface) !important;
 }
 
+.mat-datepicker-content .mat-calendar{
+  height: fit-content !important;
+  padding: .75rem !important;
+}
+
 ::ng-deep .mat-calendar-header {
   background-color: var(--mat-sys-surface-container) !important;
   color: var(--mat-sys-on-surface) !important;

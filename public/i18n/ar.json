@@ -82,6 +82,7 @@
 "chooseDepartment":"اختر القسم",
 "position":"المسمى الوظيفى",
 "joinDateTime":"تاريخ ووقت الانضمام",
-"attendanceTime":"وقت الحضور"
-
+"attendanceTime":"وقت الحضور",
+"isActive":"نشط",
+"appraisal":"توصية"
 }
