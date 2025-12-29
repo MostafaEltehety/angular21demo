@@ -26,8 +26,8 @@
         <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
         <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
       </mat-step>
-      <mat-step [label]="'Profile'|translate">
-        <app-profile></app-profile>
+      <mat-step [label]="'Profile'|translate"  [stepControl]="profileGroup">
+        <app-profile [profile]="profileGroup"></app-profile>
         <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
 
       </mat-step>

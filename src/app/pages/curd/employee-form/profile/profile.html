@@ -1,37 +1,31 @@
- <form class="d-flex form-body" [formGroup]="form">
+ <form class="d-flex form-body" [formGroup]="profile">
 
-  <mat-form-field appearance="outline" class="w-50 m-2">
-    <mat-label>{{ 'ProfileImg' | translate }}</mat-label>
 
-    <!-- Read-only input to show file name -->
-    <input
-      matInput
-      placeholder="Choose file"
-      readonly
-      formControlName="profilePath"
-    />
 
-    <!-- Upload button -->
-    <button
-      mat-icon-button
-      matSuffix
-      type="button"
-      (click)="fileInput.click()"
-    >
-      <mat-icon>attach_file</mat-icon>
-    </button>
-  </mat-form-field>
+    <!-- <mat-label>{{ 'ProfileImg' | translate }}</mat-label> -->
 
-  <!-- Hidden file input -->
-  <input
-    #fileInput
-    type="file"
-    accept="image/*"
-    hidden
-    (change)="onImageSelected($event)"
-  />
+     <div class="file-upload full-width">
+      <mat-label>Course Image</mat-label>
+      <div class="file-input-wrapper">
+        <input
+          type="file"
+          accept="image/*"
+          id="fileInput"
+          (change)="onImageSelected($event)"
+        />
+        <label for="fileInput" class="browse-btn">Browse</label>
+        <span class="file-name" *ngIf="selectedImage; else noFile">{{
+          selectedImage
+        }}</span>
+        <ng-template #noFile><span class="file-name muted">No file chosen</span></ng-template>
+      </div>
 
-</form>
+      <div class="image-preview" *ngIf="selectedImage">
+        <img [src]="selectedImage" alt="Selected course" />
+      </div>
+    </div>
 
-<!-- Optional preview -->
-<img *ngIf="selectedImage" [src]="selectedImage" width="120" />
+ </form>
+
+
+
