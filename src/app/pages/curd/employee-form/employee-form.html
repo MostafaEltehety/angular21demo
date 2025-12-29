@@ -1,6 +1,6 @@
 <div class="card w-90">
 
-  <form [formGroup]="employeeForm">
+  <form [formGroup]="employeeForm" (onsubmit)="Save()">
 
     <mat-stepper>
       <mat-step [stepControl]="personalGroup" [label]="'Personal-data'|translate">
@@ -15,7 +15,7 @@
 
       </mat-step>
       <mat-step [label]="'SkillsAndLanguages'|translate" [stepControl]="skillsGroup">
-        <app-skills-languages [skills]="skillsGroup"></app-skills-languages>
+        <app-skills-languages [skills]="skillsGroup" ></app-skills-languages>
         <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
         <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
       </mat-step>
@@ -32,6 +32,7 @@
 
       </mat-step>
     </mat-stepper>
+<button mat-stroked-button type="submit">Save</button>
 
   </form>
 

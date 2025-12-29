@@ -35,6 +35,9 @@ ContactInformation
   styleUrl: './employee-form.scss',
 })
 export class EmployeeForm implements OnInit {
+Save() {
+console.log(this.employeeForm.value);
+}
   ngOnInit(): void {
     this.services.getDeparmtentsSelect().subscribe((res) => {
       if (res) {
@@ -104,5 +107,5 @@ get profileGroup():FormGroup{
   }
 
 
-  
+
 }
