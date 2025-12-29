@@ -51,6 +51,10 @@ export const routes: Routes = [
         path:'responsive-table',
         loadComponent:()=>import('./pages/techNetzz/responsive-table/responsive-table').then(m=>m.ResponsiveTable)
       }
+      ,{
+        path:'master-details',
+        loadComponent:()=>import('./pages/master-details/master-details').then(m=>m.MasterDetails)
+      }
     ],
   },
 
