@@ -1,1 +1,37 @@
-<p>profile works!</p>
+ <form class="d-flex form-body" [formGroup]="form">
+
+  <mat-form-field appearance="outline" class="w-50 m-2">
+    <mat-label>{{ 'ProfileImg' | translate }}</mat-label>
+
+    <!-- Read-only input to show file name -->
+    <input
+      matInput
+      placeholder="Choose file"
+      readonly
+      formControlName="profilePath"
+    />
+
+    <!-- Upload button -->
+    <button
+      mat-icon-button
+      matSuffix
+      type="button"
+      (click)="fileInput.click()"
+    >
+      <mat-icon>attach_file</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <!-- Hidden file input -->
+  <input
+    #fileInput
+    type="file"
+    accept="image/*"
+    hidden
+    (change)="onImageSelected($event)"
+  />
+
+</form>
+
+<!-- Optional preview -->
+<img *ngIf="selectedImage" [src]="selectedImage" width="120" />

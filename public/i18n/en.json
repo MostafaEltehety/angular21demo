@@ -89,5 +89,7 @@
 "joinDateTime":"Join DateTime",
 "attendanceTime":"Attendance Time",
 "isActive":"Is Active",
-"appraisal":"Appraisal"
+"appraisal":"Appraisal",
+"Contact information":"Contact Information",
+"ProfileImg":"Profile"
 }

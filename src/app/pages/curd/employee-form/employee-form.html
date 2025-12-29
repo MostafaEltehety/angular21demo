@@ -1,31 +1,38 @@
 <div class="card w-90">
 
-<form [formGroup]="employeeForm">
+  <form [formGroup]="employeeForm">
 
-  <mat-stepper >
-     <mat-step [stepControl]="personalGroup" [label]="'Personal-data'|translate">
-      <app-personal-data [personalFrm]="personalGroup"></app-personal-data>
-      <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
+    <mat-stepper>
+      <mat-step [stepControl]="personalGroup" [label]="'Personal-data'|translate">
+        <app-personal-data [personalFrm]="personalGroup"></app-personal-data>
+        <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
 
-    </mat-step>
-    <mat-step [stepControl]="jobGroup" [label]="'Job-data'|translate">
-      <app-job-data [departments]="departments" [jobGroup]="jobGroup"></app-job-data>
-      <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
-      <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
+      </mat-step>
+      <mat-step [stepControl]="jobGroup" [label]="'Job-data'|translate">
+        <app-job-data [departments]="departments" [jobGroup]="jobGroup"></app-job-data>
+        <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
+        <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
 
-    </mat-step>
-    <mat-step [label]="'SkillsAndLanguages'|translate" [stepControl]="skillsGroup">
-      <app-skills-languages [skills]="skillsGroup"></app-skills-languages>
-       <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
-      <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
-    </mat-step>
-    <mat-step [label]="'Profile'|translate">
-      <app-profile></app-profile>
-       <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
+      </mat-step>
+      <mat-step [label]="'SkillsAndLanguages'|translate" [stepControl]="skillsGroup">
+        <app-skills-languages [skills]="skillsGroup"></app-skills-languages>
+        <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
+        <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
+      </mat-step>
 
-    </mat-step>
-  </mat-stepper>
+      <mat-step [label]="'Contact information'|translate" [stepControl]="contactInfoGroup">
+        <app-contact-information [contactInfo]="contactInfoGroup">{{'Contact
+          information'|translate}}</app-contact-information>
+        <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
+        <button mat-flat-button matStepperNext>{{'next'|translate}}</button>
+      </mat-step>
+      <mat-step [label]="'Profile'|translate">
+        <app-profile></app-profile>
+        <button mat-flat-button matStepperPrevious>{{'previous'|translate}}</button>
 
-</form>
+      </mat-step>
+    </mat-stepper>
+
+  </form>
 
 </div>

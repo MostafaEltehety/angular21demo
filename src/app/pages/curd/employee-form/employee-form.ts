@@ -17,6 +17,7 @@ import {
 import { JsonPipe } from '@angular/common';
 import { Departments } from '../../../services/departments';
 import { deparmtentsSelect } from '../../../models/demaprtment';
+import { ContactInformation } from './contact-information/contact-information';
 @Component({
   selector: 'app-employee-form',
   imports: [
@@ -28,7 +29,7 @@ import { deparmtentsSelect } from '../../../models/demaprtment';
     SkillsLanguages,
     Profile,
     MatAnchor,
-
+ContactInformation
   ],
   templateUrl: './employee-form.html',
   styleUrl: './employee-form.scss',
@@ -70,7 +71,22 @@ export class EmployeeForm implements OnInit {
       german:[false]
     }),
 
+    contactInfo:this.fb.group({
+      phoneNumber:[''],
+      email:['',Validators.email]
+    }),
+
+profile:this.fb.group({
+  profileFile: [File],
+  profilePath: [''],
+  notes: ['']
+})
+
   });
+
+get profileGroup():FormGroup{
+  return this.employeeForm.get('profile') as FormGroup;
+}
 
   get personalGroup(): FormGroup {
     return this.employeeForm.get('personal') as FormGroup;
@@ -81,5 +97,9 @@ export class EmployeeForm implements OnInit {
   }
   get skillsGroup():FormGroup {
     return this.employeeForm.get('skills') as FormGroup;
+  }
+
+  get contactInfoGroup():FormGroup{
+    return this.employeeForm.get('contactInfo') as FormGroup;
   }
 }
