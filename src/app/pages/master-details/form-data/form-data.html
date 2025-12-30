@@ -1,29 +1,28 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
 <div class="card">
   <div mat-dialog-title class="card-title">Employee Form</div>
 
-  <form >
   <div mat-dialog-content>
 <div class="d-flex">
       <mat-form-field appearance="outline" class="w-50 m-2">
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="Ex. Mostafa">
+        <input matInput placeholder="Ex. Mostafa" formControlName="firstName">
       </mat-form-field>
       <mat-form-field appearance="outline" class="w-50 m-2">
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Ex. Eltehety">
+        <input matInput placeholder="Ex. Eltehety" formControlName="lastName">
       </mat-form-field>
 
 </div>
 
-
 <div class="d-flex">
       <mat-form-field appearance="outline" class="w-50 m-2">
         <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="Ex. persone@example.com">
+        <input matInput type="email" placeholder="Ex. persone@example.com" formControlName="email">
       </mat-form-field>
       <mat-form-field appearance="outline" class="w-50 m-2">
         <mat-label>Birth Date</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="picker" formControlName="dob">
         <!-- <mat-hint>MM-DD-YYYY</mat-hint> -->
         <mat-datepicker #picker></mat-datepicker>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -31,20 +30,53 @@
 
 </div>
 
- <mat-radio-group  class="m-2">
+ <mat-radio-group  class=" m-2" formControlName="gender">
   <mat-label><b>Gender</b></mat-label>
   <mat-radio-button value="male">Male</mat-radio-button>
   <mat-radio-button value="female">Female</mat-radio-button>
 </mat-radio-group>
 
+<div class="d-flex">
 
+<mat-form-field appearance="outline" class="w-50 m-2">
+  <mat-label>Education</mat-label>
+  <mat-select formControlName="education">
+@for (edu of education; track $index) {
+  <mat-option [value]="edu">{{edu}}</mat-option>
+}
+</mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="w-50 m-2">
+  <mat-label>Company</mat-label>
+<input matInput placeholder="Ex. Google" formControlName="company">
+
+</mat-form-field>
 
 </div>
 
+
+<div class="d-flex">
+<mat-form-field appearance="outline" class="w-50 m-2">
+  <mat-label>Experience</mat-label>
+<input matInput placeholder="Ex. 4" type="number" formControlName="experience">
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="w-50 m-2">
+  <mat-label>Packge</mat-label>
+<input matInput placeholder="Ex. 12" type="number" formControlName="packge">
+<mat-hint>In rupees</mat-hint>
+</mat-form-field>
+</div>
+
+
+
+
+</div>
 
   <div mat-dialog-actions>
     <button mat-raised-button type="reset" class="btn-warn">Cancel</button>
     <button mat-raised-button type="submit" class="btn-primary">Save</button>
   </div>
-</form>
 </div>
+</form>

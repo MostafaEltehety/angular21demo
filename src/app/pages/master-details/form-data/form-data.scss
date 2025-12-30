@@ -2,6 +2,11 @@
 //   display: flex;
 //   gap: 10px;
 //  }
-.card{
+.card {
   padding: 0px;
+}
+
+.btn-warn,
+.btn-primary {
+  flex: 1;
 }
