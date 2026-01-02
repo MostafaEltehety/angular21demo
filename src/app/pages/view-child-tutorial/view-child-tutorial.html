@@ -1,8 +1,7 @@
-
-
- <h1>@ViewChild() Decorator</h1>
+<h1>@ViewChild() Decorator</h1>
 <h3>
-يمكن الكومبوننت تايب سكربت كلاس (.ts)من الحصول على reference لعنصر إتش تي إم إل أو كومبوننت أو دايركتف موجود في الكومبوننت تمبلت (.html)
+  يمكن الكومبوننت تايب سكربت كلاس (.ts)من الحصول على reference لعنصر إتش تي إم إل أو كومبوننت أو دايركتف موجود في
+  الكومبوننت تمبلت (.html)
 </h3>
 
 <mat-form-field appearance="outline" class="w-100">
@@ -10,18 +9,23 @@
 </mat-form-field>
 
 <div #box>
-<span>Chang Border</span>
+  <span>Chang Border</span>
 </div>
 
-<mat-form-field  appearance="outline" class="w-100">
+<mat-form-field appearance="outline" class="w-100">
   <input matInput #emailInput type="email" placeholder="Enter email">
 </mat-form-field>
 
 <button mat-stroked-button (click)="foucsInput()">Foucs on input</button>
-<button mat-stroked-button (click)="border()">Border</button>
+
+
 <button mat-stroked-button (click)="borderDiv()">Border Div</button>
 <button mat-stroked-button (click)="greeting()">Greeting</button>
+<button mat-stroked-button (click)="callAllGreetings()">Greeting All</button>
 
 
- 
 
+<app-greetings></app-greetings>
+<app-greetings></app-greetings>
+<app-greetings></app-greetings>
+<app-greetings></app-greetings>
