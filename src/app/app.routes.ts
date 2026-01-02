@@ -63,6 +63,9 @@ export const routes: Routes = [
       },{
         path:'ng-template',
         loadComponent:()=>import('./lessons/ng-template/ng-template').then(m=>m.NgTemplate)
+      },{
+        path:'control-flow',
+        loadComponent:()=>import('./lessons/control-flow/control-flow').then(m=>m.ControlFlow)
       }
     ],
   },

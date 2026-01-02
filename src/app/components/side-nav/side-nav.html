@@ -268,6 +268,18 @@
             </a>
 
 
+<a mat-list-item routerLink="/control-flow" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+              <div class="list-item-content">
+                <mat-icon [matTooltip]="'control-flow'|translate">dashboard</mat-icon>
+                @if(!collabse()){
+                <span>control-flow</span>
+                }
+              </div>
+            </a>
+
+
+
  </ng-template>
 
 
