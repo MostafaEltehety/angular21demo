@@ -1,0 +1,93 @@
+
+<h3>ما هو ng-template؟</h3>
+<h2>هو قالب (Template)
+لا يظهر في الصفحة لوحده
+يتم عرضه باستخدام:
+*ngIf
+*ngFor
+ngTemplateOutlet
+أو من Component Logic</h2>
+
+<p>Example 1 :</p>
+<h2>ng-template مع *ngIf</h2>
+
+<mat-slide-toggle [(ngModel)]="isLogin">Login</mat-slide-toggle>
+
+<div *ngIf="isLogin; else loginTemp">
+  <p>Welcome User</p>
+</div>
+
+<ng-template #loginTemp>
+  <p>Plase Login in</p>
+</ng-template>
+<br><hr>
+
+<h2>ng-template مع then / else</h2>
+<mat-slide-toggle [(ngModel)]="isAdmin">Admin</mat-slide-toggle>
+
+<ng-container *ngIf="isAdmin; then adminTemp else userTemp"></ng-container>
+
+<ng-template #adminTemp>
+  <p>Admin Template</p>
+</ng-template>
+<ng-template #userTemp>
+  <p>User Template</p>
+</ng-template>
+
+<p>📌 هنا ng-container:
+
+لا يضيف عنصر DOM إضافي
+
+فقط لتنفيذ الشرط</p>
+
+<br><hr>
+
+<h2>ng-template مع *ngFor</h2>
+
+<button mat-stroked-button (click)="data()">Data</button>
+<ng-container *ngIf="items.length>0; else noData">
+<div *ngFor="let item of items;">
+  {{item}}
+</div>
+
+</ng-container>
+
+<ng-template #noData>
+  <p>No items found</p>
+</ng-template>
+
+<br><hr>
+<h2>تمرير بيانات إلى ng-template</h2>
+
+<p>🧠 الفكرة الأساسية</p>
+<p>ng-template = دالة
+
+context = parameters
+
+let-xxx = arguments</p>
+<p>عرض Template يدويًا بـ ngTemplateOutlet</p>
+
+
+<ng-template #profileTemp let-name  let-age="age" let-score="score" let-role="role">
+<p>Name : {{name}}</p>
+<p>Age : {{age}}</p>
+<p>Score : {{score}}</p>
+<p>Role : {{role}}</p>
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="profileTemp" [ngTemplateOutletContext]="{$implicit:'Mostafa',age:30,score:90,role:'Admin'}"></ng-container>
+
+<hr>
+<ng-container [ngTemplateOutlet]="profileTemp" [ngTemplateOutletContext]="{
+  $implicit:'Ahmed',age:25,score:80,role:'User'
+}"></ng-container>
+
+
+<hr>
+<p>خلاصة ذهبية 🏆</p>
+<p>ng-template = قالب</p>
+<p>ngTemplateOutlet = عرض القالب</p>
+<p>context = البيانات</p>
+<p>$implicit = القيمة الافتراضية</p>
+<p>let-xxx = استقبال البيانات</p>
+<div style="height: 100px;"></div>

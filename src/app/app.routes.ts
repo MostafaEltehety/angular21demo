@@ -54,6 +54,15 @@ export const routes: Routes = [
       ,{
         path:'master-details',
         loadComponent:()=>import('./pages/master-details/master-details').then(m=>m.MasterDetails)
+      },{
+        path:'directive',
+        loadComponent:()=>import('./lessons/directive/directive').then(m=>m.Directive)
+      },{
+        path:'template',
+        loadComponent:()=>import('./lessons/templete/templete').then(m=>m.Templete)
+      },{
+        path:'ng-template',
+        loadComponent:()=>import('./lessons/ng-template/ng-template').then(m=>m.NgTemplate)
       }
     ],
   },

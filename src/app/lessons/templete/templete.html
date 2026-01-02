@@ -1,0 +1,56 @@
+ <h2>Template</h2>
+<h4>In Angular, a Template is the HTML view of a component.
+    It defines what appears on the screen and how data and events connect to your component’s logic (TypeScript).</h4>
+
+<h2>1) What is an Angular Template?</h2>
+<b>Sol: </b> <h3>An Angular template is HTML enhanced with Angular syntax to:</h3>
+<ol>
+    <li>Display data from the component</li>
+    <li>Respond to user actions</li>
+    <li>Control the DOM dynamically</li>
+</ol>
+📌 Every component has a template
+<br><hr>
+<h2>2) Template Syntax Basics</h2>
+
+<p><b>A )</b> {{code_interbolation}}</p>
+Used to display data
+<p>{{user_name}}</p>
+<p><b>B )</b> Property Binding [ ]</p>
+<p>Binds component data → HTML property</p>
+<p>{{proprty_code}}</p>
+<button mat-stroked-button [disabled]="isDisabled">Save</button>
+<p><b>C )</b> Event Binding ( )</p>
+<p>Binds HTML event → component method</p>
+<p>{{event_code}}</p>
+<button mat-stroked-button (click)="showAlert()">Alert</button>
+<p><b>D )</b> Two-Way Binding [( )]</p>
+<p>Combines property + event binding
+(Commonly used in forms)</p>
+<p>📌 Requires FormsModule</p>
+
+<input matInput [(ngModel)]="user_name">
+<p>{{user_name}}</p>
+
+<br><hr>
+<h2>3) Directives in Templates</h2>
+<p>Directives add logic to HTML</p>
+<p>🧱 Structural Directives</p>
+<p>Change the structure of the DOM</p>
+<b>*ngIF *ngFor</b>
+<p>🎨 Attribute Directives</p>
+<p>Change appearance or behavior</p>
+<b>*ngClass *ngStyle</b>
+<br><hr>
+<h2>4 ) Template Reference Variables #</h2>
+<input #user matInput>
+<button mat-stroked-button (click)="login(user)">Login</button>
+<p>{{tempeletRef}}</p>
+<br><hr>
+<h2>5 ) Pipes |</h2>
+<p>Transform data in templates</p>
+<p>Custom pipes are also supported.</p>
+<p>{{code_pip}}</p>
+<p>{{today | date:'short'}}</p>
+
+<div style="height: 30px;"></div>

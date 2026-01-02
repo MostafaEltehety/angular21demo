@@ -37,6 +37,16 @@ import { NgIf, NgTemplateOutlet, NgStyle } from '@angular/common';
   encapsulation: ViewEncapsulation.None,
 })
 export class SideNav {
+
+  
+toggleLessons() {
+  if(this.collabse()){
+this.collabse.update((x)=>x==false);
+  }this.LessonsOpen.set(!this.LessonsOpen());
+}
+
+
+
   collabse = signal(false);
   sidenavWidth = computed(() => (this.collabse() ? '60px' : '275px'));
   translate = inject(TranslateService);
@@ -62,6 +72,9 @@ export class SideNav {
 
   employeesOpen = signal(false);
 directiveOpen=signal(false);
+LessonsOpen=signal(false);
+TemplateOpen=signal(false);
+
 
   toggleEmployees() {
     if (this.collabse()) {

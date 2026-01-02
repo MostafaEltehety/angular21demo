@@ -182,7 +182,7 @@
           </div>
 </a>
 
-<a mat-list-item (click)="toggleDirective()">
+<!-- <a mat-list-item (click)="toggleDirective()">
           <div class="list-item-content" style="display: flex;  justify-content: space-between; text-align: center;">
             <mat-icon matTooltip="Directive">schema</mat-icon>
             @if (!collabse()) {
@@ -210,7 +210,76 @@
                 }
               </div>
             </a>
+ </ng-template> -->
+
+
+<!-- Lesone -->
+
+
+<a mat-list-item (click)="toggleLessons()">
+          <div class="list-item-content" style="display: flex;  justify-content: space-between; text-align: center;">
+            <mat-icon matTooltip="Lessons">schema</mat-icon>
+            @if (!collabse()) {
+            <span>Lessons</span>
+            @if(directiveOpen()){
+            <mat-icon>keyboard_arrow_up</mat-icon>
+            }@else {
+            <mat-icon>keyboard_arrow_down</mat-icon>
+            }
+            }
+          </div>
+        </a>
+
+@if(LessonsOpen()){
+  <ng-container *ngTemplateOutlet="Lessons"></ng-container>
+}
+
+ <ng-template #Lessons>
+<a mat-list-item routerLink="/directive" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+              <div class="list-item-content">
+                <mat-icon [matTooltip]="'directive'|translate">dashboard</mat-icon>
+                @if(!collabse()){
+                <span>directive</span>
+                }
+              </div>
+            </a>
+
+<a mat-list-item routerLink="/template" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+              <div class="list-item-content">
+                <mat-icon [matTooltip]="'template'|translate">dashboard</mat-icon>
+                @if(!collabse()){
+                <span>template</span>
+                }
+              </div>
+            </a>
+
+
+
+<a mat-list-item routerLink="/ng-template" routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+              <div class="list-item-content">
+                <mat-icon [matTooltip]="'ng-template'|translate">dashboard</mat-icon>
+                @if(!collabse()){
+                <span>ng-template</span>
+                }
+              </div>
+            </a>
+
+
  </ng-template>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

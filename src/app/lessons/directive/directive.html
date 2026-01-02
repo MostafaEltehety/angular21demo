@@ -1,0 +1,49 @@
+
+ <h2>Directive</h2>
+
+ <h2>What is the Directive?</h2>
+
+<b>Sol:</b> <h3>A directive is a class with a &commat; Directive() decorator that Angular uses to manipulate the DOM.</h3>
+<h3>“When this element appears, do something special.”</h3>
+
+<hr>
+
+<h3>Types of Angular Directives :-</h3>
+<ol>
+    <li>Component Directives</li>
+    <li>Structural Directives</li>
+    <li>Attribute Directives</li>
+</ol>
+
+<hr>
+<h3>1) Component Directives</h3>
+<p>Used with a template. This type of directive is the most common directive type.</p>
+📌 Every Angular component is a directive.
+ <br><hr><br>
+<h3>2) Structural Directives</h3>
+<p>Change the DOM layout by adding and removing DOM elements.</p>
+Usually start with *
+<ul>
+    <li>*ngIf</li>
+    <li>*ngFor</li>
+    <li>*ngSwitch</li>
+</ul>
+
+✔ Adds or removes elements from the DOM.
+<p>To use *ngIf must import NgIf from &commat;angular/common</p>
+<p *ngIf="isLogedIn">Welcome back!</p>
+<br><hr><br>
+<h3>3) Attribute Directives</h3>
+<p>Change the appearance or behavior of an element, component, or another directive.</p>
+<p>Do not add/remove elements</p>
+<ul>
+    <li>ngClass</li>
+    <li>ngStyle</li>
+    <li>Custom Directives</li>
+</ul>
+<p [ngClass]="{'active':isActive}">Hello from Attribute Directives</p>
+<br><hr><br>
+
+<h3 appHightLight>Custom Directive Example : - </h3>
+
+<div style="height: 30px;"></div>
