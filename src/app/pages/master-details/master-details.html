@@ -1,4 +1,42 @@
 <div>
   <button mat-stroked-button (click)="openFormCreateEdit()">Add Employee</button>
-
 </div>
+
+<mat-form-field class="w-100" appearance="outline">
+<mat-label>Search</mat-label>
+<input matInput (keyup)="filterData($event)">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="card" matSort >
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>No.</th>
+    <td mat-cell *matCellDef="let emp">{{emp.id}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef >First Name</th>
+    <td mat-cell *matCellDef="let emp">{{emp.firstName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef>Last Name</th>
+    <td mat-cell *matCellDef="let emp">{{emp.lastName}}</td>
+  </ng-container>
+
+
+<ng-container matColumnDef="experience" >
+<th mat-header-cell mat-sort-header *matHeaderCellDef="experience">Experience</th>
+<td mat-cell *matCellDef="let emp">{{emp.experience}}</td>
+</ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayCol"></tr>
+  <tr mat-row *matRowDef="let empRow;columns:displayCol;"></tr>
+
+
+
+
+</table>
+
+  <mat-paginator  [pageSizeOptions]="[5,10,20,100]"></mat-paginator>
+
