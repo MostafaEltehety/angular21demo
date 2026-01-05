@@ -66,6 +66,9 @@ export const routes: Routes = [
       },{
         path:'control-flow',
         loadComponent:()=>import('./lessons/control-flow/control-flow').then(m=>m.ControlFlow)
+      },{
+        path:'input-output',
+        loadComponent:()=>import('./lessons/input-output/input-output').then(m=>m.InputOutput)
       }
     ],
   },
