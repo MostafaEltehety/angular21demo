@@ -73,6 +73,10 @@ export const routes: Routes = [
         path:'component-lifecycle',
         loadComponent:()=>import('./lessons/component-lifecycle/component-lifecycle').then(m=>m.ComponentLifecycle)
       }
+      ,{
+        path:'observable-rxjs',
+        loadComponent:()=>import('./lessons/observable-rxjs/observable-rxjs').then(m=>m.ObservableRxjs)
+      }
     ],
   },
 
