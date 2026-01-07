@@ -69,6 +69,9 @@ export const routes: Routes = [
       },{
         path:'input-output',
         loadComponent:()=>import('./lessons/input-output/input-output').then(m=>m.InputOutput)
+      },{
+        path:'component-lifecycle',
+        loadComponent:()=>import('./lessons/component-lifecycle/component-lifecycle').then(m=>m.ComponentLifecycle)
       }
     ],
   },

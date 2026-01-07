@@ -1,0 +1,203 @@
+ <h3>ما هو Component Lifecycle؟</h3>
+ <p>هو سلسلة من المراحل (Hooks) التي يمر بها الـ Component من لحظة إنشائه ➜ عرضه ➜ تحديثه ➜ تدميره.
+
+Angular يوفّر Lifecycle Hooks نقدر نستخدمها علشان ننفّذ كود في توقيتات محددة.</p>
+
+<p>ترتيب الـ Lifecycle Hooks</p>
+<pre style="direction: ltr;">
+constructor
+↓
+ngOnChanges
+↓
+ngOnInit
+↓
+ngDoCheck
+↓
+ngAfterContentInit
+↓
+ngAfterContentChecked
+↓
+ngAfterViewInit
+↓
+ngAfterViewChecked
+↓
+ngOnDestroy
+
+</pre>
+
+<br><hr>
+<h4>1️⃣ constructor</h4>
+
+<p>📌 أول شيء يتم تنفيذه
+
+تهيئة المتغيرات
+
+حقن الـ Services (Dependency Injection)
+
+</p>
+<p>❌ لا يُفضّل وضع API Calls هنا</p>
+<br><hr>
+<h4>2️⃣ ngOnChanges</h4>
+<p>
+  📌 يُنفّذ عند تغيّر أي @Input()
+
+يعمل حتى قبل ngOnInit
+
+يستقبل التغييرات الجديدة والقديمة
+</p>
+<p>📍 يُستخدم عند:
+
+مراقبة تغييرات البيانات القادمة من Parent</p>
+
+<br><hr>
+
+<h4>3️⃣ ngOnInit ⭐ (الأهم)</h4>
+<p>
+  📌 يُنفّذ مرة واحدة فقط
+
+تحميل البيانات
+
+استدعاء API
+
+تهيئة القيم
+</p>
+<p>✅ أفضل مكان لأي منطق أساسي</p>
+
+<br><hr>
+<h4>4️⃣ ngDoCheck</h4>
+<p>📌 يُنفّذ مع كل Change Detection
+
+للمراقبة اليدوية
+</p>
+<p>❌ استخدامه بحذر (مكلف في الأداء)</p>
+<br><hr>
+
+<h4>5️⃣ ngAfterContentInit</h4>
+<p>📌 بعد تحميل ng-content</p>
+
+<br><hr>
+
+<h4>6️⃣ ngAfterContentChecked</h4>
+<p>📌 بعد كل فحص لمحتوى ng-content</p>
+<br><hr>
+
+<h4>7️⃣ ngAfterViewInit ⭐</h4>
+<p>📌 بعد تحميل الـ View + ViewChild
+
+أفضل مكان لاستخدام @ViewChild</p>
+<br><hr>
+
+<h4>8️⃣ ngAfterViewChecked</h4>
+<p>📌 بعد كل فحص للـ View</p>
+<p>❌ لا تضع منطق ثقيل هنا</p>
+
+<br><hr>
+<h4>9️⃣ ngOnDestroy ⭐</h4>
+<p>📌 قبل تدمير الـ Component
+
+إلغاء الاشتراكات
+
+تنظيف الـ timers
+
+منع Memory Leak</p>
+
+<br><hr>
+<h4>ملخّص سريع 🧠</h4>
+<table>
+  <thead>
+    <tr>
+      <td>Hook</td>
+      <td>الاستخدام</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>constructor</td>
+      <td>تهيئة</td>
+    </tr>
+      <tr>
+      <td>ngOnInit</td>
+      <td>API – تحميل بيانات</td>
+    </tr>
+      <tr>
+      <td>ngOnChanges</td>
+      <td> متابعة Input</td>
+    </tr>
+      <tr>
+      <td>ngAfterViewInit</td>
+      <td>ViewChild</td>
+    </tr>
+      <tr>
+      <td>ngOnDestroy</td>
+      <td> تنظيف الموارد</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<br><hr>
+<pre style="direction: ltr; ">
+┌────────────────────┐
+│   Component Created │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│    constructor      │
+│ (DI + Init Vars)    │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│   ngOnChanges       │◄─── @Input Changed
+│ (Input Updated)     │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│    ngOnInit ⭐       │
+│ (Load Data / API)  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│    ngDoCheck        │
+│ (Custom Check)     │
+└─────────┬──────────┘
+          │
+          ▼
+┌─────────────────────────────┐
+│   ngAfterContentInit        │
+│   (ng-content loaded)       │
+└─────────┬───────────────────┘
+          │
+          ▼
+┌─────────────────────────────┐
+│  ngAfterContentChecked      │
+│  (content checked)          │
+└─────────┬───────────────────┘
+          │
+          ▼
+┌─────────────────────────────┐
+│   ngAfterViewInit ⭐         │
+│   (View + ViewChild ready)  │
+└─────────┬───────────────────┘
+          │
+          ▼
+┌─────────────────────────────┐
+│  ngAfterViewChecked         │
+│  (view checked)             │
+└─────────┬───────────────────┘
+          │
+          ▼
+┌────────────────────┐
+│   User Interaction  │
+│   Change Detection  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│   ngOnDestroy ⭐     │
+│ (Cleanup / Unsub)  │
+└────────────────────┘</pre>
