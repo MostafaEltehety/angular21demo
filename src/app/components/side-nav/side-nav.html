@@ -91,34 +91,35 @@
         }
         <ng-template #subItemsHR>
 
-            <a mat-list-item routerLink="/employees" routerLinkActive="active-link"
-              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
-              <div class="list-item-content">
-                <mat-icon [matTooltip]="'Employees'|translate">groups</mat-icon>
-                @if(!collabse()){
-                <span> {{'Employees'|translate}}</span>
-                }
-              </div>
-            </a>
-            <a mat-list-item routerLink="/departments" routerLinkActive="active-link"
-              [routerLinkActiveOptions]="{exact:true}"
-              [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
-              <div class="list-item-content">
-                <mat-icon [matTooltip]="'DEPARTMENT' | translate">account_tree</mat-icon>
-                @if(!collabse()){
-                <span> {{'DEPARTMENT'|translate}}</span>
-                }
-              </div>
-            </a>
-            <a mat-list-item routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"
-              [style]="isRtl() && !collabse()? 'margin-right:20px':'margin-left:20px'">
-              <div class="list-item-content">
-                <mat-icon [matTooltip]="'USERS'|translate">contacts</mat-icon>
-                @if (!collabse()) {
-                <span> {{'USERS'|translate}} </span>
-                }
-              </div>
-            </a>
+          <a mat-list-item routerLink="/employees" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'Employees'|translate">groups</mat-icon>
+              @if(!collabse()){
+              <span> {{'Employees'|translate}}</span>
+              }
+            </div>
+          </a>
+          <a mat-list-item routerLink="/departments" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'DEPARTMENT' | translate">account_tree</mat-icon>
+              @if(!collabse()){
+              <span> {{'DEPARTMENT'|translate}}</span>
+              }
+            </div>
+          </a>
+          <a mat-list-item routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()? 'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'USERS'|translate">contacts</mat-icon>
+              @if (!collabse()) {
+              <span> {{'USERS'|translate}} </span>
+              }
+            </div>
+          </a>
 
         </ng-template>
 
@@ -140,7 +141,7 @@
             }
           </div>
         </a>
-<a mat-list-item routerLink="/master-details" routerLinkActive="active-link">
+        <a mat-list-item routerLink="/master-details" routerLinkActive="active-link">
           <div class="list-item-content">
             <mat-icon matTooltip='CURD'>dashboard</mat-icon>
             @if(!collabse()){
@@ -173,16 +174,16 @@
             }
           </div>
         </a>
-<a mat-list-item routerLink="/responsive-table" routerLinkActive="active-link">
-    <div class="list-item-content">
+        <a mat-list-item routerLink="/responsive-table" routerLinkActive="active-link">
+          <div class="list-item-content">
             <mat-icon matTooltip='Reactive Form'>dashboard</mat-icon>
             @if(!collabse()){
             <span>Responsive-table</span>
             }
           </div>
-</a>
+        </a>
 
-<!-- <a mat-list-item (click)="toggleDirective()">
+        <!-- <a mat-list-item (click)="toggleDirective()">
           <div class="list-item-content" style="display: flex;  justify-content: space-between; text-align: center;">
             <mat-icon matTooltip="Directive">schema</mat-icon>
             @if (!collabse()) {
@@ -213,10 +214,10 @@
  </ng-template> -->
 
 
-<!-- Lesone -->
+        <!-- Lesone -->
 
 
-<a mat-list-item (click)="toggleLessons()">
+        <a mat-list-item (click)="toggleLessons()">
           <div class="list-item-content" style="display: flex;  justify-content: space-between; text-align: center;">
             <mat-icon matTooltip="Lessons">schema</mat-icon>
             @if (!collabse()) {
@@ -230,65 +231,70 @@
           </div>
         </a>
 
-@if(LessonsOpen()){
-  <ng-container *ngTemplateOutlet="Lessons"></ng-container>
-}
+        @if(LessonsOpen()){
+        <ng-container *ngTemplateOutlet="Lessons"></ng-container>
+        }
 
- <ng-template #Lessons>
-<a mat-list-item routerLink="/directive" routerLinkActive="active-link"
-              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
-              <div class="list-item-content">
-                <mat-icon [matTooltip]="'directive'|translate">dashboard</mat-icon>
-                @if(!collabse()){
-                <span>directive</span>
-                }
-              </div>
-            </a>
+        <ng-template #Lessons>
+          <a mat-list-item routerLink="/directive" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'directive'|translate">dashboard</mat-icon>
+              @if(!collabse()){
+              <span>directive</span>
+              }
+            </div>
+          </a>
 
-<a mat-list-item routerLink="/template" routerLinkActive="active-link"
-              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
-              <div class="list-item-content">
-                <mat-icon [matTooltip]="'template'|translate">dashboard</mat-icon>
-                @if(!collabse()){
-                <span>template</span>
-                }
-              </div>
-            </a>
-
-
-
-<a mat-list-item routerLink="/ng-template" routerLinkActive="active-link"
-              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
-              <div class="list-item-content">
-                <mat-icon [matTooltip]="'ng-template'|translate">dashboard</mat-icon>
-                @if(!collabse()){
-                <span>ng-template</span>
-                }
-              </div>
-            </a>
+          <a mat-list-item routerLink="/template" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'template'|translate">dashboard</mat-icon>
+              @if(!collabse()){
+              <span>template</span>
+              }
+            </div>
+          </a>
 
 
-<a mat-list-item routerLink="/control-flow" routerLinkActive="active-link"
-              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
-              <div class="list-item-content">
-                <mat-icon [matTooltip]="'control-flow'|translate">dashboard</mat-icon>
-                @if(!collabse()){
-                <span>control-flow</span>
-                }
-              </div>
-            </a>
 
-<a mat-list-item routerLink="/input-output" routerLinkActive="active-link"
-              [routerLinkActiveOptions]="{exact:true}"[style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
-              <div class="list-item-content">
-                <mat-icon [matTooltip]="'input-output'|translate">dashboard</mat-icon>
-                @if(!collabse()){
-                <span>input-output</span>
-                }
-              </div>
-            </a>
+          <a mat-list-item routerLink="/ng-template" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'ng-template'|translate">dashboard</mat-icon>
+              @if(!collabse()){
+              <span>ng-template</span>
+              }
+            </div>
+          </a>
 
- </ng-template>
+
+          <a mat-list-item routerLink="/control-flow" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'control-flow'|translate">dashboard</mat-icon>
+              @if(!collabse()){
+              <span>control-flow</span>
+              }
+            </div>
+          </a>
+
+          <a mat-list-item routerLink="/input-output" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'input-output'|translate">dashboard</mat-icon>
+              @if(!collabse()){
+              <span>input-output</span>
+              }
+            </div>
+          </a>
+
+        </ng-template>
 
 
 

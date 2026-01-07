@@ -1,1 +1,11 @@
-<p>parent works!</p>
+<h3>Parent Component</h3>
+<app-child [parentMsg]="msg" (sendMsg)="recivedMsg($event)"></app-child>
+<p>Recived From Child Component : {{messageFromChild}}</p>
+
+<app-child (user)="recivedUser($event)"></app-child>
+
+<div *ngIf="userFromChild">
+  <b>User Id : </b>{{userFromChild.id}}<br>
+  <b>User Name : </b>{{userFromChild.name}} <br>
+  <b>User Email :</b> {{userFromChild.email}}
+</div>

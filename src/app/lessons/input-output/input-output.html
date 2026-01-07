@@ -1,1 +1,66 @@
-<p>input-output works!</p>
+<h2> input-output & EventEmitter</h2>
+
+
+ <p>@Input()
+👉 لنقل البيانات من الأب (Parent) إلى الابن (Child)
+</p>
+<p>
+@Output()
+👉 لإرسال أحداث/بيانات من الابن (Child) إلى الأب (Parent)
+</p>
+
+@Output – إرسال حدث من Child إلى Parent
+📌 متى أستخدمه؟
+
+لما:
+
+يحصل حدث داخل Child (click, submit, change)
+
+وتحب تبلغ Parent باللي حصل
+
+
+<br>
+<hr>
+<app-parent></app-parent>
+
+
+<br>
+<hr>
+
+<h3>ما هو EventEmitter؟</h3>
+
+EventEmitter هو كلاس في Angular يُستخدم لإرسال أحداث (Events) من
+👉 Child Component إلى
+👉 Parent Component
+
+وغالبًا يُستخدم مع @Output().
+<p>
+باختصار:
+الـ Child يقول للـ Parent: حصل حدث معي
+</p>
+
+<h3>متى أستخدم EventEmitter؟</h3>
+عند الضغط على زر داخل Child
+
+عند تغيير قيمة
+
+عند تنفيذ Action داخل Child وتحتاج إبلاغ Parent
+<br>
+<br>
+<div style="direction: ltr; text-align:center;" >
+ <p class="badge badge-primary"> {{codeBase}}</p>
+<br>
+<p class="badge badge-warn">استخدام EventEmitter فقط للتواصل بين Component ↔ Component </p>
+<br>
+<p class="badge badge-warn">لا تستخدمه في Services</p>
+
+
+
+</div>
+
+
+
+
+
+<div style="height: 100px;"></div>
+
