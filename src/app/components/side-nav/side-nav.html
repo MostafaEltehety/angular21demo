@@ -304,7 +304,16 @@
               }
             </div>
           </a>
-
+<a mat-list-item routerLink="/observable-rxjs" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact:true}"
+            [style]="isRtl() && !collabse()?  'margin-right:20px':'margin-left:20px'">
+            <div class="list-item-content">
+              <mat-icon [matTooltip]="'observable-rxjs'|translate">dashboard</mat-icon>
+              @if(!collabse()){
+              <span>observable-rxjs</span>
+              }
+            </div>
+          </a>
         </ng-template>
 
 

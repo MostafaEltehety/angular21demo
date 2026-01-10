@@ -1,1 +1,62 @@
-<p>observable-rxjs works!</p>
+<h3>ما هو الـ Observable ؟</h3>
+
+<p>المشكلة بدون Observable</p>
+<p>المشكلة بدون Observable
+
+تخيل:
+
+عندك API
+
+البيانات مش بتيجي فورًا
+
+ممكن:
+
+تيجي بعد شوية
+
+تيجي أكتر من مرة
+
+يحصل Error
+
+العملية تفضل شغالة (WebSocket – Timer)
+
+❌ Promise تقدر ترجع قيمة واحدة فقط</p>
+<p>✅ Observable تقدر ترجع 0 أو أكتر من قيمة على مدار الوقت</p>
+<p>🔹 تعريف بسيط
+
+Observable = مصدر بيانات بيتابع الزمن ويقدر:
+
+يبعث Data
+
+يبعث Error
+
+يعلن إنه خلص (Complete)</p>
+<p>🔹 مثال تشبيهي بسيط</p>
+<p>قناة تلفزيون	Observable
+البرامج	Data
+الريموت	Subscription
+تقفل التلفزيون	Unsubscribe</p>
+
+
+<p>🔹 Observable vs Promise</p>
+<b>Promise</b>
+<p>قيمة واحدة - يبدأ فورًا - لا يمكن الإلغاء - بسيط</p>
+
+<b>Observable</b>
+<p>قيم متعددة - يبدأ عند subscribe - يمكن الإلغاء - أقوى وأعمق</p>
+
+<b>مكونات Observable الأساسية</b>
+<p>observer.next(value);     // يبعث قيمة</p>
+<p>observer.error(error);   // يبعث خطأ</p>
+<p>observer.complete();     // ينهي البث</p>
+
+<b>subscribe()</b>
+<p>الـ subscribe هو اللي:
+
+يبدأ الـ Observable
+
+يستقبل القيم</p>
+
+<br><hr>
+<b>Operators (القوة الحقيقية 💪) Operators = تحويل ومعالجة البيانات</b>
+
+<div style="height: 150px;"></div>
