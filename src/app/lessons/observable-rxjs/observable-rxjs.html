@@ -49,6 +49,10 @@ Observable = مصدر بيانات بيتابع الزمن ويقدر:
 <p>observer.error(error);   // يبعث خطأ</p>
 <p>observer.complete();     // ينهي البث</p>
 
+<div style="direction: ltr;">
+<b>Example</b>
+<pre>{{codeObs}}</pre>
+
 <b>subscribe()</b>
 <p>الـ subscribe هو اللي:
 
@@ -56,7 +60,51 @@ Observable = مصدر بيانات بيتابع الزمن ويقدر:
 
 يستقبل القيم</p>
 
+<pre>{{codeView}}</pre>
+</div>
+
+
+
 <br><hr>
 <b>Operators (القوة الحقيقية 💪) Operators = تحويل ومعالجة البيانات</b>
+<p>Operator = دالة بتاخد Observable
+وتطلع Observable جديد محوّل أو متحكم في التدفق</p>
+
+<pre style="direction: ltr;">{{operator}}</pre>
+
+<p class="badge badge-primary">الـ Observable الأصلي لا يتغير → دائمًا يرجع Observable جديد</p>
+
+<hr><br>
+<p>map
+الاستخدام
+
+👉 لما تحب تغيّر شكل البيانات</p>
+
+
+<pre style="direction: ltr;">{{mapObservableCode}}</pre>
+<br><hr>
+<p>filter
+الاستخدام
+
+👉 لما تحب تفلتر البيانات</p>
+<pre style="direction: ltr;">{{filterObservableCode}}</pre>
+
+<br><hr>
+<p>tap
+الاستخدام
+
+👉 Debug / Logging
+❌ لا يغير البيانات</p>
+
+<pre style="direction: ltr;">{{tabObservableCode}}</pre>
+
+<br><hr>
+<p>debounceTime
+الاستخدام
+
+👉 مع Input / Search
+يستنى المستخدم يوقف كتابة</p>
+
+
 
 <div style="height: 150px;"></div>
